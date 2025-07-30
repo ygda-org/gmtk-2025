@@ -1,3 +1,29 @@
-[gd_scene format=3 uid="uid://blj820gn8deo1"]
+[gd_scene load_steps=5 format=3 uid="uid://blj820gn8deo1"]
+
+[ext_resource type="Texture2D" uid="uid://dtkjchwn5lqt2" path="res://ASSETS/icon.svg" id="1_nsbdx"]
+[ext_resource type="Script" uid="uid://b5xobjxppn3ri" path="res://PLAYER/player.gd" id="1_w35dc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w35dc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nsbdx")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hurok"]
+size = Vector2(128, 121)
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_w35dc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w35dc")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_hurok")
