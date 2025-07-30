@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="Loophole"
+run/main_scene="uid://b73ti8uendry"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://ASSETS/icon.svg"
 
 [rendering]
 
