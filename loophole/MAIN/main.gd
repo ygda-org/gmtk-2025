@@ -13,3 +13,13 @@ func _on_new_game_pressed() -> void:
 		SceneSwitcher.goto_scene(STARTING_SCENE, "")
 	else:
 		print("Unable to create a new save file!")
+
+
+func _on_credits_pressed():
+	$UI.visible = false
+	$Credits.visible = true
+
+
+func _on_back_pressed():
+	$UI.visible = true
+	$Credits.visible = false
