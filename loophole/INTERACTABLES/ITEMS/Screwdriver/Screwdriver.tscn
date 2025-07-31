@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccdndpo8alnju"]
+[gd_scene load_steps=6 format=3 uid="uid://ccdndpo8alnju"]
 
 [ext_resource type="Script" uid="uid://bvjqp5er7pbc" path="res://INTERACTABLES/ITEMS/Screwdriver/screwdriver.gd" id="1_chygn"]
 [ext_resource type="Resource" uid="uid://dhcx1nfq8fgot" path="res://INTERACTABLES/ITEMS/Screwdriver/Screwdriver.tres" id="2_hjmx0"]
 [ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="2_wv1ab"]
+[ext_resource type="Texture2D" uid="uid://burib4gukjucx" path="res://INTERACTABLES/ITEMS/Screwdriver/Screwdriver_Texture.tres" id="4_7fni4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjmx0"]
 
@@ -17,3 +18,4 @@ one_shot = true
 shape = SubResource("RectangleShape2D_hjmx0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_7fni4")
