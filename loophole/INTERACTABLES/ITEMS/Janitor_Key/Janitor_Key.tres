@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BaseItemResource" load_steps=3 format=3 uid="uid://b2wrdl66r2bqr"]
 
-[ext_resource type="Texture2D" uid="uid://dtkjchwn5lqt2" path="res://ASSETS/icon.svg" id="1_nf0tt"]
+[ext_resource type="Texture2D" uid="uid://b3yq6jv4rr6l5" path="res://INTERACTABLES/ITEMS/Janitor_Key/Janitor_Key_Texture.tres" id="1_nf0tt"]
 [ext_resource type="Script" uid="uid://x1ig0ytxcxi8" path="res://INTERACTABLES/ITEMS/BaseItemResource.gd" id="2_hxi84"]
 
 [resource]

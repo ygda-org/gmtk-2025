@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="BaseItemResource" load_steps=3 format=3 uid="uid://dhcx1nfq8fgot"]
 
-[ext_resource type="Texture2D" uid="uid://dtkjchwn5lqt2" path="res://ASSETS/icon.svg" id="1_0voeb"]
+[ext_resource type="Texture2D" uid="uid://burib4gukjucx" path="res://INTERACTABLES/ITEMS/Screwdriver/Screwdriver_Texture.tres" id="1_qvtw8"]
 [ext_resource type="Script" uid="uid://x1ig0ytxcxi8" path="res://INTERACTABLES/ITEMS/BaseItemResource.gd" id="2_7wyx8"]
 
 [resource]
 script = ExtResource("2_7wyx8")
 itemName = "Screwdriver"
-inventory_texture = ExtResource("1_0voeb")
+inventory_texture = ExtResource("1_qvtw8")
 metadata/_custom_type_script = "uid://x1ig0ytxcxi8"

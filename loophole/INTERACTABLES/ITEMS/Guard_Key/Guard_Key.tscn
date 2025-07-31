@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cto4wcbhaf3d"]
+[gd_scene load_steps=6 format=3 uid="uid://cto4wcbhaf3d"]
 
 [ext_resource type="Script" uid="uid://crjh4vccjf2v4" path="res://INTERACTABLES/ITEMS/Guard_Key/guard_key.gd" id="1_wv8kv"]
 [ext_resource type="Resource" uid="uid://cnymxkwjk0p21" path="res://INTERACTABLES/ITEMS/Guard_Key/Guard_Key.tres" id="2_b4gok"]
 [ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="2_lcis5"]
+[ext_resource type="Texture2D" uid="uid://dft14osv6hwod" path="res://INTERACTABLES/ITEMS/Guard_Key/Guard_Key_Texture.tres" id="4_b4gok"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b4gok"]
 
@@ -17,3 +18,5 @@ one_shot = true
 shape = SubResource("RectangleShape2D_b4gok")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_b4gok")
+region_rect = Rect2(0, 0, 48, 48)
