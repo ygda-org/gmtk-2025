@@ -40,13 +40,17 @@ tile_map_data = PackedByteArray("AAD7/+H/AwAOAAUAAAD8/+H/AwAPAAUAAAD9/+H/AwAPAAU
 tile_set = ExtResource("1_qa1l5")
 
 [node name="Decor" type="TileMapLayer" parent="." index="2"]
-tile_map_data = PackedByteArray("AAAGAN//AQALABgAAAAGAOD/AQALABkAAAA=")
+tile_map_data = PackedByteArray("AAD9/97/AQAEABUAAAD9/9//AQAEABYAAAD//97/AQAEABUAAAD//9//AQAEABYAAAABAN7/AQAEABUAAAABAN//AQAEABYAAAADAN7/AQAEABUAAAADAN//AQAEABYAAAAGAN//AQALABgAAAAGAOD/AQALABkAAAA=")
 tile_set = ExtResource("1_qa1l5")
 
-[node name="Player" parent="." index="3" instance=ExtResource("1_d6wng")]
+[node name="Decor2" type="TileMapLayer" parent="." index="3"]
+tile_map_data = PackedByteArray("AAD9/9//AQADABwAAAD+/9//AQADABwAAAD//9//AQADABwAAAAAAN//AQADABwAAAABAN//AQADABwAAAACAN//AQADABwAAAADAN//AQADABwAAAA=")
+tile_set = ExtResource("1_qa1l5")
+
+[node name="Player" parent="." index="4" instance=ExtResource("1_d6wng")]
 position = Vector2(-3, -441)
 
-[node name="StartingLocations" type="Node" parent="." index="4"]
+[node name="StartingLocations" type="Node" parent="." index="5"]
 
 [node name="MainDoor" type="Node2D" parent="StartingLocations" index="0"]
 position = Vector2(24, -308)
@@ -57,7 +61,7 @@ position = Vector2(-85, -463)
 [node name="WaitingRoomDoor" type="Node2D" parent="StartingLocations" index="2"]
 position = Vector2(128, -383)
 
-[node name="SSA_Janitor" parent="." index="5" instance=ExtResource("5_0oaqi")]
+[node name="SSA_Janitor" parent="." index="6" instance=ExtResource("5_0oaqi")]
 starting_location = "EntranceDoor"
 to_scene = "res://ROOMS/Janitor_Closet.tscn"
 
@@ -65,7 +69,7 @@ to_scene = "res://ROOMS/Janitor_Closet.tscn"
 position = Vector2(-106, -464)
 shape = SubResource("RectangleShape2D_jrs1a")
 
-[node name="SSA_Waiting" parent="." index="6" instance=ExtResource("5_0oaqi")]
+[node name="SSA_Waiting" parent="." index="7" instance=ExtResource("5_0oaqi")]
 starting_location = "EntranceDoor"
 to_scene = "res://ROOMS/Wating_Room.tscn"
 
