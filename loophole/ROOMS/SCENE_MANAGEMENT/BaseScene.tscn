@@ -74,3 +74,16 @@ libraries = {
 &"": SubResource("AnimationLibrary_vla18")
 }
 autoplay = "fade_in"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -3
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+z_index = -10
+z_as_relative = false
+offset_left = -2784.0
+offset_top = -2202.0
+offset_right = -2744.0
+offset_bottom = -2162.0
+scale = Vector2(160.121, 104.408)
+color = Color(0.319962, 0.399908, 0.472413, 1)
