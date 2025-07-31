@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cop3o8i7ugwfc"]
+[gd_scene load_steps=6 format=3 uid="uid://cop3o8i7ugwfc"]
 
 [ext_resource type="Script" uid="uid://bwvayccoe53ay" path="res://INTERACTABLES/ITEMS/test_item.gd" id="1_un78p"]
 [ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="2_m2nay"]
+[ext_resource type="Resource" uid="uid://drb6wqf68pkcd" path="res://INTERACTABLES/ITEMS/test_item_resource.tres" id="2_w8s5k"]
 [ext_resource type="Texture2D" uid="uid://dtkjchwn5lqt2" path="res://ASSETS/icon.svg" id="3_m2nay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_un78p"]
@@ -9,6 +10,7 @@ size = Vector2(74, 108)
 
 [node name="TestItem" type="Node2D"]
 script = ExtResource("1_un78p")
+itemResource = ExtResource("2_w8s5k")
 
 [node name="Interactable" parent="." instance=ExtResource("2_m2nay")]
 one_shot = true

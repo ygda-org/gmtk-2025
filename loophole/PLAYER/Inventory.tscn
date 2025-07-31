@@ -7,38 +7,43 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_upj8x")
 
-[node name="Item1" type="TextureRect" parent="."]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 290.0
+offset_bottom = 40.0
+
+[node name="Item1" type="TextureRect" parent="Panel"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 expand_mode = 1
 
-[node name="Item2" type="TextureRect" parent="."]
+[node name="Item2" type="TextureRect" parent="Panel"]
 offset_left = 50.0
 offset_top = 1.0
 offset_right = 90.0
 offset_bottom = 41.0
 expand_mode = 1
 
-[node name="Item3" type="TextureRect" parent="."]
+[node name="Item3" type="TextureRect" parent="Panel"]
 offset_left = 100.0
 offset_right = 140.0
 offset_bottom = 40.0
 expand_mode = 1
 
-[node name="Item4" type="TextureRect" parent="."]
+[node name="Item4" type="TextureRect" parent="Panel"]
 offset_left = 150.0
 offset_right = 190.0
 offset_bottom = 40.0
 expand_mode = 1
 
-[node name="Item5" type="TextureRect" parent="."]
+[node name="Item5" type="TextureRect" parent="Panel"]
 offset_left = 200.0
 offset_right = 240.0
 offset_bottom = 40.0
 expand_mode = 1
 
-[node name="Item6" type="TextureRect" parent="."]
+[node name="Item6" type="TextureRect" parent="Panel"]
 offset_left = 250.0
 offset_top = 1.0
 offset_right = 290.0

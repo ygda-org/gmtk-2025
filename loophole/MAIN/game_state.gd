@@ -1,6 +1,6 @@
 extends Node
 
-var player_inventory = [] # what data type should this hold?
+var player_inventory = [BaseItemResource] # what data type should this hold?
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
