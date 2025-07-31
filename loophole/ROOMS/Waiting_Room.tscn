@@ -1,40 +1,39 @@
-[gd_scene load_steps=6 format=4 uid="uid://b3c3gq5x07f7d"]
+[gd_scene load_steps=6 format=4 uid="uid://cs16wr38l3i8d"]
 
-[ext_resource type="Script" uid="uid://c7hrtdui1nb4t" path="res://ROOMS/SCENE_MANAGEMENT/base_scene.gd" id="1_ekcco"]
-[ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_oj1qg"]
-[ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="2_ekcco"]
-[ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="4_2tb55"]
+[ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_15mew"]
+[ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_kmgci"]
+[ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="3_jkf2s"]
+[ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="4_pss4y"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_43112"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svgu2"]
 size = Vector2(20, 30)
 
-[node name="WatingRoom" type="Node2D" node_paths=PackedStringArray("node_with_locations")]
-script = ExtResource("1_ekcco")
+[node name="WaitingRoom" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_15mew")]
 node_with_locations = NodePath("StartingLocations")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="1"]
 tile_map_data = PackedByteArray("AAD///7/AwAOAAYAAAD/////AwAOAAYAAAD//wAAAwAOAAYAAAD//wEAAwAOAAYAAAD//wIAAwAOAAYAAAD//wMAAwAOAAUAACD///3/AwAOAAUAAAAAAP3/AwAPAAUAAAABAP3/AwAPAAUAAAACAP3/AwAPAAUAAAADAP3/AwAPAAUAAAAEAP3/AwAPAAUAAAAFAP3/AwAPAAUAAAAGAP3/AwAPAAUAAAAHAP3/AwAPAAUAAAAIAP3/AwAPAAUAAAAJAP3/AwAPAAUAAAAAAAMAAwAPAAUAACABAAMAAwAPAAUAACACAAMAAwAPAAUAACADAAMAAwAPAAUAACAEAAMAAwAPAAUAACAFAAMAAwAPAAUAACAGAAMAAwAPAAUAACAHAAMAAwAPAAUAACAIAAMAAwAPAAUAACAJAAMAAwAPAAUAACAFAAAAAwAQAAYAAAAFAP//AwAQAAYAAAAFAP7/AwAPAAYAAAAEAP7/AwAPAAYAAAADAP7/AwAPAAYAAAACAP7/AwAPAAYAAAABAP7/AwAPAAYAAAAAAP7/AwAPAAYAAAAAAP//AwAPAAYAAAAAAAAAAwAPAAYAAAAAAAEAAwAPAAYAAAAAAAIAAwAPAAYAAAABAAIAAwAPAAYAAAABAAEAAwAPAAYAAAABAAAAAwAPAAYAAAABAP//AwAPAAYAAAACAP//AwAPAAYAAAACAAAAAwAPAAYAAAACAAEAAwAPAAYAAAACAAIAAwAPAAYAAAADAAIAAwAPAAYAAAADAAEAAwAPAAYAAAADAAAAAwAOAAYAABADAP//AwAPAAYAAAAEAP//AwAOAAUAADAEAAAAAwAQAAYAAAAEAAEAAwAOAAUAABAEAAIAAwAPAAYAAAAFAAIAAwAPAAYAAAAFAAEAAwAQAAYAAAAGAAEAAwAOAAUAAAAGAAAAAwAQAAYAAAAGAP//AwAOAAUAACAGAP7/AwAPAAYAAAAHAP7/AwAPAAYAAAAHAP//AwAPAAYAAAAHAAAAAwAOAAYAAAAHAAEAAwAPAAYAAAAHAAIAAwAPAAYAAAAGAAIAAwAPAAYAAAAIAAIAAwAPAAYAAAAIAAEAAwAPAAYAAAAIAAAAAwAPAAYAAAAIAP//AwAPAAYAAAAIAP7/AwAPAAYAAAAJAP7/AwAPAAYAAAAJAP//AwAPAAYAAAAJAAAAAwAPAAYAAAAJAAEAAwAPAAYAAAAJAAIAAwAPAAYAAAAKAP3/AwAPAAUAAAAKAAMAAwAPAAUAACALAP3/AwAOAAUAABALAAMAAwAOAAUAADALAAIAAwAOAAYAABALAAEAAwAOAAYAABALAAAAAwAOAAYAABALAP//AwAOAAYAABALAP7/AwAOAAYAABAKAAIAAwAPAAYAAAAKAAEAAwAPAAYAAAAKAAAAAwAPAAYAAAAKAP//AwAPAAYAAAAKAP7/AwAPAAYAAAD///z/AwABAAwAAAAAAPz/AwABAAwAAAABAPz/AwABAAwAAAACAPz/AwABAAwAAAADAPz/AwABAAwAAAAEAPz/AwAIAAwAAAAFAPz/AwAIAAwAAAAGAPz/AwAIAAwAAAAHAPz/AwAIAAwAAAAIAPz/AwAIAAwAAAAJAPz/AwAIAAwAAAAKAPz/AwAIAAwAAAALAPz/AwABAAwAAAALAPv/AwABAAsAAAAAAPv/AwABAAsAAAABAPv/AwABAAsAAAACAPv/AwABAAsAAAADAPv/AwABAAsAAAAEAPv/AwABAAsAAAAFAPv/AwABAAsAAAAGAPv/AwABAAsAAAAHAPv/AwABAAsAAAAIAPv/AwABAAsAAAAJAPv/AwABAAsAAAAKAPv/AwABAAsAAAD///v/AwABAAsAAAD+//v/AwALAAEAAAAMAPv/AwANAAEAAAAMAPz/AwANAAIAAAAMAP3/AwANAAIAAAAMAP7/AwANAAIAAAAMAP//AwANAAIAAAAMAAAAAwANAAIAAAAMAAEAAwANAAIAAAAMAAIAAwANAAIAAAAMAAMAAwANAAIAAAAMAAQAAwANAAMAAAD//wQAAwAMAAMAAAAAAAQAAwAMAAMAAAABAAQAAwAMAAMAAAACAAQAAwAMAAMAAAADAAQAAwAMAAMAAAAEAAQAAwAMAAMAAAAFAAQAAwAMAAMAAAAGAAQAAwAMAAMAAAAHAAQAAwAMAAMAAAAIAAQAAwAMAAMAAAAJAAQAAwAMAAMAAAAKAAQAAwAMAAMAAAALAAQAAwAMAAMAAAD+/wQAAwALAAMAAAD+//z/AwALAAIAAAD+//3/AwALAAIAAAD+//7/AwALAAIAAAD+/wEAAwALAAIAAAD+/wIAAwALAAIAAAD+/wMAAwALAAIAAAA=")
-tile_set = ExtResource("1_oj1qg")
+tile_set = ExtResource("2_kmgci")
 
-[node name="Player" parent="." instance=ExtResource("2_ekcco")]
+[node name="Player" parent="." index="2" instance=ExtResource("3_jkf2s")]
 position = Vector2(116, 35)
 
-[node name="Decor" type="TileMapLayer" parent="."]
+[node name="Decor" type="TileMapLayer" parent="." index="3"]
 tile_map_data = PackedByteArray("AAD///z/AQABAEgAAAD///3/AQABAEkAAAAAAPz/AQACAEgAAAAAAP3/AQACAEkAAAABAPz/AQADAEgAAAABAP3/AQADAEkAAAAJAPz/AQABAEgAAAAJAP3/AQABAEkAAAAKAPz/AQACAEgAAAAKAP3/AQACAEkAAAALAPz/AQADAEgAAAALAP3/AQADAEkAAAAEAPz/AQABAEgAAAAEAP3/AQABAEkAAAAFAPz/AQACAEgAAAAFAP3/AQACAEkAAAAGAPz/AQADAEgAAAAGAP3/AQADAEkAAAAHAPz/AQANACwAAAAHAP3/AQANAC0AAAAIAPz/AQAOACwAAAAIAP3/AQAOAC0AAAACAPz/AQANACwAAAACAP3/AQANAC0AAAADAPz/AQAOACwAAAADAP3/AQAOAC0AAAAKAAIAAQAJAB8AAAAKAAMAAQAJACAAAAAKAAAAAQAJAB8AAAAKAAEAAQAJACAAAAALAAAAAQAEACEAAAALAAEAAQADACEAAAALAAIAAQADACEAAAALAAMAAQADACEAAAA=")
-tile_set = ExtResource("1_oj1qg")
+tile_set = ExtResource("2_kmgci")
 
-[node name="Decor2" type="TileMapLayer" parent="."]
+[node name="Decor2" type="TileMapLayer" parent="." index="4"]
 tile_map_data = PackedByteArray("AAALAAEAAQAAADEAAAALAAIAAQAAADIAAAA=")
-tile_set = ExtResource("1_oj1qg")
+tile_set = ExtResource("2_kmgci")
 
-[node name="StartingLocations" type="Node" parent="."]
+[node name="StartingLocations" type="Node" parent="." index="5"]
 
-[node name="EntranceDoor" type="Node2D" parent="StartingLocations"]
+[node name="EntranceDoor" type="Node2D" parent="StartingLocations" index="0"]
 
-[node name="SceneSwitchArea" parent="." instance=ExtResource("4_2tb55")]
+[node name="SceneSwitchArea" parent="." index="6" instance=ExtResource("4_pss4y")]
 starting_location = "WaitingRoomDoor"
 to_scene = "res://ROOMS/Entrance.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitchArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitchArea" index="0"]
 position = Vector2(-26, 0)
-shape = SubResource("RectangleShape2D_43112")
+shape = SubResource("RectangleShape2D_svgu2")

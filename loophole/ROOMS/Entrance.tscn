@@ -71,7 +71,7 @@ shape = SubResource("RectangleShape2D_jrs1a")
 
 [node name="SSA_Waiting" parent="." index="7" instance=ExtResource("5_0oaqi")]
 starting_location = "EntranceDoor"
-to_scene = "res://ROOMS/Wating_Room.tscn"
+to_scene = "res://ROOMS/Waiting_Room.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_Waiting" index="0"]
 position = Vector2(154, -384)
