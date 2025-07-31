@@ -22,9 +22,11 @@ size = Vector2(128, 121)
 size = Vector2(162, 183)
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(1, 1.00456)
 script = ExtResource("1_w35dc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
 sprite_frames = SubResource("SpriteFrames_w35dc")
 autoplay = "default"
 
@@ -41,3 +43,14 @@ shape = SubResource("RectangleShape2D_w35dc")
 [node name="Inventory" parent="." instance=ExtResource("3_hurok")]
 offset_top = 119.0
 offset_bottom = 119.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = 1
+offset_left = -496.0
+offset_top = -288.0
+offset_right = -456.0
+offset_bottom = -248.0
+scale = Vector2(25.5632, 15.0522)
+color = Color(0.0678493, 0.0678496, 0.0775106, 0.52549)
