@@ -19,7 +19,7 @@ animations = [{
 size = Vector2(14, 14)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hurok"]
-radius = 102.0
+radius = 78.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_w35dc")
@@ -40,7 +40,10 @@ scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_hurok")
 
 [node name="Inventory" parent="." instance=ExtResource("3_hurok")]
-offset_top = 119.0
-offset_bottom = 119.0
+offset_left = -145.0
+offset_top = 50.0
+offset_right = -145.0
+offset_bottom = 50.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)

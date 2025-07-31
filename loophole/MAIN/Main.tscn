@@ -1,6 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://b73ti8uendry"]
+[gd_scene load_steps=4 format=3 uid="uid://b73ti8uendry"]
 
 [ext_resource type="Script" uid="uid://bac6cdou3yksv" path="res://MAIN/main.gd" id="1_gqgiv"]
+[ext_resource type="FontFile" uid="uid://b5d3s5g2svclm" path="res://ASSETS/Fonts/BasicText.otf" id="2_pf8bj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gqgiv"]
+font = ExtResource("2_pf8bj")
+font_size = 36
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_gqgiv")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UI"]
+offset_left = 216.0
+offset_top = 148.0
+offset_right = 717.0
+offset_bottom = 245.0
+text = "Welcome to Loophole!"
+label_settings = SubResource("LabelSettings_gqgiv")
+horizontal_alignment = 1
+
+[node name="Load" type="Button" parent="UI"]
+offset_left = 355.0
+offset_top = 236.0
+offset_right = 578.0
+offset_bottom = 288.0
+text = "Load from Save"
+
+[node name="NewGame" type="Button" parent="UI"]
+offset_left = 355.0
+offset_top = 299.0
+offset_right = 578.0
+offset_bottom = 351.0
+text = "New Game"
+
+[connection signal="pressed" from="UI/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="UI/NewGame" to="." method="_on_new_game_pressed"]
