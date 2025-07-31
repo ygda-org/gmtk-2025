@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="5_0oaqi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0oaqi"]
-size = Vector2(105.5, 78)
+size = Vector2(62, 6)
 
-[node name="BaseScene" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_sedmv")]
+[node name="Entrance" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_sedmv")]
 node_with_locations = NodePath("StartingLocations")
 
 [node name="SceneSwitchArea" parent="." index="0" instance=ExtResource("5_0oaqi")]
@@ -18,15 +18,16 @@ starting_location = "OutsideDoor"
 to_scene = "res://ROOMS/Outside.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="SceneSwitchArea" index="0"]
-offset_left = -41.0
-offset_top = -15.0
-offset_right = -1.0
-offset_bottom = 25.0
+visible = false
+offset_left = -8.0
+offset_top = -421.0
+offset_right = 18.0
+offset_bottom = -416.0
 scale = Vector2(2.32717, 1.92)
 color = Color(0, 1, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitchArea" index="1"]
-position = Vector2(6, 22)
+position = Vector2(23, -418)
 shape = SubResource("RectangleShape2D_0oaqi")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." index="1"]

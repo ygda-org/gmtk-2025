@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_a7ne1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cabt"]
-size = Vector2(72.5, 47.25)
+size = Vector2(48.25, 47.25)
 
 [node name="BaseScene" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_6cabt")]
 node_with_locations = NodePath("StartingLocations")
@@ -14,7 +14,7 @@ node_with_locations = NodePath("StartingLocations")
 [node name="StartingLocations" type="Node" parent="." index="0"]
 
 [node name="OutsideDoor" type="Node2D" parent="StartingLocations" index="0"]
-position = Vector2(0, 52)
+position = Vector2(-8, 240)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." index="1"]
 tile_map_data = PackedByteArray("AAD+/w0AAwANAAYAAAD+/w4AAwANAAYAAAD+/w8AAwANAAYAAAD+/xAAAwANAAYAAAD+/xEAAwANAAYAAAD+/xIAAwANAAYAAAD+/xMAAwANAAYAAAD+/xQAAwANAAYAAAD+/xUAAwANAAYAAAD+/xYAAwANAAYAAAD+/xcAAwANAAYAAAD+/xgAAwANAAYAAAD//w0AAwANAAYAAAD//w4AAwANAAYAAAD//w8AAwANAAYAAAD//xAAAwANAAYAAAD//xEAAwANAAYAAAD//xIAAwANAAYAAAD//xMAAwANAAYAAAD//xQAAwANAAYAAAD//xUAAwANAAYAAAD//xYAAwANAAYAAAD//xcAAwANAAYAAAD//xgAAwANAAYAAAAAAA0AAwANAAYAAAAAAA4AAwANAAYAAAAAAA8AAwANAAYAAAAAABAAAwANAAYAAAAAABEAAwANAAYAAAAAABIAAwANAAYAAAAAABMAAwANAAYAAAAAABQAAwANAAYAAAAAABUAAwANAAYAAAAAABYAAwANAAYAAAAAABcAAwANAAYAAAAAABgAAwANAAYAAAD+/wsAAQACABwAAAD+/wwAAQACAB0AAAD//wsAAQADABwAAAD//wwAAQADAB0AAAAAAAsAAQACABwAABAAAAwAAQACAB0AABA=")
@@ -29,12 +29,13 @@ starting_location = "MainDoor"
 to_scene = "res://ROOMS/Entrance.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitchArea" index="0"]
-position = Vector2(2.75, -11.625)
+position = Vector2(-5.125, -56)
 shape = SubResource("RectangleShape2D_6cabt")
 
 [node name="ColorRect" type="ColorRect" parent="SceneSwitchArea" index="1"]
-offset_left = -35.0
-offset_top = -40.0
-offset_right = 38.0
-offset_bottom = 7.0
+visible = false
+offset_left = -29.0
+offset_top = -79.0
+offset_right = 19.0
+offset_bottom = -32.0
 color = Color(0, 1, 1, 1)
