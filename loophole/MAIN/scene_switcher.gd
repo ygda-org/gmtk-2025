@@ -2,8 +2,17 @@ extends Node
 
 
 func goto_scene(scene: PackedScene, starting_spot: String):
+	var current_scene = get_tree().current_scene
+	
+	if current_scene.has_method("fade_out"):
+		current_scene.fade_out()
+		await current_scene.transition_player.animation_finished # Wait till it fades out
+		
 	deferred_goto_scene.call_deferred(scene, starting_spot)
+	
+	current_scene = get_tree().current_scene
 
+	
 func deferred_goto_scene(scene: PackedScene, starting_spot: String):
 	var new_scene = scene.instantiate()
 	
