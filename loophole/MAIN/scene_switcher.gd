@@ -6,7 +6,9 @@ func goto_scene(scene: PackedScene, starting_spot: String):
 
 func deferred_goto_scene(scene: PackedScene, starting_spot: String):
 	var new_scene = scene.instantiate()
-	new_scene.set_player_location(starting_spot)
+	
+	if starting_spot != "":
+		new_scene.set_player_location(starting_spot)
 	
 	var tree_ref = get_tree()
 		
