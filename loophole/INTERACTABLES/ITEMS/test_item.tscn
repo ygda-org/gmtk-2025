@@ -11,6 +11,7 @@ size = Vector2(74, 108)
 script = ExtResource("1_un78p")
 
 [node name="Interactable" parent="." instance=ExtResource("2_m2nay")]
+one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 position = Vector2(27, 44)

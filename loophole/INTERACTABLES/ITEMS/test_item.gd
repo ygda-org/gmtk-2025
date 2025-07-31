@@ -16,3 +16,5 @@ func interact():
 		if GameState.player_inventory[i] == null:
 			GameState.player_inventory[i] = $Sprite2D.texture # I don't actually know what data type to put in here yet lol
 			break
+
+	
