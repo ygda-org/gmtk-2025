@@ -27,19 +27,20 @@ func reset_player_inventory():
 	GameState.player_inventory = [null, null, null, null, null, null]
 
 
-func create_new_save_file():
+func create_new_save_file() -> int:
 	var json_save_data: String = JSON.stringify(START_SAVE_DATA)
 	
 	var file_access := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if not file_access:
 		print("Error occured while trying to write save data:", FileAccess.get_open_error())
-		return
+		return FAILED
 
 	file_access.store_line(json_save_data)
 	file_access.close()
 	print("Created save file at: " + file_access.get_path_absolute())
 	
 	loaded_save_data = START_SAVE_DATA
+	return OK
 	
 func load_save_file() -> int:
 	if not FileAccess.file_exists(SAVE_PATH):
@@ -59,4 +60,17 @@ func load_save_file() -> int:
 	loaded_save_data = json.data
 	print("Loaded save data: " + str(loaded_save_data))
 	return OK
+
+func save_game() -> int:
+	var json_save_data: String = JSON.stringify(loaded_save_data)
 	
+	var file_access := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	if not file_access:
+		print("Error occured while trying to write save data:", FileAccess.get_open_error())
+		return FAILED
+
+	file_access.store_line(json_save_data)
+	file_access.close()
+	print("Saved game at at: " + file_access.get_path_absolute())
+	
+	return OK	
