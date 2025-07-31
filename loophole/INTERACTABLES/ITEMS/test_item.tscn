@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dtkjchwn5lqt2" path="res://ASSETS/icon.svg" id="3_m2nay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_un78p"]
-size = Vector2(74, 108)
+size = Vector2(77, 99)
 
 [node name="TestItem" type="Node2D"]
 script = ExtResource("1_un78p")
@@ -16,7 +16,7 @@ itemResource = ExtResource("2_w8s5k")
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-position = Vector2(27, 44)
+position = Vector2(28.5, 39.5)
 shape = SubResource("RectangleShape2D_un78p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

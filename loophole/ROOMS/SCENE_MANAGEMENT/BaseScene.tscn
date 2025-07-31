@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://78agkknush0k"]
+
+[ext_resource type="Script" uid="uid://c7hrtdui1nb4t" path="res://ROOMS/SCENE_MANAGEMENT/base_scene.gd" id="1_xnrv6"]
+
+[node name="BaseScene" type="Node2D"]
+script = ExtResource("1_xnrv6")

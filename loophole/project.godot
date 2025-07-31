@@ -18,11 +18,16 @@ config/icon="res://ASSETS/icon.svg"
 [autoload]
 
 GameState="*res://MAIN/game_state.gd"
+SceneSwitcher="*res://MAIN/scene_switcher.gd"
 
 [display]
 
 window/size/viewport_width=960
 window/size/viewport_height=540
+
+[global_group]
+
+Player=""
 
 [input]
 

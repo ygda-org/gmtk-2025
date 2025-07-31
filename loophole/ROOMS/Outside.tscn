@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=4 uid="uid://4qighc3yxqc4"]
+
+[ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_6cabt"]
+[ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_m8e51"]
+[ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="2_a7ne1"]
+[ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_a7ne1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cabt"]
+size = Vector2(72.5, 47.25)
+
+[node name="BaseScene" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_6cabt")]
+node_with_locations = NodePath("StartingLocations")
+
+[node name="StartingLocations" type="Node" parent="." index="0"]
+
+[node name="OutsideDoor" type="Node2D" parent="StartingLocations" index="0"]
+position = Vector2(0, 52)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="1"]
+tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAD//wQAAAAAAAAAAAD//wMAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAD7/wMAAAAAAAAAAAD7/wQAAAAAAAAAAAD7/wUAAAAAAAAAAAD7/wYAAAAAAAAAAAD7/wcAAAAAAAAAAAD7/wgAAAAAAAAAAAD7/wkAAAAAAAAAAAD8/wMAAAAAAAAAAAD8/wQAAAAAAAAAAAD8/wUAAAAAAAAAAAD8/wYAAAAAAAAAAAD8/wcAAAAAAAAAAAD8/wgAAAAAAAAAAAD8/wkAAAAAAAAAAAD9/wMAAAAAAAAAAAD9/wQAAAAAAAAAAAD9/wUAAAAAAAAAAAD9/wYAAAAAAAAAAAD9/wcAAAAAAAAAAAD9/wgAAAAAAAAAAAD9/wkAAAAAAAAAAAD+/wMAAAAAAAAAAAD+/wQAAAAAAAAAAAD+/wUAAAAAAAAAAAD+/wYAAAAAAAAAAAD+/wcAAAAAAAAAAAD+/wgAAAAAAAAAAAD+/wkAAAAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAAAAAAAAAD//wcAAAAAAAAAAAD//wgAAAAAAAAAAAD//wkAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAABAAgAAAAAAAAAAAABAAkAAAAAAAAAAAACAAMAAAAAAAAAAAACAAQAAAAAAAAAAAACAAUAAAAAAAAAAAACAAYAAAAAAAAAAAACAAcAAAAAAAAAAAACAAgAAAAAAAAAAAACAAkAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAYAAAAAAAAAAAADAAcAAAAAAAAAAAADAAgAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAYAAAAAAAAAAAAEAAcAAAAAAAAAAAAEAAgAAAAAAAAAAAAEAAkAAAAAAAAAAAD///3/AAAAAAAAAAD///7/AAAAAAAAAAAAAP3/AAAAAAAAAAAAAP7/AAAAAAAAAAA=")
+tile_set = ExtResource("1_m8e51")
+
+[node name="Player" parent="." index="2" instance=ExtResource("2_a7ne1")]
+position = Vector2(15, 358)
+
+[node name="SceneSwitchArea" parent="." index="3" instance=ExtResource("3_a7ne1")]
+position = Vector2(-3, -97)
+starting_location = "MainDoor"
+to_scene = "res://ROOMS/Entrance.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitchArea" index="0"]
+position = Vector2(2.75, -11.625)
+shape = SubResource("RectangleShape2D_6cabt")
+
+[node name="ColorRect" type="ColorRect" parent="SceneSwitchArea" index="1"]
+offset_left = -35.0
+offset_top = -40.0
+offset_right = 38.0
+offset_bottom = 7.0
+color = Color(0, 1, 1, 1)

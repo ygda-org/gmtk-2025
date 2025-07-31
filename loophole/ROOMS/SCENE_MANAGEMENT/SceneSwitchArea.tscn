@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsmfk2u2b6fr0"]
+
+[ext_resource type="Script" uid="uid://bsdi3ssw2y7up" path="res://ROOMS/SCENE_MANAGEMENT/scene_switch_area.gd" id="1_60om8"]
+
+[node name="SceneSwitchArea" type="Area2D"]
+script = ExtResource("1_60om8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
