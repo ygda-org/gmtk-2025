@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bnifs01dflka5"]
+[gd_scene load_steps=9 format=4 uid="uid://bnifs01dflka5"]
 
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="1_d6wng"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_qa1l5"]
@@ -12,15 +12,18 @@ size = Vector2(62, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrs1a"]
 size = Vector2(20, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t122x"]
+size = Vector2(20, 32)
+
 [node name="Entrance" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_sedmv")]
 node_with_locations = NodePath("StartingLocations")
 
-[node name="SceneSwitchArea" parent="." index="0" instance=ExtResource("5_0oaqi")]
+[node name="SSA_Outside" parent="." index="0" instance=ExtResource("5_0oaqi")]
 position = Vector2(1, 133)
 starting_location = "OutsideDoor"
 to_scene = "res://ROOMS/Outside.tscn"
 
-[node name="ColorRect" type="ColorRect" parent="SceneSwitchArea" index="0"]
+[node name="ColorRect" type="ColorRect" parent="SSA_Outside" index="0"]
 visible = false
 offset_left = -8.0
 offset_top = -421.0
@@ -29,7 +32,7 @@ offset_bottom = -416.0
 scale = Vector2(2.32717, 1.92)
 color = Color(0, 1, 1, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitchArea" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_Outside" index="1"]
 position = Vector2(23, -418)
 shape = SubResource("RectangleShape2D_0oaqi")
 
@@ -51,10 +54,21 @@ position = Vector2(24, -308)
 [node name="JanitorDoor" type="Node2D" parent="StartingLocations" index="1"]
 position = Vector2(-85, -463)
 
-[node name="SceneSwitchArea2" parent="." index="5" instance=ExtResource("5_0oaqi")]
+[node name="WaitingRoomDoor" type="Node2D" parent="StartingLocations" index="2"]
+position = Vector2(128, -383)
+
+[node name="SSA_Janitor" parent="." index="5" instance=ExtResource("5_0oaqi")]
 starting_location = "EntranceDoor"
 to_scene = "res://ROOMS/Janitor_Closet.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitchArea2" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_Janitor" index="0"]
 position = Vector2(-106, -464)
 shape = SubResource("RectangleShape2D_jrs1a")
+
+[node name="SSA_Waiting" parent="." index="6" instance=ExtResource("5_0oaqi")]
+starting_location = "EntranceDoor"
+to_scene = "res://ROOMS/Wating_Room.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_Waiting" index="0"]
+position = Vector2(154, -384)
+shape = SubResource("RectangleShape2D_t122x")
