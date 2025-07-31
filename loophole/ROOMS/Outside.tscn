@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cabt"]
 size = Vector2(48.25, 47.25)
 
-[node name="BaseScene" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_6cabt")]
+[node name="Outside" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_6cabt")]
 node_with_locations = NodePath("StartingLocations")
 
 [node name="StartingLocations" type="Node" parent="." index="0"]
