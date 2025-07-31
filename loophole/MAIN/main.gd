@@ -10,6 +10,6 @@ func _ready():
 func _process(delta):
 	pass
 
-func interact(player):
-	print("interacted wtih!")
-	GameState.player_inventory.append("TestItem") # I don't actually know what data type to put in here yet lol
+
+func reset_player_inventory():
+	GameState.player_inventory = []

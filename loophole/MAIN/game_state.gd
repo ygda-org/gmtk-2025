@@ -1,5 +1,6 @@
-extends Node2D
+extends Node
 
+var player_inventory = [] # what data type should this hold?
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,7 +10,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-func interact(player):
-	print("interacted wtih!")
-	GameState.player_inventory.append("TestItem") # I don't actually know what data type to put in here yet lol

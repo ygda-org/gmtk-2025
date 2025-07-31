@@ -15,6 +15,10 @@ run/main_scene="uid://b73ti8uendry"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://ASSETS/icon.svg"
 
+[autoload]
+
+GameState="*res://MAIN/game_state.gd"
+
 [input]
 
 down={
