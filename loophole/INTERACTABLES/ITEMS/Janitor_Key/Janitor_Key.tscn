@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgjcnj6doos0r"]
+
+[ext_resource type="Script" uid="uid://ccfgysuqx36vp" path="res://INTERACTABLES/ITEMS/Janitor_Key/janitor_key.gd" id="1_wu7fe"]
+[ext_resource type="Resource" uid="uid://b2wrdl66r2bqr" path="res://INTERACTABLES/ITEMS/Janitor_Key/Janitor_Key.tres" id="2_pg7hi"]
+[ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="3_eep1c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta6gt"]
+
+[node name="JanitorKey" type="Node2D"]
+script = ExtResource("1_wu7fe")
+itemResource = ExtResource("2_pg7hi")
+
+[node name="Interactable" parent="." instance=ExtResource("3_eep1c")]
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("RectangleShape2D_ta6gt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

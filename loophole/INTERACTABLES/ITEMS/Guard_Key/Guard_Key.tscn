@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cto4wcbhaf3d"]
+
+[ext_resource type="Script" uid="uid://crjh4vccjf2v4" path="res://INTERACTABLES/ITEMS/Guard_Key/guard_key.gd" id="1_wv8kv"]
+[ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="2_lcis5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4gok"]
+
+[node name="GuardKey" type="Node2D"]
+script = ExtResource("1_wv8kv")
+
+[node name="Interactable" parent="." instance=ExtResource("2_lcis5")]
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("RectangleShape2D_b4gok")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

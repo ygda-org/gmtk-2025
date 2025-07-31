@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BaseItemResource" load_steps=3 format=3 uid="uid://b2wrdl66r2bqr"]
+
+[ext_resource type="Texture2D" uid="uid://dtkjchwn5lqt2" path="res://ASSETS/icon.svg" id="1_nf0tt"]
+[ext_resource type="Script" uid="uid://x1ig0ytxcxi8" path="res://INTERACTABLES/ITEMS/BaseItemResource.gd" id="2_hxi84"]
+
+[resource]
+script = ExtResource("2_hxi84")
+itemName = "Janitor_Key"
+inventory_texture = ExtResource("1_nf0tt")
+metadata/_custom_type_script = "uid://x1ig0ytxcxi8"

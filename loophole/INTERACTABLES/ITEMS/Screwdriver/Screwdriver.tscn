@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccdndpo8alnju"]
+
+[ext_resource type="Script" uid="uid://bvjqp5er7pbc" path="res://INTERACTABLES/ITEMS/Screwdriver/screwdriver.gd" id="1_chygn"]
+[ext_resource type="Resource" uid="uid://dhcx1nfq8fgot" path="res://INTERACTABLES/ITEMS/Screwdriver/Screwdriver.tres" id="2_hjmx0"]
+[ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="2_wv1ab"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjmx0"]
+
+[node name="Screwdriver" type="Node2D"]
+script = ExtResource("1_chygn")
+itemResource = ExtResource("2_hjmx0")
+
+[node name="Interactable" parent="." instance=ExtResource("2_wv1ab")]
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("RectangleShape2D_hjmx0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

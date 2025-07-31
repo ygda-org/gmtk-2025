@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://bbviqqxi80n4p"]
+[gd_scene load_steps=8 format=4 uid="uid://bbviqqxi80n4p"]
 
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_o3fjv"]
 [ext_resource type="Script" uid="uid://c7hrtdui1nb4t" path="res://ROOMS/SCENE_MANAGEMENT/base_scene.gd" id="1_rv6rj"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="2_5ploj"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_per5x"]
+[ext_resource type="PackedScene" uid="uid://ccdndpo8alnju" path="res://INTERACTABLES/ITEMS/Screwdriver/Screwdriver.tscn" id="5_a2qu3"]
+[ext_resource type="PackedScene" uid="uid://dgjcnj6doos0r" path="res://INTERACTABLES/ITEMS/Janitor_Key/Janitor_Key.tscn" id="6_jj1f0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rv6rj"]
 size = Vector2(7, 32)
@@ -35,3 +37,9 @@ to_scene = "res://ROOMS/Entrance.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitchArea"]
 position = Vector2(115.5, 0)
 shape = SubResource("RectangleShape2D_rv6rj")
+
+[node name="Screwdriver" parent="." instance=ExtResource("5_a2qu3")]
+position = Vector2(97, -21)
+
+[node name="JanitorKey" parent="." instance=ExtResource("6_jj1f0")]
+position = Vector2(47, -19)

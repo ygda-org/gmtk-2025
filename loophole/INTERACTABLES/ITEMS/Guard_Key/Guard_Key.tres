@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BaseItemResource" load_steps=3 format=3 uid="uid://cnymxkwjk0p21"]
+
+[ext_resource type="Texture2D" uid="uid://dtkjchwn5lqt2" path="res://ASSETS/icon.svg" id="1_g7k5p"]
+[ext_resource type="Script" uid="uid://x1ig0ytxcxi8" path="res://INTERACTABLES/ITEMS/BaseItemResource.gd" id="1_tyogx"]
+
+[resource]
+script = ExtResource("1_tyogx")
+itemName = "Guard_Key"
+inventory_texture = ExtResource("1_g7k5p")
+metadata/_custom_type_script = "uid://x1ig0ytxcxi8"
