@@ -21,16 +21,19 @@ text = "Welcome to Loophole!"
 label_settings = SubResource("LabelSettings_gqgiv")
 horizontal_alignment = 1
 
-[node name="Button2" type="Button" parent="UI"]
-offset_left = 355.0
-offset_top = 299.0
-offset_right = 578.0
-offset_bottom = 351.0
-text = "Load From Save"
-
-[node name="Button" type="Button" parent="UI"]
+[node name="Load" type="Button" parent="UI"]
 offset_left = 355.0
 offset_top = 236.0
 offset_right = 578.0
 offset_bottom = 288.0
+text = "Load from Save"
+
+[node name="NewGame" type="Button" parent="UI"]
+offset_left = 355.0
+offset_top = 299.0
+offset_right = 578.0
+offset_bottom = 351.0
 text = "New Game"
+
+[connection signal="pressed" from="UI/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="UI/NewGame" to="." method="_on_new_game_pressed"]
