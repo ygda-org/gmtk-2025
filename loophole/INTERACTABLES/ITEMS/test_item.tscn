@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cop3o8i7ugwfc"]
+
+[ext_resource type="Script" uid="uid://bwvayccoe53ay" path="res://INTERACTABLES/ITEMS/test_item.gd" id="1_un78p"]
+[ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="2_m2nay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un78p"]
+size = Vector2(74, 108)
+
+[node name="TestItem" type="Node2D"]
+script = ExtResource("1_un78p")
+
+[node name="Interactable" parent="." instance=ExtResource("2_m2nay")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(27, 44)
+shape = SubResource("RectangleShape2D_un78p")
