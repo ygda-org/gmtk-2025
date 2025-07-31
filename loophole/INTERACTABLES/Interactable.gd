@@ -11,5 +11,5 @@ func _ready():
 func _process(delta):
 	pass
 
-func interact(player):
-	get_parent().interact(player)
+func interact():
+	get_parent().interact()
