@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://blj820gn8deo1"]
+[gd_scene load_steps=7 format=3 uid="uid://blj820gn8deo1"]
 
 [ext_resource type="Texture2D" uid="uid://dtkjchwn5lqt2" path="res://ASSETS/icon.svg" id="1_nsbdx"]
 [ext_resource type="Script" uid="uid://b5xobjxppn3ri" path="res://PLAYER/player.gd" id="1_w35dc"]
+[ext_resource type="PackedScene" uid="uid://3nio8u3kj00c" path="res://PLAYER/Inventory.tscn" id="3_hurok"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w35dc"]
 animations = [{
@@ -36,3 +37,7 @@ shape = SubResource("RectangleShape2D_hurok")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(-4, -1.5)
 shape = SubResource("RectangleShape2D_w35dc")
+
+[node name="Inventory" parent="." instance=ExtResource("3_hurok")]
+offset_top = 119.0
+offset_bottom = 119.0

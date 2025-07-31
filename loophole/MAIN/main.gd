@@ -9,7 +9,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-
-func reset_player_inventory():
-	GameState.player_inventory = []

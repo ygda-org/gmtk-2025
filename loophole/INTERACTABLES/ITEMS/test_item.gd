@@ -11,5 +11,8 @@ func _process(delta):
 	pass
 
 func interact():
-	print("interacted wtih!")
-	GameState.player_inventory.append("TestItem") # I don't actually know what data type to put in here yet lol
+	print(GameState.player_inventory)
+	for i in range(len(GameState.player_inventory)):
+		if GameState.player_inventory[i] == null:
+			GameState.player_inventory[i] = $Sprite2D.texture # I don't actually know what data type to put in here yet lol
+			break
