@@ -1,45 +1,44 @@
 [gd_scene load_steps=8 format=4 uid="uid://bbviqqxi80n4p"]
 
+[ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_jj1f0"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_o3fjv"]
-[ext_resource type="Script" uid="uid://c7hrtdui1nb4t" path="res://ROOMS/SCENE_MANAGEMENT/base_scene.gd" id="1_rv6rj"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="2_5ploj"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_per5x"]
 [ext_resource type="PackedScene" uid="uid://ccdndpo8alnju" path="res://INTERACTABLES/ITEMS/Screwdriver/Screwdriver.tscn" id="5_a2qu3"]
 [ext_resource type="PackedScene" uid="uid://dgjcnj6doos0r" path="res://INTERACTABLES/ITEMS/Janitor_Key/Janitor_Key.tscn" id="6_jj1f0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rv6rj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kli5p"]
 size = Vector2(7, 32)
 
-[node name="JanitorCloset" type="Node2D" node_paths=PackedStringArray("node_with_locations")]
-script = ExtResource("1_rv6rj")
+[node name="JanitorCloset" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_jj1f0")]
 node_with_locations = NodePath("StartingLocations")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="1"]
 tile_map_data = PackedByteArray("AAD///7/AwAOAAcAAAD/////AwAOAAgAAAD//wAAAwAOAAgAAAD//wEAAwAOAAcAACAAAAEAAwAPAAcAACABAAEAAwAPAAcAACACAAEAAwAPAAcAACADAAEAAwAPAAcAACAEAAEAAwAPAAcAACAFAAEAAwAPAAcAACAAAP7/AwAPAAcAAAABAP7/AwAPAAcAAAACAP7/AwAPAAcAAAADAP7/AwAPAAcAAAAEAP7/AwAPAAcAAAAFAP7/AwAPAAcAAAAGAP7/AwAOAAcAABAGAAEAAwAOAAcAADAGAP//AwAOAAgAABAGAAAAAwAOAAgAABADAAAAAwAPAAgAAAADAP//AwAPAAgAAAACAP//AwAPAAgAAAABAP//AwAPAAgAAAAAAP//AwAPAAgAAAAAAAAAAwAPAAgAAAABAAAAAwAPAAgAAAACAAAAAwAPAAgAAAAEAP//AwAPAAgAAAAEAAAAAwAPAAgAAAAFAAAAAwAPAAgAAAAFAP//AwAPAAgAAAD///3/AwABABQAAAAAAP3/AwABABQAAAABAP3/AwABABQAAAACAP3/AwABABQAAAADAP3/AwABABQAAAAEAP3/AwABABQAAAAFAP3/AwABABQAAAAGAP3/AwABABQAAAD///z/AwABABMAAAAAAPz/AwABABMAAAABAPz/AwABABMAAAACAPz/AwABABMAAAADAPz/AwABABMAAAAEAPz/AwABABMAAAAFAPz/AwABABMAAAAGAPz/AwABABMAAAD+//z/AwALAAEAAAAHAPz/AwANAAEAAAAHAP3/AwANAAIAAAD+//3/AwALAAIAAAD+//7/AwALAAIAAAD+////AwALAAIAAAD+/wAAAwALAAIAAAD+/wEAAwALAAIAAAD+/wIAAwALAAMAAAD//wIAAwAMAAMAAAAAAAIAAwAMAAMAAAABAAIAAwAMAAMAAAACAAIAAwAMAAMAAAADAAIAAwAMAAMAAAAEAAIAAwAMAAMAAAAFAAIAAwAMAAMAAAAGAAIAAwAMAAMAAAAHAAIAAwANAAMAAAAHAAEAAwANAAEAAAAHAP7/AwANAAEAACA=")
 tile_set = ExtResource("1_o3fjv")
 
-[node name="StartingLocations" type="Node" parent="."]
+[node name="StartingLocations" type="Node" parent="." index="2"]
 
-[node name="EntranceDoor" type="Node2D" parent="StartingLocations"]
+[node name="EntranceDoor" type="Node2D" parent="StartingLocations" index="0"]
 position = Vector2(100, 0)
 
-[node name="Decor" type="TileMapLayer" parent="."]
+[node name="Decor" type="TileMapLayer" parent="." index="3"]
 tile_map_data = PackedByteArray("AAADAPz/AQAGABIAAAADAP3/AQAGABMAAAADAP7/AQAGABQAAAAEAPz/AQAHABIAAAAEAP3/AQAHABMAAAAEAP7/AQAHABQAAAABAPz/AQAGABIAAAABAP3/AQAGABMAAAABAP7/AQAGABQAAAACAPz/AQAHABIAAAACAP3/AQAHABMAAAACAP7/AQAHABQAAAD///z/AQAGABIAAAD///3/AQAGABMAAAD///7/AQAGABQAAAAAAPz/AQAHABIAAAAAAP3/AQAHABMAAAAAAP7/AQAHABQAAAD//wAAAQAFACYAAAD//wEAAQAFACcAAAAAAAAAAQAGACYAAAAAAAEAAQAGACcAAAAFAP3/AQAAACkAAAAGAP3/AQABACkAAAA=")
 tile_set = ExtResource("1_o3fjv")
 
-[node name="Player" parent="." instance=ExtResource("2_5ploj")]
+[node name="Player" parent="." index="4" instance=ExtResource("2_5ploj")]
 position = Vector2(-2, 5)
 
-[node name="SceneSwitchArea" parent="." instance=ExtResource("3_per5x")]
+[node name="SceneSwitchArea" parent="." index="5" instance=ExtResource("3_per5x")]
 starting_location = "JanitorDoor"
 to_scene = "res://ROOMS/Entrance.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitchArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitchArea" index="0"]
 position = Vector2(115.5, 0)
-shape = SubResource("RectangleShape2D_rv6rj")
+shape = SubResource("RectangleShape2D_kli5p")
 
-[node name="Screwdriver" parent="." instance=ExtResource("5_a2qu3")]
+[node name="Screwdriver" parent="." index="6" instance=ExtResource("5_a2qu3")]
 position = Vector2(97, -21)
 
-[node name="JanitorKey" parent="." instance=ExtResource("6_jj1f0")]
+[node name="JanitorKey" parent="." index="7" instance=ExtResource("6_jj1f0")]
 position = Vector2(47, -19)
