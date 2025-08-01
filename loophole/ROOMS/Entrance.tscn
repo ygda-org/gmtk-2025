@@ -83,6 +83,9 @@ position = Vector2(-68, -560)
 [node name="CEODoor" type="Node2D" parent="StartingLocations" index="4"]
 position = Vector2(126, -463)
 
+[node name="RightWingDoor" type="Node2D" parent="StartingLocations" index="5"]
+position = Vector2(113, -560)
+
 [node name="SSA_Janitor" parent="." index="6" instance=ExtResource("5_0oaqi")]
 starting_location = "EntranceDoor"
 to_scene = "res://ROOMS/Janitor_Closet.tscn"
@@ -138,3 +141,11 @@ shape = SubResource("RectangleShape2D_g5jtj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LockedDoor" index="1"]
 position = Vector2(8, 17.5)
 shape = SubResource("RectangleShape2D_j3g3i")
+
+[node name="SSA_Right" parent="." index="14" instance=ExtResource("5_0oaqi")]
+starting_location = "ServiceDoor"
+to_scene = "res://ROOMS/right_wing.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_Right" index="0"]
+position = Vector2(131.75, -560.5)
+shape = SubResource("RectangleShape2D_2pfv7")
