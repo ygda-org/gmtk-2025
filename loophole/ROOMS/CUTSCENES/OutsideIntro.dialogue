@@ -1,0 +1,8 @@
+~ start
+if not GameState.has_watched_intro()
+	Playing intro cutscene...
+else:
+	When did they install metal detectors??
+	Guess I'll need a new strategy...
+	**Go explore and try to find a way into the vault!**
+=> END

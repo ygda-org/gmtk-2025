@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dh0wk22ufu566"
+path="res://.godot/imported/OutsideIntro.dialogue-919d06e9e67153a33672395af483c152.tres"
+
+[deps]
+
+source_file="res://ROOMS/CUTSCENES/OutsideIntro.dialogue"
+dest_files=["res://.godot/imported/OutsideIntro.dialogue-919d06e9e67153a33672395af483c152.tres"]
+
+[params]
+
+defaults=true
