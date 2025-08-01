@@ -1,8 +1,9 @@
-[gd_scene load_steps=55 format=3 uid="uid://cgm1gga7whvi3"]
+[gd_scene load_steps=56 format=3 uid="uid://5uyawl4p53aa"]
 
 [ext_resource type="Texture2D" uid="uid://c45ehkq6cvqbq" path="res://ASSETS/Modern tiles_Free/Characters_free/Bob_idle_anim_16x16.png" id="1_5m7nm"]
-[ext_resource type="Script" uid="uid://d0ttqg2db4x8j" path="res://NPCs/Bob/bob.gd" id="1_f7fa8"]
+[ext_resource type="PackedScene" uid="uid://h77mgx7ql5u2" path="res://NPCs/BaseNPC.tscn" id="1_wlu11"]
 [ext_resource type="Texture2D" uid="uid://il125nva0fuq" path="res://ASSETS/Modern tiles_Free/Characters_free/Bob_run_16x16.png" id="2_qpp2i"]
+[ext_resource type="Resource" uid="uid://bo1gtjr4l8c6w" path="res://NPCs/Bob/test.dialogue" id="4_cmjui"]
 [ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="4_wlu11"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qpp2i"]
@@ -197,7 +198,7 @@ region = Rect2(160, 0, 16, 32)
 atlas = ExtResource("2_qpp2i")
 region = Rect2(176, 0, 16, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tpur0"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cmjui"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -384,19 +385,16 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmjui"]
-size = Vector2(28, 38)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcmsf"]
+size = Vector2(20, 22)
 
-[node name="Bob" type="Node2D"]
-script = ExtResource("1_f7fa8")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_tpur0")
+[node name="Bob" instance=ExtResource("1_wlu11")]
+sprite_frames = SubResource("SpriteFrames_cmjui")
 animation = &"idle-down"
-autoplay = "idle-down"
+dialogue = ExtResource("4_cmjui")
 
-[node name="Interactable" parent="." instance=ExtResource("4_wlu11")]
+[node name="Interactable" parent="." index="0" instance=ExtResource("4_wlu11")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_cmjui")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" index="0"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_wcmsf")
