@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://h77mgx7ql5u2"]
+
+[ext_resource type="Script" uid="uid://jvmmrvpstla3" path="res://NPCs/base_npc.gd" id="1_ikncf"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+script = ExtResource("1_ikncf")
