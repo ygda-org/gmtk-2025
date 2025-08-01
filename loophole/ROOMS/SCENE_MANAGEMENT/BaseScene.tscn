@@ -60,6 +60,7 @@ _data = {
 script = ExtResource("1_xnrv6")
 
 [node name="TransitionLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="TransitionLayer"]
 offset_left = -13.0
@@ -73,7 +74,6 @@ metadata/_edit_use_anchors_ = true
 libraries = {
 &"": SubResource("AnimationLibrary_vla18")
 }
-autoplay = "fade_in"
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -3

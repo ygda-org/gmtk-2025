@@ -7,6 +7,13 @@ extends Node2D
 
 var fade_out_finished: bool = false
 
+func _ready() -> void:
+	transition_layer.visible = true
+	transition_player.play("fade_in")
+	await transition_player.animation_finished
+	transition_layer.visible = false
+
+
 # Called by SceneSwitcher to set location of player
 func set_player_location(starting_location: String):
 	var player: Node2D = $Player
@@ -20,4 +27,5 @@ func set_player_location(starting_location: String):
 		player.position = location.position
 
 func fade_out():
+	transition_layer.visible = true
 	transition_player.play("fade_out")
