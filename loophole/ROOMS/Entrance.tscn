@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://bnifs01dflka5"]
+[gd_scene load_steps=14 format=4 uid="uid://bnifs01dflka5"]
 
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="1_d6wng"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_qa1l5"]
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_sedmv"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="5_0oaqi"]
 [ext_resource type="PackedScene" uid="uid://5uyawl4p53aa" path="res://NPCs/Bob/Bob.tscn" id="5_jrs1a"]
+[ext_resource type="PackedScene" uid="uid://dnubw7x6o5y7c" path="res://INTERACTABLES/Locked_Door.tscn" id="6_t122x"]
+[ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="7_2pfv7"]
+[ext_resource type="Resource" uid="uid://b2wrdl66r2bqr" path="res://INTERACTABLES/ITEMS/Janitor_Key/Janitor_Key.tres" id="7_g5jtj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0oaqi"]
 size = Vector2(62, 6)
@@ -14,6 +17,12 @@ size = Vector2(20, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t122x"]
 size = Vector2(20, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5jtj"]
+size = Vector2(18, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3g3i"]
+size = Vector2(20, 3)
 
 [node name="Entrance" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_sedmv")]
 node_with_locations = NodePath("StartingLocations")
@@ -80,3 +89,18 @@ shape = SubResource("RectangleShape2D_t122x")
 
 [node name="Bob" parent="." index="10" instance=ExtResource("5_jrs1a")]
 position = Vector2(76, -451)
+
+[node name="LockedDoor" parent="." index="11" instance=ExtResource("6_t122x")]
+position = Vector2(96, -516)
+unlockResource = ExtResource("7_g5jtj")
+
+[node name="Interactable" parent="LockedDoor" index="0" instance=ExtResource("7_2pfv7")]
+position = Vector2(-96, 516)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LockedDoor/Interactable" index="0"]
+position = Vector2(104, -493)
+shape = SubResource("RectangleShape2D_g5jtj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LockedDoor" index="1"]
+position = Vector2(8, 17.5)
+shape = SubResource("RectangleShape2D_j3g3i")
