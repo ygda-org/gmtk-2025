@@ -83,3 +83,6 @@ func save_game() -> int:
 	print("Saved game at at: " + file_access.get_path_absolute())
 	
 	return OK	
+
+func has_watched_intro():
+	return loaded_save_data["has_watched_intro"]

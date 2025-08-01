@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://4qighc3yxqc4"]
+[gd_scene load_steps=8 format=4 uid="uid://4qighc3yxqc4"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_6cabt"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_m8e51"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="2_a7ne1"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_a7ne1"]
+[ext_resource type="PackedScene" uid="uid://druwyapeq51bv" path="res://ROOMS/SCENE_MANAGEMENT/CutsceneManager.tscn" id="5_028p6"]
+[ext_resource type="Resource" uid="uid://dh0wk22ufu566" path="res://ROOMS/CUTSCENES/OutsideIntro.dialogue" id="6_susxu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cabt"]
 size = Vector2(48.25, 47.25)
@@ -39,3 +41,6 @@ offset_top = -79.0
 offset_right = 19.0
 offset_bottom = -32.0
 color = Color(0, 1, 1, 1)
+
+[node name="CutsceneManager" parent="." index="6" instance=ExtResource("5_028p6")]
+dialogue_resource = ExtResource("6_susxu")
