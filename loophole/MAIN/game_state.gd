@@ -14,10 +14,19 @@ const START_SAVE_DATA : Dictionary[String, Variant] = {
 
 var loaded_save_data: Dictionary = {}
 
+var can_player_move: bool = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	DialogueManager.dialogue_ended.connect(dialogue_finished)
+	DialogueManager.dialogue_started.connect(dialogue_started)
 	reset_player_inventory()
 
+func dialogue_finished():
+	can_player_move = true
+
+func dialogue_started():
+	can_player_move = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

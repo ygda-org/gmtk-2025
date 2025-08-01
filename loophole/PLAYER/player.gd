@@ -9,6 +9,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	if not GameState.can_player_move:
+		return
+	
 	if Input.is_action_just_pressed("interact"):
 		var interactables = $InteractionArea.get_overlapping_areas()
 		for i in interactables:
