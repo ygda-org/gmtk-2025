@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_sedmv"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="5_0oaqi"]
 [ext_resource type="PackedScene" uid="uid://5uyawl4p53aa" path="res://NPCs/Bob/Bob.tscn" id="5_jrs1a"]
-[ext_resource type="PackedScene" uid="uid://dnubw7x6o5y7c" path="res://INTERACTABLES/Locked_Door.tscn" id="6_t122x"]
+[ext_resource type="PackedScene" uid="uid://dnubw7x6o5y7c" path="res://INTERACTABLES/Locked_Door/Locked_Door.tscn" id="6_t122x"]
 [ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="7_2pfv7"]
 [ext_resource type="Resource" uid="uid://b2wrdl66r2bqr" path="res://INTERACTABLES/ITEMS/Janitor_Key/Janitor_Key.tres" id="7_g5jtj"]
 

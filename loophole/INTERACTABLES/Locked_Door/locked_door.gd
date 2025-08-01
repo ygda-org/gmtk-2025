@@ -2,6 +2,7 @@ extends StaticBody2D
 
 @export var unlockResource: BaseItemResource
 @export var consumesUnlock: bool = false
+@export var dialogue: DialogueResource = load("res://INTERACTABLES/Locked_Door/Locked_Door.dialogue")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +14,10 @@ func _process(delta):
 	pass
 
 func interact():
+	DialogueManager.show_dialogue_balloon(dialogue)
+	attempt()
+
+func attempt():
 	for i in range(len(GameState.player_inventory)):
 		if GameState.player_inventory[i] == null or unlockResource.itemName == null:
 			continue
