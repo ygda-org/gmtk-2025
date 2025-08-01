@@ -1,0 +1,6 @@
+~ start
+: The janitor is asleep.
+: You can see some keys dangling from his side.
+- Pickpocket
+	: You stole the janitor's keys.
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dopr60nquwku"
+path="res://.godot/imported/Janitor.dialogue-dd1939d8258a2c45ffa758fa46c8bf32.tres"
+
+[deps]
+
+source_file="res://NPCs/Janitor/Janitor.dialogue"
+dest_files=["res://.godot/imported/Janitor.dialogue-dd1939d8258a2c45ffa758fa46c8bf32.tres"]
+
+[params]
+
+defaults=true

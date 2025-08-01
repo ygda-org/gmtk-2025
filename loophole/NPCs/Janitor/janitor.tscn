@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://dntmx05tc2bbt"]
+
+[ext_resource type="PackedScene" uid="uid://h77mgx7ql5u2" path="res://NPCs/BaseNPC.tscn" id="1_n8wrc"]
+[ext_resource type="Texture2D" uid="uid://uojw1tsyrs1y" path="res://ASSETS/janitorsleep.png" id="2_ifut4"]
+[ext_resource type="Resource" uid="uid://dopr60nquwku" path="res://NPCs/Janitor/Janitor.dialogue" id="3_qd01f"]
+[ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="4_0xbvm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd01f"]
+atlas = ExtResource("2_ifut4")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xbvm"]
+atlas = ExtResource("2_ifut4")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_srqb8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd01f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xbvm")
+}],
+"loop": true,
+"name": &"sleep",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_srqb8"]
+size = Vector2(20, 36)
+
+[node name="Janitor" instance=ExtResource("1_n8wrc")]
+sprite_frames = SubResource("SpriteFrames_srqb8")
+animation = &"sleep"
+autoplay = "sleep"
+frame_progress = 0.0500597
+dialogue = ExtResource("3_qd01f")
+
+[node name="Interactable" parent="." index="0" instance=ExtResource("4_0xbvm")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" index="0"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_srqb8")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bbviqqxi80n4p"]
+[gd_scene load_steps=9 format=4 uid="uid://bbviqqxi80n4p"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_jj1f0"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_o3fjv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_per5x"]
 [ext_resource type="PackedScene" uid="uid://ccdndpo8alnju" path="res://INTERACTABLES/ITEMS/Screwdriver/Screwdriver.tscn" id="5_a2qu3"]
 [ext_resource type="PackedScene" uid="uid://dgjcnj6doos0r" path="res://INTERACTABLES/ITEMS/Janitor_Key/Janitor_Key.tscn" id="6_jj1f0"]
+[ext_resource type="PackedScene" uid="uid://dntmx05tc2bbt" path="res://NPCs/Janitor/janitor.tscn" id="7_kli5p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kli5p"]
 size = Vector2(7, 32)
@@ -32,7 +33,7 @@ tile_map_data = PackedByteArray("AAAAAP3/AQACACYAAAAAAP7/AQACACcAAAD///z/AQAAACM
 tile_set = ExtResource("1_o3fjv")
 
 [node name="Player" parent="." index="5" instance=ExtResource("2_5ploj")]
-position = Vector2(106, 5)
+position = Vector2(104, 5)
 
 [node name="SceneSwitchArea" parent="." index="6" instance=ExtResource("3_per5x")]
 starting_location = "JanitorDoor"
@@ -47,3 +48,6 @@ position = Vector2(97, -21)
 
 [node name="JanitorKey" parent="." index="8" instance=ExtResource("6_jj1f0")]
 position = Vector2(47, -19)
+
+[node name="Janitor" parent="." index="10" instance=ExtResource("7_kli5p")]
+position = Vector2(-3, -33)
