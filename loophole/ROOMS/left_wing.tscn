@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=4 uid="uid://dawrstliu4qq6"]
+
+[ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_4535g"]
+[ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_2vrdx"]
+[ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_owqic"]
+[ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="4_w15kf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owqic"]
+size = Vector2(7, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w15kf"]
+size = Vector2(6, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpy63"]
+size = Vector2(8, 34)
+
+[node name="Left_Wing" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_4535g")]
+node_with_locations = NodePath("StartingLocations")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="2"]
+tile_map_data = PackedByteArray("AAD//wAAAwAOAAUAACD/////AwAOAAYAAAAAAAAAAwAPAAUAACAAAP//AwAPAAYAAAABAAAAAwAPAAUAACACAAAAAwAOAAUAADACAP//AwAOAAYAABACAP7/AwAPAAYAAAACAP3/AwAPAAYAAAACAPz/AwAOAAYAABAAAP3/AwAPAAYAAAAAAPz/AwAPAAYAAAAAAPv/AwAPAAYAAAAAAPr/AwAPAAYAAAD///r/AwAOAAYAAAD///v/AwAOAAYAAAD///z/AwAOAAYAAAD///3/AwAPAAYAAAD///7/AwAPAAYAAAAAAP7/AwAPAAYAAAABAP7/AwAPAAYAAAABAP3/AwAPAAYAAAABAPz/AwAPAAYAAAABAPv/AwAPAAYAAAABAPr/AwAPAAYAAAABAP//AwAPAAYAAAAAAPn/AwAPAAYAAAABAPn/AwAPAAYAAAABAPj/AwAPAAYAAAABAPf/AwAPAAUAAAAAAPf/AwAPAAUAAAAAAPj/AwAPAAYAAAD///n/AwAOAAYAAAD///j/AwAOAAYAAAD///f/AwAOAAUAAAD///b/AwAAABIAAAAAAPb/AwABABIAAAABAPb/AwABABIAAAACAPb/AwABABIAAAADAPb/AwABABIAAAAEAPb/AwABABIAAAAFAPb/AwABABIAAAAGAPb/AwABABIAAAACAPv/AwAOAAYAABACAPr/AwAQAAUAADADAPr/AwAPAAUAACAEAPr/AwAPAAUAACAFAPr/AwAPAAUAACAGAPr/AwAOAAUAADACAPf/AwAPAAUAAAADAPf/AwAPAAUAAAAEAPf/AwAPAAUAAAAFAPf/AwAPAAUAAAAGAPf/AwAOAAUAABACAPj/AwAPAAYAAAADAPj/AwAPAAYAAAAEAPj/AwAPAAYAAAAFAPj/AwAPAAYAAAAGAPj/AwAPAAYAAAAGAPn/AwAPAAYAAAAFAPn/AwAPAAYAAAAEAPn/AwAPAAYAAAADAPn/AwAPAAYAAAACAPn/AwAPAAYAAAD///X/AwAAABEAAAAAAPX/AwABABEAAAABAPX/AwABABEAAAACAPX/AwABABEAAAADAPX/AwABABEAAAAEAPX/AwABABEAAAAFAPX/AwABABEAAAAGAPX/AwABABEAAAD+//X/AwALAAEAAAD+//b/AwALAAIAAAD+//f/AwALAAIAAAD+//j/AwALAAIAAAD+//n/AwALAAIAAAD+//r/AwALAAIAAAD+//v/AwALAAIAAAD+//z/AwALAAEAACD+/wAAAwALAAIAAAD+/wEAAwALAAMAAAD//wEAAwAMAAMAAAAAAAEAAwAMAAMAAAABAAEAAwAMAAMAAAACAAEAAwAMAAMAAAADAAEAAwANAAMAAAADAAAAAwANAAIAAAADAP//AwANAAEAAAADAPz/AwALAAEAADADAPv/AwAGAAIAAAAEAPv/AwAMAAMAAAAFAPv/AwAMAAMAAAAGAPv/AwAMAAMAAAD+////AwALAAEAAAAHAPv/AwANAAMAAAAHAPX/AwANAAEAAAAHAPb/AwANAAIAAAAHAPr/AwANAAEAAAAHAPf/AwANAAEAACA=")
+tile_set = ExtResource("2_2vrdx")
+
+[node name="Decor" type="TileMapLayer" parent="." index="3"]
+tile_map_data = PackedByteArray("AAD///b/AQANACwAAAD///f/AQANAC0AAAAAAPb/AQAOACwAAAAAAPf/AQAOAC0AAAABAPX/AQAIABYAAAABAPb/AQAIABcAAAACAPX/AQAJABYAAAACAPb/AQAJABcAAAAEAPX/AQAIABQAAAAEAPb/AQAIABUAAAAFAPX/AQAJABQAAAAFAPb/AQAJABUAAAA=")
+tile_set = ExtResource("2_2vrdx")
+
+[node name="StartingLocations" type="Node" parent="." index="4"]
+
+[node name="ServiceDoor" type="Node2D" parent="StartingLocations" index="0"]
+position = Vector2(35, -31)
+
+[node name="EmployeeDoor" type="Node2D" parent="StartingLocations" index="1"]
+position = Vector2(0, -32)
+
+[node name="VaultDoor" type="Node2D" parent="StartingLocations" index="2"]
+position = Vector2(101, -114)
+
+[node name="SSA_Service" parent="." index="5" instance=ExtResource("3_owqic")]
+starting_location = "LeftWingDoor"
+to_scene = "res://ROOMS/Entrance.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_Service" index="0"]
+position = Vector2(51.5, -32)
+shape = SubResource("RectangleShape2D_owqic")
+
+[node name="SSA_Employee" parent="." index="6" instance=ExtResource("3_owqic")]
+starting_location = "LeftWingDoor"
+to_scene = "res://ROOMS/Employee_Room.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_Employee" index="0"]
+position = Vector2(-19, -31.5)
+shape = SubResource("RectangleShape2D_w15kf")
+
+[node name="SSA_Prevault" parent="." index="7" instance=ExtResource("3_owqic")]
+starting_location = "LeftDoor"
+to_scene = "res://ROOMS/prevault.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_Prevault" index="0"]
+position = Vector2(116, -112)
+shape = SubResource("RectangleShape2D_tpy63")
+
+[node name="Player" parent="." index="8" instance=ExtResource("4_w15kf")]
+position = Vector2(22, -24)
