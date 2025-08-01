@@ -23,13 +23,18 @@ tile_set = ExtResource("1_o3fjv")
 position = Vector2(100, 0)
 
 [node name="Decor" type="TileMapLayer" parent="." index="3"]
-tile_map_data = PackedByteArray("AAADAPz/AQAGABIAAAADAP3/AQAGABMAAAADAP7/AQAGABQAAAAEAPz/AQAHABIAAAAEAP3/AQAHABMAAAAEAP7/AQAHABQAAAABAPz/AQAGABIAAAABAP3/AQAGABMAAAABAP7/AQAGABQAAAACAPz/AQAHABIAAAACAP3/AQAHABMAAAACAP7/AQAHABQAAAD///z/AQAGABIAAAD///3/AQAGABMAAAD///7/AQAGABQAAAAAAPz/AQAHABIAAAAAAP3/AQAHABMAAAAAAP7/AQAHABQAAAD//wAAAQAFACYAAAD//wEAAQAFACcAAAAAAAAAAQAGACYAAAAAAAEAAQAGACcAAAAFAP3/AQAAACkAAAAGAP3/AQABACkAAAA=")
+tile_map_data = PackedByteArray("AAADAPz/AQAGABIAAAADAP3/AQAGABMAAAADAP7/AQAGABQAAAAEAPz/AQAHABIAAAAEAP3/AQAHABMAAAAEAP7/AQAHABQAAAABAPz/AQAGABIAAAABAP3/AQAGABMAAAABAP7/AQAGABQAAAACAPz/AQAHABIAAAACAP3/AQAHABMAAAACAP7/AQAHABQAAAAFAP3/AQAAACkAAAAGAP3/AQABACkAAAA=")
 tile_set = ExtResource("1_o3fjv")
 
-[node name="Player" parent="." index="4" instance=ExtResource("2_5ploj")]
-position = Vector2(-2, 5)
+[node name="DecorDisplaced" type="TileMapLayer" parent="." index="4"]
+position = Vector2(6, 11)
+tile_map_data = PackedByteArray("AAAAAP3/AQACACYAAAAAAP7/AQACACcAAAD///z/AQAAACMAAAD///3/AQAAACQAAAD///7/AQAAACUAAAA=")
+tile_set = ExtResource("1_o3fjv")
 
-[node name="SceneSwitchArea" parent="." index="5" instance=ExtResource("3_per5x")]
+[node name="Player" parent="." index="5" instance=ExtResource("2_5ploj")]
+position = Vector2(106, 5)
+
+[node name="SceneSwitchArea" parent="." index="6" instance=ExtResource("3_per5x")]
 starting_location = "JanitorDoor"
 to_scene = "res://ROOMS/Entrance.tscn"
 
@@ -37,8 +42,8 @@ to_scene = "res://ROOMS/Entrance.tscn"
 position = Vector2(115.5, 0)
 shape = SubResource("RectangleShape2D_kli5p")
 
-[node name="Screwdriver" parent="." index="6" instance=ExtResource("5_a2qu3")]
+[node name="Screwdriver" parent="." index="7" instance=ExtResource("5_a2qu3")]
 position = Vector2(97, -21)
 
-[node name="JanitorKey" parent="." index="7" instance=ExtResource("6_jj1f0")]
+[node name="JanitorKey" parent="." index="8" instance=ExtResource("6_jj1f0")]
 position = Vector2(47, -19)
