@@ -19,7 +19,7 @@ animations = [{
 size = Vector2(14, 14)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hurok"]
-radius = 78.0
+radius = 20.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_w35dc")

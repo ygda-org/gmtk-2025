@@ -386,7 +386,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wcmsf"]
-size = Vector2(20, 22)
+size = Vector2(31, 36)
 
 [node name="Bob" instance=ExtResource("1_wlu11")]
 sprite_frames = SubResource("SpriteFrames_cmjui")
@@ -396,5 +396,5 @@ dialogue = ExtResource("4_cmjui")
 [node name="Interactable" parent="." index="0" instance=ExtResource("4_wlu11")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" index="0"]
-position = Vector2(0, 5)
+position = Vector2(-0.5, 6)
 shape = SubResource("RectangleShape2D_wcmsf")
