@@ -31,7 +31,13 @@ func dialogue_started(resource):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-	
+
+func add_item_to_player_inventory(item):
+	for i in range(len(player_inventory)):
+		if player_inventory[i] == null:
+			player_inventory[i] = item # BaseItemResources go into the inventory array
+			break
+
 func reset_player_inventory():
 	GameState.player_inventory = [null, null, null, null, null, null]
 

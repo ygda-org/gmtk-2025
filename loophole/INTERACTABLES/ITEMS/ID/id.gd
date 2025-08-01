@@ -12,9 +12,6 @@ func _process(delta):
 	pass
 
 func interact():
-	for i in range(len(GameState.player_inventory)):
-		if GameState.player_inventory[i] == null:
-			GameState.player_inventory[i] = itemResource # BaseItemResources go into the inventory array
-			break
+	GameState.add_item_to_player_inventory(itemResource)
 
 	
