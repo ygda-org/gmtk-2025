@@ -1,3 +1,5 @@
 ~ start
 : The door is locked.
+if GameState.player_has_item("Janitor_Key"):
+	- Unlock
 => END
