@@ -38,6 +38,25 @@ func add_item_to_player_inventory(item):
 			player_inventory[i] = item # BaseItemResources go into the inventory array
 			break
 
+func player_has_item(item: Variant):
+	if item is String:
+		for i in player_inventory:
+			if i == null:
+				continue
+			if i.itemName == item:
+				return true
+		return false
+	elif item is BaseItemResource:
+		for i in player_inventory:
+			if i == null:
+				continue
+			if i.itemName == item.itemName:
+				return true
+		return false
+	else:
+		print("player_has_item called without proper parameter type")
+		return false
+
 func reset_player_inventory():
 	GameState.player_inventory = [null, null, null, null, null, null]
 
