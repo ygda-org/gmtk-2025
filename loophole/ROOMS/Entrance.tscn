@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://bnifs01dflka5"]
+[gd_scene load_steps=9 format=4 uid="uid://bnifs01dflka5"]
 
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="1_d6wng"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_qa1l5"]
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_sedmv"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="5_0oaqi"]
+[ext_resource type="PackedScene" uid="uid://cgm1gga7whvi3" path="res://NPCs/Bob/Bob.tscn" id="5_jrs1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0oaqi"]
 size = Vector2(62, 6)
@@ -76,3 +77,6 @@ to_scene = "res://ROOMS/Waiting_Room.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_Waiting" index="0"]
 position = Vector2(154, -384)
 shape = SubResource("RectangleShape2D_t122x")
+
+[node name="Bob" parent="." index="10" instance=ExtResource("5_jrs1a")]
+position = Vector2(76, -451)

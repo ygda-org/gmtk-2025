@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bo1gtjr4l8c6w"
+path="res://.godot/imported/test.dialogue-9969d09803fde0cf1888aa5ade3e9c71.tres"
+
+[deps]
+
+source_file="res://NPCs/Bob/test.dialogue"
+dest_files=["res://.godot/imported/test.dialogue-9969d09803fde0cf1888aa5ade3e9c71.tres"]
+
+[params]
+
+defaults=true
