@@ -4,4 +4,6 @@
 - Pickpocket
 	: You stole the janitor's keys.
 	do GameState.add_item_to_player_inventory(load("res://INTERACTABLES/ITEMS/Janitor_Key/Janitor_Key.tres"))
+- Leave
+	: You left the janitor alone
 => END
