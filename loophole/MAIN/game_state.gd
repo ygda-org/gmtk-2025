@@ -4,12 +4,12 @@ var player_inventory = [BaseItemResource] # what data type should this hold?
 
 
 const SAVE_PATH: String = "user://savedata.json"
-const START_SAVE_DATA : Dictionary[String, int] = {
+const START_SAVE_DATA : Dictionary[String, Variant] = {
 	"disguise_path": 0,
 	"vent_path": 0,
-	"keys_path": 0,
 	"sewer_path": 0,
 	"inspector_path": 0,
+	"has_watched_intro": false
 }
 
 var loaded_save_data: Dictionary = {}
