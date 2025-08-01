@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=4 uid="uid://cretdq7ls85te"]
+
+[ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_lr8gl"]
+[ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_w3e06"]
+[ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_eqefy"]
+[ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="4_r6nrq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqefy"]
+size = Vector2(7, 32)
+
+[node name="Prevault" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_lr8gl")]
+node_with_locations = NodePath("StartingLocations")
+
+[node name="StartingLocations" type="Node" parent="." index="0"]
+
+[node name="LeftDoor" type="Node2D" parent="StartingLocations" index="0"]
+position = Vector2(-35, -16)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="3"]
+tile_map_data = PackedByteArray("AAD9/wAAAwAOAAUAACD+/wAAAwAPAAUAACD//wAAAwAPAAUAACAAAAAAAwAPAAUAACABAAAAAwAOAAUAADD9////AwAPAAYAAAD9//7/AwAPAAYAAAD+//7/AwAPAAYAAAD///7/AwAPAAYAAAAAAP7/AwAPAAYAAAABAP7/AwAPAAYAAAABAP//AwAPAAYAAAAAAP//AwAPAAYAAAD/////AwAPAAYAAAD+////AwAPAAYAAAD9//3/AwAOAAYAAAD9//z/AwAOAAYAAAD9//v/AwAOAAUAAAABAPv/AwAOAAUAABABAPz/AwAOAAYAABABAP3/AwAOAAYAABAAAPv/AwAPAAUAAAD///v/AwAPAAUAAAD+//v/AwAPAAUAAAAAAP3/AwAPAAYAAAD///3/AwAPAAYAAAD+//3/AwAPAAYAAAD+//z/AwAPAAYAAAD///z/AwAPAAYAAAAAAPz/AwAPAAYAAAABAPn/AwADABEAAAD9//n/AwADABEAAAD9//r/AwADABIAAAABAPr/AwADABIAAAABAPj/AwAIAAIAAAD9//j/AwAIAAIAAAD8//r/AwAQAAYAAAD8//v/AwAQAAYAAAACAPr/AwAQAAYAAAACAPv/AwAQAAYAAAD8//j/AwAAABEAAAD8//n/AwAAABIAAAACAPn/AwACABIAAAACAPj/AwACABEAAAD7//j/AwALAAEAAAD7//n/AwALAAIAAAD7//r/AwALAAIAAAD7//v/AwALAAIAAAADAPj/AwANAAEAAAADAPn/AwANAAIAAAADAPr/AwANAAIAAAADAPv/AwANAAIAAAD7//z/AwALAAMAAAADAPz/AwANAAMAAAACAPz/AwAGAAIAAAD8//z/AwAFAAIAAAD8//3/AwALAAEAACACAP3/AwALAAEAADACAAAAAwALAAEAABD8/wAAAwALAAEAAAD8/wEAAwALAAMAAAD9/wEAAwAMAAMAAAD+/wEAAwAMAAMAAAD//wEAAwAMAAMAAAAAAAEAAwAMAAMAAAABAAEAAwAMAAMAAAACAAEAAwANAAMAAAA=")
+tile_set = ExtResource("2_w3e06")
+
+[node name="SSA_LeftWing" parent="." index="4" instance=ExtResource("3_eqefy")]
+starting_location = "VaultDoor"
+to_scene = "res://ROOMS/left_wing.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_LeftWing" index="0"]
+position = Vector2(-51.5, -16)
+shape = SubResource("RectangleShape2D_eqefy")
+
+[node name="Player" parent="." index="5" instance=ExtResource("4_r6nrq")]
+position = Vector2(-2, -10)
