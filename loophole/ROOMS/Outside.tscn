@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://4qighc3yxqc4"]
+[gd_scene load_steps=11 format=4 uid="uid://4qighc3yxqc4"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_6cabt"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_m8e51"]
@@ -9,6 +9,43 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cabt"]
 size = Vector2(48.25, 47.25)
+
+[sub_resource type="Animation" id="Animation_rg6lw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7, 359)]
+}
+
+[sub_resource type="Animation" id="Animation_susxu"]
+resource_name = "IntroCutscene"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-7, 359), Vector2(-7, 213)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rg6lw"]
+_data = {
+&"RESET": SubResource("Animation_rg6lw"),
+&"intro_cutscene": SubResource("Animation_susxu")
+}
 
 [node name="Outside" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_6cabt")]
 node_with_locations = NodePath("StartingLocations")
@@ -23,7 +60,7 @@ tile_map_data = PackedByteArray("AAD+/w0AAwAMAAUAAAD+/w4AAwANAAYAAAD+/w8AAwANAAY
 tile_set = ExtResource("1_m8e51")
 
 [node name="Player" parent="." index="2" instance=ExtResource("2_a7ne1")]
-position = Vector2(1, 358)
+position = Vector2(-7, 359)
 
 [node name="SceneSwitchArea" parent="." index="3" instance=ExtResource("3_a7ne1")]
 position = Vector2(-3, 256)
@@ -42,5 +79,17 @@ offset_right = 19.0
 offset_bottom = -32.0
 color = Color(0, 1, 1, 1)
 
+[node name="ColorRect" parent="Background" index="0"]
+offset_left = -2792.0
+offset_top = -2241.0
+offset_right = -2752.0
+offset_bottom = -2201.0
+
 [node name="CutsceneManager" parent="." index="6" instance=ExtResource("5_028p6")]
 dialogue_resource = ExtResource("6_susxu")
+
+[node name="CutscenePlayer" type="AnimationPlayer" parent="." index="7"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_rg6lw")
+}

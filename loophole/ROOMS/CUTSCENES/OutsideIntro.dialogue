@@ -1,8 +1,11 @@
 ~ start
 if not GameState.has_watched_intro()
-	Playing intro cutscene...
+	Robbing this place will be a piece of cake!
+	do GameState.get_cutscene_player().play("intro_cutscene")
 else:
 	When did they install metal detectors??
 	Guess I'll need a new strategy...
 	**Go explore and try to find a way into the vault!**
+
+
 => END

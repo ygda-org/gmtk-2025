@@ -86,3 +86,6 @@ func save_game() -> int:
 
 func has_watched_intro():
 	return loaded_save_data["has_watched_intro"]
+
+func get_cutscene_player() -> AnimationPlayer:
+	return get_tree().current_scene.get_node("CutscenePlayer")
