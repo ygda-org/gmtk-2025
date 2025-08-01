@@ -22,10 +22,10 @@ func _ready():
 	DialogueManager.dialogue_started.connect(dialogue_started)
 	reset_player_inventory()
 
-func dialogue_finished():
+func dialogue_finished(resource):
 	can_player_move = true
 
-func dialogue_started():
+func dialogue_started(resource):
 	can_player_move = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
