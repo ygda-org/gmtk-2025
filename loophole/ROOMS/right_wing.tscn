@@ -1,15 +1,21 @@
-[gd_scene load_steps=7 format=4 uid="uid://d0d1ve75sldsm"]
+[gd_scene load_steps=11 format=4 uid="uid://d0d1ve75sldsm"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_41mpu"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_nylj2"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_iu7ct"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="4_vnl8h"]
+[ext_resource type="PackedScene" uid="uid://bwuv52dujgg5m" path="res://NPCs/Guard/Guard.tscn" id="5_wl53s"]
+[ext_resource type="Resource" uid="uid://pjxrymlcqyjn" path="res://NPCs/Guard/Guard.dialogue" id="6_jtr5p"]
+[ext_resource type="PackedScene" uid="uid://h3q8kxfdxsde" path="res://NPCs/Guard/Guard_Detection_Zone.tscn" id="6_yfbwj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnl8h"]
 size = Vector2(7, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rl5ea"]
 size = Vector2(8, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtr5p"]
+size = Vector2(20, 48)
 
 [node name="RightWing" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_41mpu")]
 node_with_locations = NodePath("StartingLocations")
@@ -47,3 +53,13 @@ shape = SubResource("RectangleShape2D_rl5ea")
 
 [node name="Player" parent="." index="7" instance=ExtResource("4_vnl8h")]
 position = Vector2(14, -26)
+
+[node name="Guard" parent="." index="8" instance=ExtResource("5_wl53s")]
+position = Vector2(-80, -129)
+dialogue = ExtResource("6_jtr5p")
+
+[node name="GuardDetectionZone" parent="Guard" index="1" instance=ExtResource("6_yfbwj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Guard/GuardDetectionZone" index="0"]
+position = Vector2(-1, 41)
+shape = SubResource("RectangleShape2D_jtr5p")

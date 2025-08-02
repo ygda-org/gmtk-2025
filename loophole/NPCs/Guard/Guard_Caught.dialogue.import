@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d34g7vm5ks1sd"
+path="res://.godot/imported/Guard_Caught.dialogue-2a4985ababcbacd36a98a1b30347f0e6.tres"
+
+[deps]
+
+source_file="res://NPCs/Guard/Guard_Caught.dialogue"
+dest_files=["res://.godot/imported/Guard_Caught.dialogue-2a4985ababcbacd36a98a1b30347f0e6.tres"]
+
+[params]
+
+defaults=true

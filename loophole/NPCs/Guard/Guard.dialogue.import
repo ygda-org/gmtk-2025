@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://pjxrymlcqyjn"
+path="res://.godot/imported/Guard.dialogue-71ba7de82c68401afb10aa165669ffc8.tres"
+
+[deps]
+
+source_file="res://NPCs/Guard/Guard.dialogue"
+dest_files=["res://.godot/imported/Guard.dialogue-71ba7de82c68401afb10aa165669ffc8.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://h3q8kxfdxsde"]
+
+[ext_resource type="Script" uid="uid://bux68n5ximm0u" path="res://NPCs/Guard/guard_detection_zone.gd" id="1_or7d3"]
+
+[node name="GuardDetectionZone" type="Area2D"]
+script = ExtResource("1_or7d3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
