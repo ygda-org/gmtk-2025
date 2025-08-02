@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c8ktcegccrysv"
+path="res://.godot/imported/Bob.dialogue-f205fe1903dff826eb1aa629b64f9563.tres"
+
+[deps]
+
+source_file="res://NPCs/Bob/Bob.dialogue"
+dest_files=["res://.godot/imported/Bob.dialogue-f205fe1903dff826eb1aa629b64f9563.tres"]
+
+[params]
+
+defaults=true

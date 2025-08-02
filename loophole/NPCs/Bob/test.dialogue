@@ -1,11 +1,11 @@
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
+CEO: [[Hi|Hello|Howdy]], this is some dialogue.
+CEO: Here are some choices.
 - First one
-	Nathan: You picked the first one.
+	CEO: You picked the first one.
 - Second one
-	Nathan: You picked the second one.
+	CEO: You picked the second one.
 - Start again => start
 - End the conversation => END
-Nathan: For more information see the online documentation.
+CEO: For more information see the online documentation.
 => END

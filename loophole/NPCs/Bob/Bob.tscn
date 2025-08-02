@@ -1,9 +1,10 @@
-[gd_scene load_steps=56 format=3 uid="uid://5uyawl4p53aa"]
+[gd_scene load_steps=63 format=3 uid="uid://5uyawl4p53aa"]
 
 [ext_resource type="Texture2D" uid="uid://c45ehkq6cvqbq" path="res://ASSETS/Modern tiles_Free/Characters_free/Bob_idle_anim_16x16.png" id="1_5m7nm"]
 [ext_resource type="PackedScene" uid="uid://h77mgx7ql5u2" path="res://NPCs/BaseNPC.tscn" id="1_wlu11"]
 [ext_resource type="Texture2D" uid="uid://il125nva0fuq" path="res://ASSETS/Modern tiles_Free/Characters_free/Bob_run_16x16.png" id="2_qpp2i"]
 [ext_resource type="Resource" uid="uid://bo1gtjr4l8c6w" path="res://NPCs/Bob/test.dialogue" id="4_cmjui"]
+[ext_resource type="Texture2D" uid="uid://ukegonh6ifdf" path="res://ASSETS/Modern tiles_Free/Characters_free/Bob_sit3_16x16.png" id="4_wcmsf"]
 [ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="4_wlu11"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qpp2i"]
@@ -198,6 +199,30 @@ region = Rect2(160, 0, 16, 32)
 atlas = ExtResource("2_qpp2i")
 region = Rect2(176, 0, 16, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_caui7"]
+atlas = ExtResource("4_wcmsf")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32n3a"]
+atlas = ExtResource("4_wcmsf")
+region = Rect2(112, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1kih"]
+atlas = ExtResource("4_wcmsf")
+region = Rect2(128, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orkk2"]
+atlas = ExtResource("4_wcmsf")
+region = Rect2(144, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2kn2"]
+atlas = ExtResource("4_wcmsf")
+region = Rect2(160, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trmht"]
+atlas = ExtResource("4_wcmsf")
+region = Rect2(176, 0, 16, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_cmjui"]
 animations = [{
 "frames": [{
@@ -383,6 +408,29 @@ animations = [{
 "loop": true,
 "name": &"run-up",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_caui7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32n3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1kih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orkk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2kn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trmht")
+}],
+"loop": true,
+"name": &"sitting-left",
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wcmsf"]
@@ -390,7 +438,9 @@ size = Vector2(31, 36)
 
 [node name="Bob" instance=ExtResource("1_wlu11")]
 sprite_frames = SubResource("SpriteFrames_cmjui")
-animation = &"idle-down"
+animation = &"sitting-left"
+autoplay = "sitting-left"
+frame_progress = 0.714513
 dialogue = ExtResource("4_cmjui")
 
 [node name="Interactable" parent="." index="0" instance=ExtResource("4_wlu11")]

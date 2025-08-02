@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://woo08bfqwk24"]
+[gd_scene load_steps=8 format=4 uid="uid://woo08bfqwk24"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_umo1e"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_8fi8l"]
+[ext_resource type="PackedScene" uid="uid://5uyawl4p53aa" path="res://NPCs/Bob/Bob.tscn" id="3_6visn"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="3_rwnyi"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="4_ng0mo"]
+[ext_resource type="Resource" uid="uid://c8ktcegccrysv" path="res://NPCs/Bob/Bob.dialogue" id="4_nqlxp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ng0mo"]
 size = Vector2(6, 33)
@@ -21,28 +23,32 @@ tile_set = ExtResource("2_8fi8l")
 
 [node name="TheChairs" type="TileMapLayer" parent="." index="4"]
 modulate = Color(0.684444, 0.431949, 0.45964, 1)
-position = Vector2(0, 5)
-tile_map_data = PackedByteArray("AAABAP7/AQAJAB8AAAABAP//AQAJACAAAAAHAP7/AQAPAB8AAAAHAP//AQAPACAAAAA=")
+position = Vector2(4, 5)
+tile_map_data = PackedByteArray("AAABAP7/AQAJAB8AAAABAP//AQAJACAAAAAHAP7/AQAMACEAAAAHAP//AQAMACIAAAA=")
 tile_set = ExtResource("2_8fi8l")
 
-[node name="Decor" type="TileMapLayer" parent="." index="5"]
+[node name="Bob" parent="." index="5" instance=ExtResource("3_6visn")]
+position = Vector2(123, -26)
+dialogue = ExtResource("4_nqlxp")
+
+[node name="Decor" type="TileMapLayer" parent="." index="6"]
 modulate = Color(0.506703, 0.365781, 0.37874, 1)
 tile_map_data = PackedByteArray("AAABAP7/AQAFAAoAAAABAP//AQAFAAsAAAABAAAAAQAFAAwAAAACAP7/AQAGAAoAAAACAP//AQAGAAsAAAACAAAAAQAGAAwAAAADAP7/AQAJAAoAAAADAP//AQAJAAsAAAADAAAAAQAJAAwAAAAEAP7/AQAJAAoAAAAEAP//AQAJAAsAAAAEAAAAAQAJAAwAAAAFAP7/AQAJAAoAAAAFAP//AQAJAAsAAAAFAAAAAQAJAAwAAAAHAP7/AQAIAAoAAAAHAP//AQAIAAsAAAAHAAAAAQAIAAwAAAAGAP7/AQAHAAoAAAAGAP//AQAHAAsAAAAGAAAAAQAHAAwAAAAAAPz/AQAMAC0AAAAAAP3/AQAMAC4AAAAIAPz/AQAMAC0AAAAIAP3/AQAMAC4AAAA=")
 tile_set = ExtResource("2_8fi8l")
 
-[node name="OnTable" type="TileMapLayer" parent="." index="6"]
+[node name="OnTable" type="TileMapLayer" parent="." index="7"]
 tile_map_data = PackedByteArray("AAAEAP7/AQAAADEAAAAEAP//AQAAADIAAAA=")
 tile_set = ExtResource("2_8fi8l")
 
-[node name="Player" parent="." index="7" instance=ExtResource("3_rwnyi")]
+[node name="Player" parent="." index="8" instance=ExtResource("3_rwnyi")]
 position = Vector2(-53, 19)
 
-[node name="StartingLocations" type="Node" parent="." index="8"]
+[node name="StartingLocations" type="Node" parent="." index="9"]
 
 [node name="EntranceDoor" type="Node2D" parent="StartingLocations" index="0"]
 position = Vector2(8, 16)
 
-[node name="SSA_Entrance" parent="." index="9" instance=ExtResource("4_ng0mo")]
+[node name="SSA_Entrance" parent="." index="10" instance=ExtResource("4_ng0mo")]
 starting_location = "CEODoor"
 to_scene = "res://ROOMS/Entrance.tscn"
 

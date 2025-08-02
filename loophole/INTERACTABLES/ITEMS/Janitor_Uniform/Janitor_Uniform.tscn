@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://xsxwb0rxr3bf"]
+
+[ext_resource type="Script" uid="uid://clsx80m3cv7i0" path="res://INTERACTABLES/ITEMS/Janitor_Uniform/janitor_uniform.gd" id="1_2uf13"]
+[ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="1_3tg5b"]
+[ext_resource type="Texture2D" uid="uid://dtkjchwn5lqt2" path="res://ASSETS/icon.svg" id="2_3tg5b"]
+[ext_resource type="Resource" uid="uid://byar28c6t6mc3" path="res://INTERACTABLES/ITEMS/Janitor_Uniform/Janitor_Uniform.tres" id="2_r0tt0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0tt0"]
+
+[node name="JanitorUniform" type="Node2D"]
+script = ExtResource("1_2uf13")
+itemResource = ExtResource("2_r0tt0")
+
+[node name="Interactable" parent="." instance=ExtResource("1_3tg5b")]
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("RectangleShape2D_r0tt0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_3tg5b")
