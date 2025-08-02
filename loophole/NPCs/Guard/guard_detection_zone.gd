@@ -20,3 +20,5 @@ func _on_body_entered(body):
 
 func caught_player():
 	DialogueManager.show_dialogue_balloon(load("res://NPCs/Guard/Guard_Caught.dialogue"))
+	await DialogueManager.dialogue_ended
+	GameState.restart_game()
