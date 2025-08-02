@@ -1,9 +1,24 @@
 ~ start
 Receptionist: [[Hi|Hello|Howdy]], tell me what you need.
 - I'd like to make a deposit
-	Receptionist: Please tell me your account n
+	Receptionist: Please tell me your account number and how much you wish to deposit.
+	- Nevermind, sorry.
+	=> END
 - I'd like to make a withdrawl
+	Receptionist: Please tell me your account number and how much you wish to withdraw.
+	- Nevermind, sorry.
+	=> END
 - Could you tell me the bank's phone number?
-	Receptionist: 
+	Receptionist: Sure. For contact, every inquiry goes through the number, 
 - Hello. It's a pleasure to meet you.
+	Receptionist: It's good to meet you too. Could you tell me what you need?
+	- Let me into your vault.
+	- I'm here on orders from the Federal Bank Security Administration.
+		Receptionist: Then it must be important. What can I do for you?
+		- I need to inspect your vault in order to make sure it's up to code.
+			if GameState.loaded_save_data["inspector_path"] == 0:
+				Receptionist: Okay. Let me take you there.
+				do GameState.send_to_vault("inspector_path") 
+			elif GameState.loaded_save_data["inspector_path"] == 1:
+				Receptionist: I'm sorry but as per recent rules, all inspections need to be confirmed in advance by at least two hours.
 => END
