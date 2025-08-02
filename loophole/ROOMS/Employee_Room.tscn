@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=4 uid="uid://dwv1asu0eh8s6"]
+[gd_scene load_steps=10 format=4 uid="uid://dwv1asu0eh8s6"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_pys8n"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_q0276"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="2_n80rx"]
 [ext_resource type="PackedScene" uid="uid://cto4wcbhaf3d" path="res://INTERACTABLES/ITEMS/Guard_Key/Guard_Key.tscn" id="3_n80rx"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="5_jc8d2"]
+[ext_resource type="PackedScene" uid="uid://5uyawl4p53aa" path="res://NPCs/Bob/Bob.tscn" id="6_jjj4k"]
+[ext_resource type="PackedScene" uid="uid://bbx3sp1xwulb8" path="res://NPCs/Amelia/amelia.tscn" id="7_atvdi"]
+[ext_resource type="Resource" uid="uid://cs1sbqwbw5bh6" path="res://ROOMS/WorkerPassword.dialogue" id="7_dysqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jc8d2"]
 size = Vector2(7, 32)
@@ -38,3 +41,14 @@ to_scene = "res://ROOMS/left_wing.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_LeftWing" index="0"]
 position = Vector2(67.5, 48)
 shape = SubResource("RectangleShape2D_jc8d2")
+
+[node name="Bob" parent="." index="8" instance=ExtResource("6_jjj4k")]
+position = Vector2(-35, -88)
+animation = &"idle-right"
+frame_progress = 0.0
+dialogue = ExtResource("7_dysqv")
+disabled = true
+
+[node name="Amelia" parent="." index="9" instance=ExtResource("7_atvdi")]
+position = Vector2(-16, -107)
+dialogue = ExtResource("7_dysqv")

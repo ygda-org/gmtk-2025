@@ -440,7 +440,7 @@ size = Vector2(31, 36)
 sprite_frames = SubResource("SpriteFrames_cmjui")
 animation = &"run-down"
 autoplay = "sitting-left"
-frame_progress = 0.183554
+frame_progress = 0.461711
 dialogue = ExtResource("4_cmjui")
 
 [node name="Interactable" parent="." index="0" instance=ExtResource("4_wlu11")]
