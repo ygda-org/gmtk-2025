@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://bnifs01dflka5"]
+[gd_scene load_steps=17 format=4 uid="uid://bnifs01dflka5"]
 
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="1_d6wng"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_qa1l5"]
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_sedmv"]
+[ext_resource type="PackedScene" uid="uid://bbx3sp1xwulb8" path="res://NPCs/Amelia/amelia.tscn" id="4_2pfv7"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="5_0oaqi"]
 [ext_resource type="PackedScene" uid="uid://dnubw7x6o5y7c" path="res://INTERACTABLES/Locked_Door/Locked_Door.tscn" id="6_t122x"]
 [ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="7_2pfv7"]
@@ -57,18 +58,21 @@ shape = SubResource("RectangleShape2D_0oaqi")
 tile_map_data = PackedByteArray("AAD7/+H/AwAOAAUAAAD8/+H/AwAPAAUAAAD9/+H/AwAPAAUAAAD+/+H/AwAPAAUAAAD//+H/AwAPAAUAAAAAAOH/AwAPAAUAAAABAOH/AwAPAAUAAAACAOH/AwAPAAUAAAADAOH/AwAPAAUAAAD7/+L/AwAQAAUAAAD7/+P/AwAQAAUAACD7/+T/AwAOAAYAAAD7/+X/AwAOAAYAAAD7/+b/AwAOAAYAAAAEAOH/AwAPAAUAAAAFAOH/AwAPAAUAAAAGAOH/AwAPAAUAAAD7/+f/AwAQAAUAAAD7/+j/AwAQAAUAACD7/+n/AwAOAAYAAAAHAOH/AwAOAAUAABAHAOL/AwAQAAUAABAHAOP/AwAQAAUAADAHAOT/AwAOAAYAABAHAOX/AwAOAAYAABAHAOb/AwAOAAYAABAHAOf/AwAQAAUAABAHAOj/AwAQAAUAADAHAOn/AwAOAAYAABD7/+r/AwAOAAUAACAHAOr/AwAOAAUAADD8/+r/AwAPAAUAACD9/+r/AwAPAAUAACD+/+r/AwAPAAUAACD//+r/AwAPAAUAACAAAOr/AwAQAAUAACABAOr/AwAPAAYAAAACAOr/AwAQAAUAADADAOr/AwAPAAUAACAEAOr/AwAPAAUAACAFAOr/AwAPAAUAACAGAOr/AwAPAAUAACD//+f/AwAPAAYAAAD//+b/AwAOAAUAABD//+X/AwAOAAYAABD//+T/AwAOAAUAADD//+P/AwAPAAYAAAD//+L/AwAPAAYAAAD+/+L/AwAPAAYAAAD9/+L/AwAPAAYAAAD8/+L/AwAPAAYAAAD8/+P/AwAPAAYAAAD8/+T/AwAPAAYAAAD8/+X/AwAPAAYAAAD8/+b/AwAPAAYAAAD8/+f/AwAPAAYAAAD8/+j/AwAPAAYAAAD8/+n/AwAPAAYAAAD9/+n/AwAPAAYAAAD9/+j/AwAPAAYAAAD9/+f/AwAPAAYAAAD9/+b/AwAPAAYAAAD9/+X/AwAPAAYAAAD9/+T/AwAPAAYAAAD9/+P/AwAPAAYAAAD+/+P/AwAPAAYAAAD+/+T/AwAPAAYAAAD+/+X/AwAPAAYAAAD+/+b/AwAPAAYAAAD+/+f/AwAPAAYAAAD+/+j/AwAPAAYAAAD+/+n/AwAPAAYAAAD//+n/AwAPAAYAAAD//+j/AwAPAAYAAAAAAOj/AwAPAAYAAAAAAOf/AwAPAAYAAAAAAOb/AwAQAAYAAAAAAOX/AwAQAAYAAAAAAOT/AwAQAAYAAAAAAOP/AwAPAAYAAAAAAOL/AwAPAAYAAAABAOL/AwAPAAYAAAABAOP/AwAPAAUAACABAOT/AwAQAAYAAAABAOX/AwAQAAYAAAABAOb/AwAQAAYAAAABAOf/AwAPAAUAAAABAOj/AwAPAAYAAAABAOn/AwAPAAYAAAAAAOn/AwAPAAYAAAACAOn/AwAPAAYAAAACAOj/AwAPAAYAAAACAOf/AwAPAAYAAAACAOb/AwAQAAYAAAACAOX/AwAQAAYAAAACAOT/AwAQAAYAAAACAOP/AwAPAAYAAAACAOL/AwAPAAYAAAADAOL/AwAPAAYAAAADAOP/AwAPAAYAAAADAOT/AwAOAAUAACADAOX/AwAOAAYAAAADAOb/AwAOAAUAAAADAOf/AwAPAAYAAAADAOj/AwAPAAYAAAADAOn/AwAPAAYAAAAEAOn/AwAPAAYAAAAEAOj/AwAPAAYAAAAEAOf/AwAPAAYAAAAEAOb/AwAPAAYAAAAEAOX/AwAPAAYAAAAEAOT/AwAPAAYAAAAEAOP/AwAPAAYAAAAEAOL/AwAPAAYAAAAFAOL/AwAPAAYAAAAFAOP/AwAPAAYAAAAFAOT/AwAPAAYAAAAFAOX/AwAPAAYAAAAFAOb/AwAPAAYAAAAFAOf/AwAPAAYAAAAFAOj/AwAPAAYAAAAFAOn/AwAPAAYAAAAGAOn/AwAPAAYAAAAGAOj/AwAPAAYAAAAGAOf/AwAPAAYAAAAGAOb/AwAPAAYAAAAGAOX/AwAPAAYAAAAGAOT/AwAPAAYAAAAGAOP/AwAPAAYAAAAGAOL/AwAPAAYAAAAAAOv/AwAOAAYAAAAAAOz/AwAOAAYAAAAAAO3/AwAOAAYAAAABAOv/AwAPAAYAAAABAOz/AwAPAAYAAAABAO3/AwAPAAYAAAACAOv/AwAOAAYAABACAOz/AwAOAAYAABACAO3/AwAOAAYAABAIAN//AwANAAEAAAAIAOD/AwANAAIAAAAIAOH/AwAFAAIAADAIAOT/AwAGAAIAAAAIAOX/AwANAAIAAAAIAOb/AwAFAAIAADAIAOn/AwAGAAIAAAAIAOr/AwANAAIAAAAIAOv/AwANAAMAAAADAOv/AwAKAAEAAAAEAOv/AwAMAAMAAAAFAOv/AwAMAAMAAAAGAOv/AwAMAAMAAAAHAOv/AwAMAAMAAAD7/+v/AwAMAAMAAAD8/+v/AwAMAAMAAAD9/+v/AwAMAAMAAAD+/+v/AwAMAAMAAAD//+v/AwAJAAEAAAD6/+v/AwALAAMAAAD6/+D/AwALAAIAAAD6/+H/AwAGAAIAADD6/+T/AwAFAAIAAAD6/+X/AwALAAIAAAD6/+b/AwAGAAIAADD6/+n/AwAFAAIAAAD6/+r/AwALAAIAAAD6/9//AwALAAEAAAD//+z/AwALAAIAAAD//+3/AwALAAIAAAADAOz/AwANAAIAAAADAO3/AwANAAIAAAD//+7/AwALAAMAAAADAO7/AwANAAMAAAD7/+D/AwABABIAAAD8/+D/AwACABIAAAD9/+D/AQABAAgAAAD9/9//AwAPAAUAACD8/9//AwACABEAAAD7/9//AwABABEAAAAHAOD/AwAAABIAAAAFAOD/AwACABIAAAAFAN//AwACABEAAAAHAN//AwAAABEAAAD6/+f/AwAPAAUAAAD6/+j/AwAPAAUAACD6/+L/AwAPAAUAAAD6/+P/AwAPAAUAACAIAOf/AwAPAAUAAAAIAOj/AwAPAAUAACAIAOL/AwAPAAUAAAAIAOP/AwAPAAUAACD+/+D/AQABAAgAAAD//+D/AQABAAgAAAAAAOD/AQABAAgAAAABAOD/AQABAAgAAAACAOD/AQABAAgAAAADAOD/AQABAAgAAAAEAOD/AwAAABIAAAD+/9//AwAPAAUAACD//9//AwAPAAUAACAAAN//AwAPAAUAACABAN//AwAPAAUAACACAN//AwAPAAUAACADAN//AwAPAAUAACAEAN//AwAAABEAAAD7/97/AwAOAAYAAAD7/9v/AwAOAAUAAAD8/9v/AwAPAAUAAAD9/9v/AwAPAAUAAAD+/9v/AwAPAAUAAAD//9v/AwAPAAUAAAAAANv/AwAPAAUAAAABANv/AwAPAAUAAAACANv/AwAPAAUAAAADANv/AwAPAAUAAAAFANv/AwAPAAUAAAAGANv/AwAPAAUAAAAEANv/AwAPAAUAAAAHANv/AwAOAAUAABAHANz/AwAPAAYAAAAHAN3/AwAPAAYAAAAHAN7/AwAOAAYAABAGAN7/AwAPAAYAAAAFAN7/AwAPAAYAAAAEAN7/AwAPAAYAAAADAN7/AwAPAAYAAAACAN7/AwAPAAYAAAABAN7/AwAPAAYAAAAAAN7/AwAPAAYAAAD//97/AwAPAAYAAAD+/97/AwAPAAYAAAD9/97/AwAPAAYAAAD8/97/AwAPAAYAAAD8/93/AwAPAAYAAAD8/9z/AwAPAAYAAAD9/9z/AwAPAAYAAAD+/9z/AwAPAAYAAAD//9z/AwAPAAYAAAAAANz/AwAPAAYAAAABANz/AwAPAAYAAAACANz/AwAPAAYAAAADANz/AwAPAAYAAAADAN3/AwAPAAYAAAAEAN3/AwAPAAYAAAAFAN3/AwAPAAYAAAAGAN3/AwAPAAYAAAAGANz/AwAPAAYAAAAFANz/AwAPAAYAAAAEANz/AwAPAAYAAAAAAN3/AwAPAAYAAAD//93/AwAPAAYAAAD+/93/AwAPAAYAAAD9/93/AwAPAAYAAAABAN3/AwAPAAYAAAACAN3/AwAPAAYAAAAGAN//AwAPAAYAAAAGAOD/AwAPAAUAACD6/97/AwALAAEAAAD6/9v/AwALAAEAACD7/9r/AwAAABIAAAD8/9r/AwABABIAAAD9/9r/AwABABIAAAD+/9r/AwABABIAAAD//9r/AwABABIAAAAAANr/AwABABIAAAABANr/AwABABIAAAACANr/AwABABIAAAADANr/AwABABIAAAAEANr/AwABABIAAAAFANr/AwABABIAAAAGANr/AwABABIAAAAHANr/AwACABIAAAAHANn/AwACABEAAAAGANn/AwABABEAAAAFANn/AwABABEAAAAEANn/AwABABEAAAADANn/AwABABEAAAACANn/AwABABEAAAABANn/AwABABEAAAAAANn/AwABABEAAAD//9n/AwABABEAAAD+/9n/AwABABEAAAD9/9n/AwABABEAAAD8/9n/AwABABEAAAD7/9n/AwAAABEAAAD6/9r/AwALAAIAAAD6/9n/AwALAAEAAAAIANn/AwANAAEAAAAIANr/AwANAAIAAAAIANv/AwALAAEAADAIAN7/AwALAAEAABD7/93/AwAPAAYAAAD7/9z/AwAPAAYAAAA=")
 tile_set = ExtResource("1_qa1l5")
 
-[node name="Decor" type="TileMapLayer" parent="." index="2"]
-tile_map_data = PackedByteArray("AAD9/97/AQAEABUAAAD9/9//AQAEABYAAAD//97/AQAEABUAAAD//9//AQAEABYAAAABAN7/AQAEABUAAAABAN//AQAEABYAAAADAN7/AQAEABUAAAADAN//AQAEABYAAAAGAN//AQALABgAAAAGAOD/AQALABkAAAD7/+D/AQANACwAAAD7/+H/AQANAC0AAAD8/+D/AQAOACwAAAD8/+H/AQAOAC0AAAA=")
+[node name="Amelia" parent="." index="2" instance=ExtResource("4_2pfv7")]
+position = Vector2(8, -532)
+
+[node name="Decor" type="TileMapLayer" parent="." index="3"]
+tile_map_data = PackedByteArray("AAAGAN//AQALABgAAAAGAOD/AQALABkAAAD7/+D/AQANACwAAAD7/+H/AQANAC0AAAD8/+D/AQAOACwAAAD8/+H/AQAOAC0AAAA=")
 tile_set = ExtResource("1_qa1l5")
 
-[node name="Decor2" type="TileMapLayer" parent="." index="3"]
+[node name="Decor2" type="TileMapLayer" parent="." index="4"]
 tile_map_data = PackedByteArray("AAD9/9//AQADABwAAAD+/9//AQADABwAAAD//9//AQADABwAAAAAAN//AQADABwAAAABAN//AQADABwAAAACAN//AQADABwAAAADAN//AQADABwAAAA=")
 tile_set = ExtResource("1_qa1l5")
 
-[node name="Player" parent="." index="4" instance=ExtResource("1_d6wng")]
+[node name="Player" parent="." index="5" instance=ExtResource("1_d6wng")]
 position = Vector2(-3, -441)
 
-[node name="StartingLocations" type="Node" parent="." index="5"]
+[node name="StartingLocations" type="Node" parent="." index="6"]
 
 [node name="MainDoor" type="Node2D" parent="StartingLocations" index="0"]
 position = Vector2(24, -308)
@@ -91,7 +95,7 @@ position = Vector2(113, -560)
 [node name="MeetingDoor" type="Node2D" parent="StartingLocations" index="6"]
 position = Vector2(-80, -384)
 
-[node name="SSA_Janitor" parent="." index="6" instance=ExtResource("5_0oaqi")]
+[node name="SSA_Janitor" parent="." index="7" instance=ExtResource("5_0oaqi")]
 starting_location = "EntranceDoor"
 to_scene = "res://ROOMS/Janitor_Closet.tscn"
 
@@ -99,7 +103,7 @@ to_scene = "res://ROOMS/Janitor_Closet.tscn"
 position = Vector2(-106, -464)
 shape = SubResource("RectangleShape2D_jrs1a")
 
-[node name="SSA_Waiting" parent="." index="7" instance=ExtResource("5_0oaqi")]
+[node name="SSA_Waiting" parent="." index="8" instance=ExtResource("5_0oaqi")]
 starting_location = "EntranceDoor"
 to_scene = "res://ROOMS/Waiting_Room.tscn"
 
@@ -107,7 +111,7 @@ to_scene = "res://ROOMS/Waiting_Room.tscn"
 position = Vector2(154, -384)
 shape = SubResource("RectangleShape2D_t122x")
 
-[node name="SSA_Left" parent="." index="8" instance=ExtResource("5_0oaqi")]
+[node name="SSA_Left" parent="." index="9" instance=ExtResource("5_0oaqi")]
 starting_location = "ServiceDoor"
 to_scene = "res://ROOMS/left_wing.tscn"
 
@@ -115,7 +119,7 @@ to_scene = "res://ROOMS/left_wing.tscn"
 position = Vector2(-83.25, -560.5)
 shape = SubResource("RectangleShape2D_2pfv7")
 
-[node name="SSA_CEO" parent="." index="9" instance=ExtResource("5_0oaqi")]
+[node name="SSA_CEO" parent="." index="10" instance=ExtResource("5_0oaqi")]
 starting_location = "EntranceDoor"
 to_scene = "res://ROOMS/ceo_room.tscn"
 
@@ -129,7 +133,7 @@ offset_top = -2566.0
 offset_right = -2785.0
 offset_bottom = -2526.0
 
-[node name="LockedDoor" parent="." index="12" instance=ExtResource("6_t122x")]
+[node name="LockedDoor" parent="." index="13" instance=ExtResource("6_t122x")]
 position = Vector2(96, -516)
 unlockResource = ExtResource("7_g5jtj")
 
@@ -144,7 +148,7 @@ shape = SubResource("RectangleShape2D_g5jtj")
 position = Vector2(8, 17.5)
 shape = SubResource("RectangleShape2D_j3g3i")
 
-[node name="SSA_Right" parent="." index="13" instance=ExtResource("5_0oaqi")]
+[node name="SSA_Right" parent="." index="14" instance=ExtResource("5_0oaqi")]
 starting_location = "ServiceDoor"
 to_scene = "res://ROOMS/right_wing.tscn"
 
@@ -152,7 +156,7 @@ to_scene = "res://ROOMS/right_wing.tscn"
 position = Vector2(131.75, -560.5)
 shape = SubResource("RectangleShape2D_2pfv7")
 
-[node name="SSA_Meeting" parent="." index="14" instance=ExtResource("5_0oaqi")]
+[node name="SSA_Meeting" parent="." index="15" instance=ExtResource("5_0oaqi")]
 starting_location = "EntranceDoor"
 to_scene = "res://ROOMS/meeting_room.tscn"
 
