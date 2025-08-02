@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dkfgltn2fjrov"
+path="res://.godot/imported/WallPhone.dialogue-7838ddc227ef7ebd8844123361b6a46c.tres"
+
+[deps]
+
+source_file="res://NPCs/Wall_Phone/WallPhone.dialogue"
+dest_files=["res://.godot/imported/WallPhone.dialogue-7838ddc227ef7ebd8844123361b6a46c.tres"]
+
+[params]
+
+defaults=true

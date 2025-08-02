@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cva7e054eo1x0"]
+[gd_scene load_steps=7 format=3 uid="uid://cva7e054eo1x0"]
 
 [ext_resource type="PackedScene" uid="uid://h77mgx7ql5u2" path="res://NPCs/BaseNPC.tscn" id="1_4ph25"]
 [ext_resource type="Texture2D" uid="uid://bscitrbiefiai" path="res://ASSETS/wall-phone.png" id="2_8vucv"]
 [ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="3_l8ko7"]
+[ext_resource type="Resource" uid="uid://dkfgltn2fjrov" path="res://NPCs/Wall_Phone/WallPhone.dialogue" id="3_povwp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_povwp"]
 animations = [{
@@ -16,14 +17,15 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1s5y"]
-size = Vector2(20, 43)
+size = Vector2(20, 27)
 
 [node name="WallPhone" instance=ExtResource("1_4ph25")]
 sprite_frames = SubResource("SpriteFrames_povwp")
 autoplay = "default"
+dialogue = ExtResource("3_povwp")
 
 [node name="Interactable" parent="." index="0" instance=ExtResource("3_l8ko7")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" index="0"]
-position = Vector2(0, 6.5)
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_y1s5y")

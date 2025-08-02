@@ -9,7 +9,7 @@ Receptionist: [[Hi|Hello|Howdy]], tell me what you need.
 	- Nevermind, sorry.
 	=> END
 - Could you tell me the bank's phone number?
-	Receptionist: Sure. For contact, every inquiry goes through the number, 
+	Receptionist: Sure. For contact, every inquiry goes through the number, (986) 457-2384
 - Hello. It's a pleasure to meet you.
 	Receptionist: It's good to meet you too. Could you tell me what you need?
 	- Let me into your vault.
@@ -20,5 +20,5 @@ Receptionist: [[Hi|Hello|Howdy]], tell me what you need.
 				Receptionist: Okay. Let me take you there.
 				do GameState.send_to_vault("inspector_path") 
 			elif GameState.loaded_save_data["inspector_path"] == 1:
-				Receptionist: I'm sorry but as per recent rules, all inspections need to be confirmed in advance by at least two hours.
+				Receptionist: I'm sorry but as per recent rules, all inspections need to be confirmed over phone in advance by at least two hours.
 => END

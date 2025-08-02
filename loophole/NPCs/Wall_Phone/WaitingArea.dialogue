@@ -1,0 +1,7 @@
+~ start
+: Would you like to wait here?
+- Yes
+	do GameState.player_has_timeskipped = true
+	do get_tree().current_scene.get_node("TransitionLayer").fade_out_and_in()
+- No => END
+=> END

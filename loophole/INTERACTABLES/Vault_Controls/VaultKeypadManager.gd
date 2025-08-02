@@ -1,7 +1,12 @@
 extends Node
 
+# turns out I'm also using this for phone dialing lol
+
 var password
 var current_user_guess = ""
+
+var current_dial: String = ""
+const bank_number: String = "9864572384"
 
 # Called when the node enters the scene tree for the first time.
 func prepare():
@@ -10,7 +15,7 @@ func prepare():
 	if GameState.loaded_save_data["disguise_path"] == 2:
 		password = "62145"
 	if GameState.loaded_save_data["disguise_path"] == 3:
-		password = "9243234235423536785"
+		password = "HAHA"
 
 
 func add_to_guess(addition: String):
@@ -19,4 +24,15 @@ func add_to_guess(addition: String):
 func check_current_guess():
 	var check = password == current_user_guess
 	current_user_guess = ""
+	return check
+
+func add_to_dial(addition: String):
+	current_dial += addition
+
+func check_dial_length():
+	return len(current_dial) == 10
+
+func check_dial():
+	var check = current_dial == bank_number
+	current_dial = ""
 	return check

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://rkrm2buuydwn"
+path="res://.godot/imported/WaitingArea.dialogue-4b33483cf59e7b27ea2f5bf91d2c8368.tres"
+
+[deps]
+
+source_file="res://NPCs/Wall_Phone/WaitingArea.dialogue"
+dest_files=["res://.godot/imported/WaitingArea.dialogue-4b33483cf59e7b27ea2f5bf91d2c8368.tres"]
+
+[params]
+
+defaults=true

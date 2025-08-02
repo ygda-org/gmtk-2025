@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://cs16wr38l3i8d"]
+[gd_scene load_steps=8 format=4 uid="uid://cs16wr38l3i8d"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_15mew"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_kmgci"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="3_jkf2s"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="4_pss4y"]
 [ext_resource type="PackedScene" uid="uid://b6oxst7mopyj8" path="res://NPCs/Sam/sam.tscn" id="5_kmgci"]
+[ext_resource type="PackedScene" uid="uid://cva7e054eo1x0" path="res://NPCs/Wall_Phone/wall_phone.tscn" id="6_jkf2s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svgu2"]
 size = Vector2(20, 30)
@@ -20,7 +21,7 @@ tile_set = ExtResource("2_kmgci")
 position = Vector2(116, 35)
 
 [node name="Decor" type="TileMapLayer" parent="." index="3"]
-tile_map_data = PackedByteArray("AAD///z/AQABAEgAAAD///3/AQABAEkAAAAAAPz/AQACAEgAAAAAAP3/AQACAEkAAAABAPz/AQADAEgAAAABAP3/AQADAEkAAAAJAPz/AQABAEgAAAAJAP3/AQABAEkAAAAKAPz/AQACAEgAAAAKAP3/AQACAEkAAAALAPz/AQADAEgAAAALAP3/AQADAEkAAAAEAPz/AQABAEgAAAAEAP3/AQABAEkAAAAFAPz/AQACAEgAAAAFAP3/AQACAEkAAAAGAPz/AQADAEgAAAAGAP3/AQADAEkAAAAHAPz/AQANACwAAAAHAP3/AQANAC0AAAAIAPz/AQAOACwAAAAIAP3/AQAOAC0AAAACAPz/AQANACwAAAACAP3/AQANAC0AAAADAPz/AQAOACwAAAADAP3/AQAOAC0AAAAKAAIAAQAJAB8AAAAKAAMAAQAJACAAAAAKAAAAAQAJAB8AAAAKAAEAAQAJACAAAAALAAAAAQAEACEAAAALAAEAAQADACEAAAALAAIAAQADACEAAAALAAMAAQADACEAAAA=")
+tile_map_data = PackedByteArray("AAD///z/AQABAEgAAAD///3/AQABAEkAAAAAAPz/AQACAEgAAAAAAP3/AQACAEkAAAABAPz/AQADAEgAAAABAP3/AQADAEkAAAAJAPz/AQABAEgAAAAJAP3/AQABAEkAAAAKAPz/AQACAEgAAAAKAP3/AQACAEkAAAALAPz/AQADAEgAAAALAP3/AQADAEkAAAAEAPz/AQABAEgAAAAEAP3/AQABAEkAAAAFAPz/AQACAEgAAAAFAP3/AQACAEkAAAAGAPz/AQADAEgAAAAGAP3/AQADAEkAAAACAPz/AQANACwAAAACAP3/AQANAC0AAAADAPz/AQAOACwAAAADAP3/AQAOAC0AAAAKAAIAAQAJAB8AAAAKAAMAAQAJACAAAAAKAAAAAQAJAB8AAAAKAAEAAQAJACAAAAALAAAAAQAEACEAAAALAAEAAQADACEAAAALAAIAAQADACEAAAALAAMAAQADACEAAAA=")
 tile_set = ExtResource("2_kmgci")
 
 [node name="Decor2" type="TileMapLayer" parent="." index="4"]
@@ -52,3 +53,6 @@ anim = "bob"
 [node name="Sam3" parent="." index="10" instance=ExtResource("5_kmgci")]
 position = Vector2(170, -38)
 anim = "alex"
+
+[node name="WallPhone" parent="." index="11" instance=ExtResource("6_jkf2s")]
+position = Vector2(128, -55)
