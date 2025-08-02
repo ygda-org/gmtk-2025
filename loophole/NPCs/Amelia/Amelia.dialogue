@@ -19,9 +19,17 @@ Receptionist: [[Hi|Hello|Howdy]], tell me what you need.
 			if GameState.loaded_save_data["inspector_path"] == 0:
 				Receptionist: Okay. Let me take you there.
 				do GameState.send_to_vault("inspector_path") 
-			elif GameState.loaded_save_data["inspector_path"] == 1:
+			elif GameState.loaded_save_data["inspector_path"] > 0:
 				if GameState.player_has_called and GameState.player_has_timeskipped:
-					Receptionist: Ah, right on time. Please come with me, inspector
+					Receptionist: Ah, right on time. Please come with me, inspector.
+					if GameState.loaded_save_data["inspector_path"] == 2:
+						Receptionist: But quickly, you have your ID, right?
+						if GameState.player_has_item("ID"):
+							- Show ID
+								Receptionist: I see it, thank you. Alright, to the vault we go.
+							- Leave => END
+						else:
+							- Sorry, I forgot it. (leave) => END
 					do GameState.send_to_vault("inspector_path")
 				else:
 					Receptionist: I'm sorry but as per recent rules, all inspections need to be confirmed over phone in advance by at least two hours.

@@ -1,0 +1,10 @@
+~ start
+if not GameState.player_has_item("ID"):
+	: It's a bank inspector. His back is turned, and in his back pocket you can see his ID.
+	- Pickpocket
+		: You have taken his ID.
+		do GameState.add_item_to_player_inventory(load("res://INTERACTABLES/ITEMS/ID/ID.tres"))
+	- Leave
+else:
+	: It's the inspector who you took the ID from.
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c5pdf3mesftky"
+path="res://.godot/imported/Inspector.dialogue-156d5c96380c1c874dc9b4931422c6cb.tres"
+
+[deps]
+
+source_file="res://NPCs/Inspector/Inspector.dialogue"
+dest_files=["res://.godot/imported/Inspector.dialogue-156d5c96380c1c874dc9b4931422c6cb.tres"]
+
+[params]
+
+defaults=true

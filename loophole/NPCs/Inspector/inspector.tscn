@@ -1,0 +1,76 @@
+[gd_scene load_steps=14 format=3 uid="uid://dfhag6tlfhvig"]
+
+[ext_resource type="PackedScene" uid="uid://h77mgx7ql5u2" path="res://NPCs/BaseNPC.tscn" id="1_33ugi"]
+[ext_resource type="Texture2D" uid="uid://c45ehkq6cvqbq" path="res://ASSETS/Modern tiles_Free/Characters_free/Bob_idle_anim_16x16.png" id="2_1g5qh"]
+[ext_resource type="Resource" uid="uid://c5pdf3mesftky" path="res://NPCs/Inspector/Inspector.dialogue" id="3_h2dsn"]
+[ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="3_oqkqd"]
+[ext_resource type="PackedScene" uid="uid://n1npjsbvqda3" path="res://NPCs/Inspector/InspectorLogic.tscn" id="5_h2dsn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2dsn"]
+atlas = ExtResource("2_1g5qh")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w7vj"]
+atlas = ExtResource("2_1g5qh")
+region = Rect2(112, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwifl"]
+atlas = ExtResource("2_1g5qh")
+region = Rect2(128, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rywle"]
+atlas = ExtResource("2_1g5qh")
+region = Rect2(144, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhvtj"]
+atlas = ExtResource("2_1g5qh")
+region = Rect2(160, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xy0dl"]
+atlas = ExtResource("2_1g5qh")
+region = Rect2(176, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nmcp3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2dsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w7vj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwifl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rywle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhvtj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xy0dl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs2rl"]
+size = Vector2(20, 36)
+
+[node name="Inspector" instance=ExtResource("1_33ugi")]
+sprite_frames = SubResource("SpriteFrames_nmcp3")
+animation = &"idle"
+autoplay = "idle"
+frame = 5
+frame_progress = 0.0549203
+dialogue = ExtResource("3_h2dsn")
+
+[node name="Interactable" parent="." index="0" instance=ExtResource("3_oqkqd")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" index="0"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_bs2rl")
+
+[node name="InspectorLogic" parent="." index="1" instance=ExtResource("5_h2dsn")]
