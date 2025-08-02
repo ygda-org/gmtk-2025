@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cs16wr38l3i8d"]
+[gd_scene load_steps=11 format=4 uid="uid://cs16wr38l3i8d"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_15mew"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_kmgci"]
@@ -6,9 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="4_pss4y"]
 [ext_resource type="PackedScene" uid="uid://b6oxst7mopyj8" path="res://NPCs/Sam/sam.tscn" id="5_kmgci"]
 [ext_resource type="PackedScene" uid="uid://cva7e054eo1x0" path="res://NPCs/Wall_Phone/wall_phone.tscn" id="6_jkf2s"]
+[ext_resource type="PackedScene" uid="uid://6601lajhql6q" path="res://NPCs/Wall_Phone/WaitingArea.tscn" id="7_treab"]
+[ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="8_egnfu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svgu2"]
 size = Vector2(20, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isccs"]
+size = Vector2(46, 33)
 
 [node name="WaitingRoom" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_15mew")]
 node_with_locations = NodePath("StartingLocations")
@@ -41,18 +46,27 @@ position = Vector2(-26, 0)
 shape = SubResource("RectangleShape2D_svgu2")
 
 [node name="Sam" parent="." index="8" instance=ExtResource("5_kmgci")]
-position = Vector2(-5, -36)
+position = Vector2(157, -44)
 animation = &"alex"
 frame_progress = 0.0
 anim = "amelia"
 
 [node name="Sam2" parent="." index="9" instance=ExtResource("5_kmgci")]
-position = Vector2(100, -37)
+position = Vector2(10, -44)
 anim = "bob"
 
 [node name="Sam3" parent="." index="10" instance=ExtResource("5_kmgci")]
-position = Vector2(170, -38)
+position = Vector2(183, -44)
 anim = "alex"
 
 [node name="WallPhone" parent="." index="11" instance=ExtResource("6_jkf2s")]
 position = Vector2(128, -55)
+
+[node name="WaitingArea" parent="." index="12" instance=ExtResource("7_treab")]
+position = Vector2(67, -50)
+
+[node name="Interactable" parent="WaitingArea" index="0" instance=ExtResource("8_egnfu")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaitingArea/Interactable" index="0"]
+position = Vector2(21, 8.5)
+shape = SubResource("RectangleShape2D_isccs")
