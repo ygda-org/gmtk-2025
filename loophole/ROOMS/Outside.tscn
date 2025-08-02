@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://4qighc3yxqc4"]
+[gd_scene load_steps=15 format=4 uid="uid://4qighc3yxqc4"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_6cabt"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_m8e51"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://druwyapeq51bv" path="res://ROOMS/SCENE_MANAGEMENT/CutsceneManager.tscn" id="5_028p6"]
 [ext_resource type="Resource" uid="uid://dh0wk22ufu566" path="res://ROOMS/CUTSCENES/OutsideIntro.dialogue" id="6_susxu"]
 [ext_resource type="PackedScene" uid="uid://b6oxst7mopyj8" path="res://NPCs/Sam/sam.tscn" id="7_rg6lw"]
+[ext_resource type="Script" uid="uid://fiu5lqfji2yg" path="res://ROOMS/metal_detectors.gd" id="8_ejw3m"]
+[ext_resource type="Texture2D" uid="uid://burv1yoy1gxtu" path="res://ASSETS/metal_detector.png" id="8_l7uwf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cabt"]
 size = Vector2(48.25, 47.25)
@@ -140,3 +142,18 @@ position = Vector2(-117, 223)
 autoplay = "adam"
 frame_progress = 0.0
 anim = "adam"
+
+[node name="MetalDetectors" type="Node2D" parent="." index="14"]
+script = ExtResource("8_ejw3m")
+
+[node name="MetalDetector" type="Sprite2D" parent="MetalDetectors" index="0"]
+position = Vector2(-37, 199)
+texture = ExtResource("8_l7uwf")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 32)
+
+[node name="MetalDetector2" type="Sprite2D" parent="MetalDetectors" index="1"]
+position = Vector2(20, 199)
+texture = ExtResource("8_l7uwf")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 32)
