@@ -1,14 +1,19 @@
-[gd_scene load_steps=21 format=3 uid="uid://bwuv52dujgg5m"]
+[gd_scene load_steps=23 format=3 uid="uid://bwuv52dujgg5m"]
 
 [ext_resource type="PackedScene" uid="uid://h77mgx7ql5u2" path="res://NPCs/BaseNPC.tscn" id="1_jrrv7"]
 [ext_resource type="Texture2D" uid="uid://ch7wf5vk7surl" path="res://ASSETS/guardfront_3.png" id="2_0gvqw"]
+[ext_resource type="Texture2D" uid="uid://dtrdtncoc35h2" path="res://ASSETS/guard_idle_2fps.png" id="2_pn65w"]
 [ext_resource type="Texture2D" uid="uid://bemtjbg3haj56" path="res://ASSETS/GuardLeft.png" id="3_rkacn"]
 [ext_resource type="Resource" uid="uid://pjxrymlcqyjn" path="res://NPCs/Guard/Guard.dialogue" id="4_3gnlj"]
 [ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="4_rkacn"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3gnlj"]
-atlas = ExtResource("2_0gvqw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu0jg"]
+atlas = ExtResource("2_pn65w")
 region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7x4v"]
+atlas = ExtResource("2_pn65w")
+region = Rect2(16, 0, 16, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pn65w"]
 atlas = ExtResource("2_0gvqw")
@@ -62,11 +67,14 @@ region = Rect2(112, 0, 16, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3gnlj")
+"texture": SubResource("AtlasTexture_qu0jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7x4v")
 }],
 "loop": true,
-"name": &"idle-temp",
-"speed": 5.0
+"name": &"idle",
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -120,8 +128,9 @@ size = Vector2(31, 34)
 
 [node name="Guard" instance=ExtResource("1_jrrv7")]
 sprite_frames = SubResource("SpriteFrames_qu0jg")
-animation = &"idle-temp"
-frame_progress = 0.49754
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.733373
 dialogue = ExtResource("4_3gnlj")
 
 [node name="Interactable" parent="." index="0" instance=ExtResource("4_rkacn")]

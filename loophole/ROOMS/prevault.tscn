@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://cretdq7ls85te"]
+[gd_scene load_steps=8 format=4 uid="uid://cretdq7ls85te"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_lr8gl"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_w3e06"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_eqefy"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="4_r6nrq"]
+[ext_resource type="PackedScene" uid="uid://cpsu45s3du6v8" path="res://INTERACTABLES/Vault_Controls/VaultControls.tscn" id="5_7fjqr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqefy"]
 size = Vector2(7, 32)
@@ -27,7 +28,7 @@ tile_map_data = PackedByteArray("AAD9/wAAAwAOAAUAACD+/wAAAwAPAAUAACD//wAAAwAPAAU
 tile_set = ExtResource("2_w3e06")
 
 [node name="decor" type="TileMapLayer" parent="." index="4"]
-tile_map_data = PackedByteArray("AAACAPn/AQAMACgAAAACAPr/AQAMACkAAAD8//n/AQAMACgAAAD8//r/AQAMACkAAAACAPf/AQABAEYAAAACAPj/AQABAEcAAAD8//f/AQAAAEYAAAD8//j/AQAAAEcAAAD9//r/AQAJABsAAAABAPr/AQAEABwAAAA=")
+tile_map_data = PackedByteArray("AAACAPn/AQAMACgAAAACAPr/AQAMACkAAAD8//n/AQAMACgAAAD8//r/AQAMACkAAAACAPf/AQABAEYAAAACAPj/AQABAEcAAAD8//f/AQAAAEYAAAD8//j/AQAAAEcAAAA=")
 tile_set = ExtResource("2_w3e06")
 
 [node name="SSA_LeftWing" parent="." index="5" instance=ExtResource("3_eqefy")]
@@ -56,3 +57,6 @@ to_scene = "res://ROOMS/vault.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_Vault" index="0"]
 position = Vector2(-8, -104)
 shape = SubResource("RectangleShape2D_r6nrq")
+
+[node name="VaultControls" parent="." index="9" instance=ExtResource("5_7fjqr")]
+position = Vector2(19, -91)

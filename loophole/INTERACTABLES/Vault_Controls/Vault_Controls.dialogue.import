@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bhy767pjqub3x"
+path="res://.godot/imported/Vault_Controls.dialogue-911bee2ead40fc32457c5349a736a7b9.tres"
+
+[deps]
+
+source_file="res://INTERACTABLES/Vault_Controls/Vault_Controls.dialogue"
+dest_files=["res://.godot/imported/Vault_Controls.dialogue-911bee2ead40fc32457c5349a736a7b9.tres"]
+
+[params]
+
+defaults=true

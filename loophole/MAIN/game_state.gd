@@ -132,6 +132,7 @@ func send_to_vault(ending: String):
 	
 	
 func restart_game():
+	reset_player_inventory()
 	if current_ending == "intro":
 		loaded_save_data.set("has_watched_intro", true)
 	elif START_SAVE_DATA.keys().has(current_ending):
