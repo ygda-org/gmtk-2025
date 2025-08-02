@@ -1,0 +1,71 @@
+[gd_scene load_steps=13 format=3 uid="uid://bbx3sp1xwulb8"]
+
+[ext_resource type="PackedScene" uid="uid://h77mgx7ql5u2" path="res://NPCs/BaseNPC.tscn" id="1_ux7in"]
+[ext_resource type="Texture2D" uid="uid://cl64sa8dm5onw" path="res://ASSETS/Modern tiles_Free/Characters_free/Amelia_idle_anim_16x16.png" id="2_s0fl0"]
+[ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="3_hfs4u"]
+[ext_resource type="Resource" uid="uid://d1kc2pl83p0r6" path="res://NPCs/Amelia/Amelia.dialogue" id="3_j6w32"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6w32"]
+atlas = ExtResource("2_s0fl0")
+region = Rect2(288, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0arle"]
+atlas = ExtResource("2_s0fl0")
+region = Rect2(304, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuwbt"]
+atlas = ExtResource("2_s0fl0")
+region = Rect2(320, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqgli"]
+atlas = ExtResource("2_s0fl0")
+region = Rect2(336, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eksax"]
+atlas = ExtResource("2_s0fl0")
+region = Rect2(352, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2tex"]
+atlas = ExtResource("2_s0fl0")
+region = Rect2(368, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0l2mb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6w32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0arle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuwbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqgli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eksax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2tex")
+}],
+"loop": true,
+"name": &"sitting-forward",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0fl0"]
+size = Vector2(20, 58)
+
+[node name="Amelia" instance=ExtResource("1_ux7in")]
+sprite_frames = SubResource("SpriteFrames_0l2mb")
+animation = &"sitting-forward"
+autoplay = "sitting-forward"
+dialogue = ExtResource("3_j6w32")
+
+[node name="Interactable" parent="." index="0" instance=ExtResource("3_hfs4u")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" index="0"]
+position = Vector2(0, 17)
+shape = SubResource("RectangleShape2D_s0fl0")

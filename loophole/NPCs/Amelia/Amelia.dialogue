@@ -1,0 +1,9 @@
+~ start
+Receptionist: [[Hi|Hello|Howdy]], tell me what you need.
+- I'd like to make a deposit
+	Receptionist: Please tell me your account n
+- I'd like to make a withdrawl
+- Could you tell me the bank's phone number?
+	Receptionist: 
+- Hello. It's a pleasure to meet you.
+=> END
