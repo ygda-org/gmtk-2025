@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://4qighc3yxqc4"]
+[gd_scene load_steps=13 format=4 uid="uid://4qighc3yxqc4"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_6cabt"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_m8e51"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_a7ne1"]
 [ext_resource type="PackedScene" uid="uid://druwyapeq51bv" path="res://ROOMS/SCENE_MANAGEMENT/CutsceneManager.tscn" id="5_028p6"]
 [ext_resource type="Resource" uid="uid://dh0wk22ufu566" path="res://ROOMS/CUTSCENES/OutsideIntro.dialogue" id="6_susxu"]
+[ext_resource type="PackedScene" uid="uid://b6oxst7mopyj8" path="res://NPCs/Sam/sam.tscn" id="7_rg6lw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cabt"]
 size = Vector2(48.25, 47.25)
@@ -78,10 +79,14 @@ tile_set = ExtResource("1_m8e51")
 tile_map_data = PackedByteArray("AAAMAA4ABAAGAAAAAAA=")
 tile_set = ExtResource("1_m8e51")
 
-[node name="Player" parent="." index="5" instance=ExtResource("2_a7ne1")]
+[node name="decor" type="TileMapLayer" parent="." index="5"]
+tile_map_data = PackedByteArray("AAD8/wwAAQAKAC0AAAD8/w0AAQAKAC4AAAACAAwAAQALAC0AAAABAAsAAQAKACwAAAD8/wsAAQAKACwAAAD9/wsAAQALACwAAAD9/wwAAQALAC0AAAD9/w0AAQALAC4AAAABAAwAAQAKAC0AAAABAA0AAQAKAC4AAAACAAsAAQALACwAAAACAA0AAQALAC4AAAD3/wsAAQAKACwAAAD3/wwAAQAKAC0AAAD3/w0AAQAKAC4AAAD4/wsAAQALACwAAAD4/wwAAQALAC0AAAD4/w0AAQALAC4AAAAGAAsAAQAKACwAAAAGAAwAAQAKAC0AAAAGAA0AAQAKAC4AAAAHAAsAAQALACwAAAAHAAwAAQALAC0AAAAHAA0AAQALAC4AAAALAAsAAQAKACwAAAALAAwAAQAKAC0AAAALAA0AAQAKAC4AAAAMAAsAAQALACwAAAAMAAwAAQALAC0AAAAMAA0AAQALAC4AAADy/wsAAQAKACwAAADy/wwAAQAKAC0AAADy/w0AAQAKAC4AAADz/wsAAQALACwAAADz/wwAAQALAC0AAADz/w0AAQALAC4AAAAEAA0AAQAMAC4AAAAJAAwAAQAMAC0AAAAJAA0AAQAMAC4AAAD6/wwAAQAMAC0AAAD6/w0AAQAMAC4AAAD1/wwAAQAMAC0AAAD1/w0AAQAMAC4AAADw/wwAAQAMAC0AAADw/w0AAQAMAC4AAADw/w8AAQAHAEAAAADx/w8AAQAIAEAAAADv/w4AAQAHADgAAADv/w8AAQAHADkAAADx/w4AAQAAADQAAAADAAsAAQAJABwAAAADAAwAAQAJAB0AAAAFAAsAAQAJABwAAAAFAAwAAQAJAB0AAAAIAAsAAQAJABwAAAAIAAwAAQAJAB0AAAAKAAsAAQAJABwAAAAKAAwAAQAJAB0AAAANAAsAAQAJABwAAAANAAwAAQAJAB0AAAD7/wsAAQAJABwAAAD7/wwAAQAJAB0AAAD5/wsAAQAJABwAAAD5/wwAAQAJAB0AAAD2/wsAAQAJABwAAAD2/wwAAQAJAB0AAAD0/wsAAQAJABwAAAD0/wwAAQAJAB0AAADx/wsAAQAJABwAAADx/wwAAQAJAB0AAADv/wsAAQAJABwAAADv/wwAAQAJAB0AAAAEAAwAAQAMAC0AAAD//woAAQAPAAcAAAD//wsAAQAPAAgAAAAAAAoAAQAPAAUAAAAAAAsAAQAPAAYAAAD+/woAAQAPAAMAAAD+/wsAAQAPAAQAAAA=")
+tile_set = ExtResource("1_m8e51")
+
+[node name="Player" parent="." index="6" instance=ExtResource("2_a7ne1")]
 position = Vector2(-7, 359)
 
-[node name="SceneSwitchArea" parent="." index="6" instance=ExtResource("3_a7ne1")]
+[node name="SceneSwitchArea" parent="." index="7" instance=ExtResource("3_a7ne1")]
 position = Vector2(-3, 256)
 starting_location = "MainDoor"
 to_scene = "res://ROOMS/Entrance.tscn"
@@ -98,7 +103,7 @@ offset_right = 19.0
 offset_bottom = -32.0
 color = Color(0, 1, 1, 1)
 
-[node name="SSA_Sewers" parent="." index="7" instance=ExtResource("3_a7ne1")]
+[node name="SSA_Sewers" parent="." index="8" instance=ExtResource("3_a7ne1")]
 position = Vector2(200, 232)
 starting_location = "ManholeExit"
 to_scene = "res://ROOMS/SEWERS/sewer_entrance.tscn"
@@ -120,12 +125,18 @@ offset_top = -2249.0
 offset_right = -2733.0
 offset_bottom = -2209.0
 
-[node name="CutsceneManager" parent="." index="10" instance=ExtResource("5_028p6")]
+[node name="CutsceneManager" parent="." index="11" instance=ExtResource("5_028p6")]
 dialogue_resource = ExtResource("6_susxu")
 enabled = true
 
-[node name="CutscenePlayer" type="AnimationPlayer" parent="." index="11"]
+[node name="CutscenePlayer" type="AnimationPlayer" parent="." index="12"]
 unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_rg6lw")
 }
+
+[node name="Sam" parent="." index="13" instance=ExtResource("7_rg6lw")]
+position = Vector2(-117, 223)
+autoplay = "adam"
+frame_progress = 0.0
+anim = "adam"

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://cs16wr38l3i8d"]
+[gd_scene load_steps=7 format=4 uid="uid://cs16wr38l3i8d"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_15mew"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_kmgci"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="3_jkf2s"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="4_pss4y"]
+[ext_resource type="PackedScene" uid="uid://b6oxst7mopyj8" path="res://NPCs/Sam/sam.tscn" id="5_kmgci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svgu2"]
 size = Vector2(20, 30)
@@ -37,3 +38,17 @@ to_scene = "res://ROOMS/Entrance.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitchArea" index="0"]
 position = Vector2(-26, 0)
 shape = SubResource("RectangleShape2D_svgu2")
+
+[node name="Sam" parent="." index="8" instance=ExtResource("5_kmgci")]
+position = Vector2(-5, -36)
+animation = &"alex"
+frame_progress = 0.0
+anim = "amelia"
+
+[node name="Sam2" parent="." index="9" instance=ExtResource("5_kmgci")]
+position = Vector2(100, -37)
+anim = "bob"
+
+[node name="Sam3" parent="." index="10" instance=ExtResource("5_kmgci")]
+position = Vector2(170, -38)
+anim = "alex"

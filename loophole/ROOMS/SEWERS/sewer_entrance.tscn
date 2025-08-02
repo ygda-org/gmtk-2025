@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://c0iwyqr3nd538"]
+[gd_scene load_steps=8 format=4 uid="uid://c0iwyqr3nd538"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_81tij"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_i8hv3"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="3_nkrne"]
+[ext_resource type="PackedScene" uid="uid://b6oxst7mopyj8" path="res://NPCs/Sam/sam.tscn" id="3_rbw4d"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="4_vceak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vceak"]
@@ -40,16 +41,20 @@ position = Vector2(-0.5, 0)
 tile_map_data = PackedByteArray("AAD+/wcAAwALAAMAAAD//wcAAwALAAMAAAAAAAcAAwALAAMAAAABAAcAAwALAAMAAAA=")
 tile_set = ExtResource("2_i8hv3")
 
+[node name="barriers" type="TileMapLayer" parent="." index="5"]
+visible = false
+tile_set = ExtResource("2_i8hv3")
+
 [node name="ColorRect" parent="Background" index="0"]
 offset_left = -2783.0
 offset_top = -2210.0
 offset_right = -2743.0
 offset_bottom = -2170.0
 
-[node name="Player" parent="." index="7" instance=ExtResource("3_nkrne")]
+[node name="Player" parent="." index="8" instance=ExtResource("3_nkrne")]
 position = Vector2(0, 30)
 
-[node name="SSA_Outside" parent="." index="8" instance=ExtResource("4_vceak")]
+[node name="SSA_Outside" parent="." index="9" instance=ExtResource("4_vceak")]
 position = Vector2(0, 84)
 starting_location = "OutsideManhole"
 to_scene = "res://ROOMS/Outside.tscn"
@@ -66,7 +71,7 @@ offset_right = 19.0
 offset_bottom = -32.0
 color = Color(0, 1, 1, 1)
 
-[node name="SSA_Sewers" parent="." index="9" instance=ExtResource("4_vceak")]
+[node name="SSA_Sewers" parent="." index="10" instance=ExtResource("4_vceak")]
 position = Vector2(-160, -349)
 starting_location = "SewerMainEntry"
 to_scene = "res://ROOMS/SEWERS/sewer_main.tscn"
@@ -81,3 +86,7 @@ offset_top = -79.0
 offset_right = 19.0
 offset_bottom = -32.0
 color = Color(0, 1, 1, 1)
+
+[node name="Sam" parent="." index="11" instance=ExtResource("3_rbw4d")]
+position = Vector2(-16, 144)
+anim = "bob"

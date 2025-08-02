@@ -26,7 +26,11 @@ position = Vector2(17, -16)
 tile_map_data = PackedByteArray("AAD9/wAAAwAOAAUAACD+/wAAAwAPAAUAACD//wAAAwAPAAUAACAAAAAAAwAPAAUAACABAAAAAwAOAAUAADD9////AwAPAAYAAAD9//7/AwAPAAYAAAD+//7/AwAPAAYAAAD///7/AwAPAAYAAAAAAP7/AwAPAAYAAAABAP7/AwAPAAYAAAABAP//AwAPAAYAAAAAAP//AwAPAAYAAAD/////AwAPAAYAAAD+////AwAPAAYAAAD9//3/AwAOAAYAAAD9//z/AwAOAAYAAAD9//v/AwAOAAUAAAABAPv/AwAOAAUAABABAPz/AwAOAAYAABABAP3/AwAOAAYAABAAAPv/AwAPAAUAAAD///v/AwAPAAUAAAD+//v/AwAPAAUAAAAAAP3/AwAPAAYAAAD///3/AwAPAAYAAAD+//3/AwAPAAYAAAD+//z/AwAPAAYAAAD///z/AwAPAAYAAAAAAPz/AwAPAAYAAAABAPn/AwAGABEAAAD9//n/AwAEABEAAAD9//r/AwAAABIAAAABAPr/AwACABIAAAD8//r/AwAQAAYAAAD8//v/AwAQAAYAAAACAPr/AwAQAAYAAAACAPv/AwAQAAYAAAD8//j/AwAFABEAAAD8//n/AwABABIAAAACAPn/AwABABIAAAACAPj/AwAFABEAAAD7//j/AwALAAIAAAD7//n/AwALAAIAAAD7//r/AwALAAIAAAD7//v/AwALAAIAAAADAPj/AwANAAIAAAADAPn/AwANAAIAAAADAPr/AwANAAIAAAADAPv/AwANAAIAAAD7//z/AwALAAMAAAADAPz/AwANAAMAAAACAPz/AwAGAAIAAAD8//z/AwAFAAIAAAD8//3/AwALAAEAACACAP3/AwALAAEAADACAAAAAwALAAEAABD8/wAAAwALAAEAAAD8/wEAAwALAAMAAAD9/wEAAwAMAAMAAAD+/wEAAwAMAAMAAAD//wEAAwAMAAMAAAAAAAEAAwAMAAMAAAABAAEAAwAMAAMAAAACAAEAAwANAAMAAAD///n/BAADAAAAAAADAPf/AwANAAIAAAD7//f/AwALAAIAAAD9//j/AwAEABEAAAABAPj/AwAGABEAAAACAPf/AwAFABEAAAD8//f/AwAFABEAAAD9//f/AwAAABEAAAABAPf/AwACABEAAAD+//f/AwABABEAAAD///f/AwABABEAAAAAAPf/AwABABEAAAD8//b/AwABABEAAAACAPb/AwABABEAAAADAPb/AwANAAEAAAD7//b/AwALAAEAAAD9//b/AwANAAEAAAABAPb/AwALAAEAAAA=")
 tile_set = ExtResource("2_w3e06")
 
-[node name="SSA_LeftWing" parent="." index="4" instance=ExtResource("3_eqefy")]
+[node name="decor" type="TileMapLayer" parent="." index="4"]
+tile_map_data = PackedByteArray("AAACAPn/AQAMACgAAAACAPr/AQAMACkAAAD8//n/AQAMACgAAAD8//r/AQAMACkAAAACAPf/AQABAEYAAAACAPj/AQABAEcAAAD8//f/AQAAAEYAAAD8//j/AQAAAEcAAAD9//r/AQAJABsAAAABAPr/AQAEABwAAAA=")
+tile_set = ExtResource("2_w3e06")
+
+[node name="SSA_LeftWing" parent="." index="5" instance=ExtResource("3_eqefy")]
 starting_location = "VaultDoor"
 to_scene = "res://ROOMS/left_wing.tscn"
 
@@ -34,10 +38,10 @@ to_scene = "res://ROOMS/left_wing.tscn"
 position = Vector2(-51.5, -16)
 shape = SubResource("RectangleShape2D_eqefy")
 
-[node name="Player" parent="." index="5" instance=ExtResource("4_r6nrq")]
+[node name="Player" parent="." index="6" instance=ExtResource("4_r6nrq")]
 position = Vector2(-2, -10)
 
-[node name="SSA_RightWing" parent="." index="6" instance=ExtResource("3_eqefy")]
+[node name="SSA_RightWing" parent="." index="7" instance=ExtResource("3_eqefy")]
 starting_location = "VaultDoor"
 to_scene = "res://ROOMS/right_wing.tscn"
 
@@ -45,7 +49,7 @@ to_scene = "res://ROOMS/right_wing.tscn"
 position = Vector2(35.5, -16)
 shape = SubResource("RectangleShape2D_eqefy")
 
-[node name="SSA_Vault" parent="." index="7" instance=ExtResource("3_eqefy")]
+[node name="SSA_Vault" parent="." index="8" instance=ExtResource("3_eqefy")]
 starting_location = "PrevaultDoor"
 to_scene = "res://ROOMS/vault.tscn"
 

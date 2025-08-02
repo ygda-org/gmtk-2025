@@ -37,7 +37,7 @@ tile_map_data = PackedByteArray("AAABAP7/AQAFAAoAAAABAP//AQAFAAsAAAABAAAAAQAFAAw
 tile_set = ExtResource("2_8fi8l")
 
 [node name="OnTable" type="TileMapLayer" parent="." index="7"]
-tile_map_data = PackedByteArray("AAAEAP7/AQAAADEAAAAEAP//AQAAADIAAAA=")
+tile_map_data = PackedByteArray("AAAEAP7/AQAAADEAAAAEAP//AQAAADIAAAAGAP7/AQAMAA4AAAAGAP//AQAAACgAAAA=")
 tile_set = ExtResource("2_8fi8l")
 
 [node name="Player" parent="." index="8" instance=ExtResource("3_rwnyi")]
