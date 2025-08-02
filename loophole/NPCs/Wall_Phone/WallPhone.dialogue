@@ -33,6 +33,9 @@ else:
 	=> EnterPin
 ~ BankCall
 Receptionist: Hello, this is the bank.
+- What times are you open?
+	Receptionist: From nine to two. If that's all you need, goodbye.
+	=> END
 - I've called to schedule an inspection.
 	Receptionist: Alright. When?
 	- In one hour.
@@ -42,7 +45,10 @@ Receptionist: Hello, this is the bank.
 		=> Succeed
 	- In three hours.
 		=> Succeed
+- What's your favorite color?
+	Receptionist: Green for the color of money. If that's all you need, goodbye.
+	=> END
 ~ Succeed
-Receptionist: Alright. Your inspection has been scheduled. Have a good day.
+Receptionist: Alright. Thank you for scheduling an inspection. Have a good day.
 do GameState.player_has_called = true
 => END

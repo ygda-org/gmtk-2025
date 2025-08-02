@@ -2,13 +2,13 @@
 if GameState.player_has_item("Janitor_Uniform"):
 	CEO: What could a janitor possibly need from me?
 	- Tell me the vault code.
-		CEO: You ought to show some respect. Get out.
+		CEO: You ought to show some respect to your superior. Get out before I fire you on the spot.
 	- I'm off to clean the vault, but I can't get in without the code.
-		CEO: After that break-in? No can do.
+		CEO: After that recent break-in? No can do. No one I don't trust will be getting that code.
 		- What break in?
-			CEO: Break-in? What about it? Why would our bank ever be breached? Impossible. Get out.
+			CEO: Break-in? What about it? Why would our bank ever be breached? Impossible. I ought to fire you. Get out of here.
 		- Okay.
 			CEO: I see you understand. Now get out.
 else:
-	CEO: Who are you to be in here? Get out.
+	CEO: Who are you to be in here? Get out of my room.
 => END
