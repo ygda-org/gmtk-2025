@@ -17,8 +17,6 @@ func add_to_guess(addition: String):
 	current_user_guess += addition
 
 func check_current_guess():
-	print(password)
-	print(current_user_guess)
 	var check = password == current_user_guess
 	current_user_guess = ""
 	return check
