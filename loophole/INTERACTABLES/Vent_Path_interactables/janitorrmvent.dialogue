@@ -1,7 +1,7 @@
 ~ start
 if GameState.loaded_save_data["vent_path"] == 0:
 	=> open_vent
-if GameState.loaded_save_data["vent_path"] == 1:
+if GameState.loaded_save_data["vent_path"] >= 1:
 	=> bolted_vent
 ~ open_vent
 : Enter the vent?
