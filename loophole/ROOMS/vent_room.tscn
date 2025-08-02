@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=4 uid="uid://bcvgyp7girsk8"]
+[gd_scene load_steps=6 format=4 uid="uid://ce1g8urev5wwn"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_31icf"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_m154b"]
+[ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_3gcgw"]
+[ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="4_6ftm7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ftm7"]
+size = Vector2(12, 11)
 
 [node name="VentRoom" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_31icf")]
 node_with_locations = NodePath("Starting Locations")
@@ -33,3 +38,14 @@ position = Vector2(200, 16)
 
 [node name="WaitingRmVent" type="Node2D" parent="Starting Locations" index="3"]
 position = Vector2(288, 96)
+
+[node name="SceneSwitchArea" parent="." index="5" instance=ExtResource("3_3gcgw")]
+starting_location = "Vent"
+to_scene = "res://ROOMS/Janitor_Closet.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitchArea" index="0"]
+position = Vector2(-8, 5.5)
+shape = SubResource("RectangleShape2D_6ftm7")
+
+[node name="Player" parent="." index="6" instance=ExtResource("4_6ftm7")]
+position = Vector2(104, 50)

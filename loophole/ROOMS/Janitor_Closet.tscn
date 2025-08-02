@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bbviqqxi80n4p"]
+[gd_scene load_steps=10 format=4 uid="uid://bbviqqxi80n4p"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_jj1f0"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_o3fjv"]
@@ -11,6 +11,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kli5p"]
 size = Vector2(7, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkl0b"]
+size = Vector2(12, 9)
+
 [node name="JanitorCloset" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_jj1f0")]
 node_with_locations = NodePath("StartingLocations")
 
@@ -22,6 +25,9 @@ tile_set = ExtResource("1_o3fjv")
 
 [node name="EntranceDoor" type="Node2D" parent="StartingLocations" index="0"]
 position = Vector2(100, 0)
+
+[node name="Vent" type="Node2D" parent="StartingLocations" index="1"]
+position = Vector2(-24, -8)
 
 [node name="Decor" type="TileMapLayer" parent="." index="3"]
 tile_map_data = PackedByteArray("AAADAPz/AQAGABIAAAADAP3/AQAGABMAAAADAP7/AQAGABQAAAAEAPz/AQAHABIAAAAEAP3/AQAHABMAAAAEAP7/AQAHABQAAAABAPz/AQAGABIAAAABAP3/AQAGABMAAAABAP7/AQAGABQAAAACAPz/AQAHABIAAAACAP3/AQAHABMAAAACAP7/AQAHABQAAAAFAP3/AQAAACkAAAAGAP3/AQABACkAAAD+//3/BgADAAQAAAA=")
@@ -46,8 +52,22 @@ shape = SubResource("RectangleShape2D_kli5p")
 [node name="Screwdriver" parent="." index="7" instance=ExtResource("5_a2qu3")]
 position = Vector2(97, -21)
 
+[node name="ColorRect" parent="Background" index="0"]
+offset_left = -2809.0
+offset_top = -2207.0
+offset_right = -2769.0
+offset_bottom = -2167.0
+
 [node name="Janitor" parent="." index="9" instance=ExtResource("7_kli5p")]
 position = Vector2(-3, -33)
 
 [node name="JanitorUniform" parent="." index="10" instance=ExtResource("7_fkl0b")]
 position = Vector2(8, 19)
+
+[node name="SSA_Vent" parent="." index="11" instance=ExtResource("3_per5x")]
+starting_location = "JanitorRmVent"
+to_scene = "res://ROOMS/vent_room.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_Vent" index="0"]
+position = Vector2(-24, -27.5)
+shape = SubResource("RectangleShape2D_fkl0b")
