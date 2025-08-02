@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=4 uid="uid://c6jl8byekudod"]
+[gd_scene load_steps=8 format=4 uid="uid://c6jl8byekudod"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_e64s8"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_y456t"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="3_kitq2"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="4_xvxxy"]
+[ext_resource type="Script" uid="uid://w7pmfamdul03" path="res://ROOMS/SEWERS/sewer_to_vault.gd" id="5_djrnx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djrnx"]
 size = Vector2(15, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvxxy"]
+size = Vector2(14, 10)
 
 [node name="sewer_main" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_e64s8")]
 node_with_locations = NodePath("StartingLocations")
@@ -30,7 +34,7 @@ tile_set = ExtResource("2_y456t")
 
 [node name="barriers" type="TileMapLayer" parent="." index="4"]
 visible = false
-tile_map_data = PackedByteArray("AAD6////AwABAAUAAAD7////AwABAAUAAAD8////AwABAAUAAAD9////AwABAAUAAAD6/wEAAwABAAUAAAD7/wEAAwABAAUAAAD8/wEAAwABAAUAAAD9/wEAAwABAAUAAAD+//7/AwABAAUAAAD/////AwABAAUAAAAAAP//AwABAAUAAAABAP//AwABAAUAAAD+/wEAAwABAAUAAAD//wEAAwABAAUAAAABAAEAAwABAAUAAAAAAAEAAwABAAUAAAA=")
+tile_map_data = PackedByteArray("AAD6////AwABAAUAAAD7////AwABAAUAAAD8////AwABAAUAAAD9////AwABAAUAAAD6/wEAAwABAAUAAAD7/wEAAwABAAUAAAD8/wEAAwABAAUAAAD9/wEAAwABAAUAAAD/////AwABAAUAAAAAAP//AwABAAUAAAABAP//AwABAAUAAAD+/wEAAwABAAUAAAD//wEAAwABAAUAAAABAAEAAwABAAUAAAAAAAEAAwABAAUAAAD+////AwAMAAMAAAA=")
 tile_set = ExtResource("2_y456t")
 
 [node name="ColorRect" parent="Background" index="0"]
@@ -57,3 +61,12 @@ offset_top = -79.0
 offset_right = 19.0
 offset_bottom = -32.0
 color = Color(0, 1, 1, 1)
+
+[node name="SewerToVault" type="Area2D" parent="." index="9"]
+position = Vector2(-24, -5)
+script = ExtResource("5_djrnx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SewerToVault" index="0"]
+shape = SubResource("RectangleShape2D_xvxxy")
+
+[connection signal="body_entered" from="SewerToVault" to="SewerToVault" method="_on_body_entered"]
