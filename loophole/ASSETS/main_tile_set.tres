@@ -1,12 +1,11 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://qcoif2ljbwxh"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://qcoif2ljbwxh"]
 
-[ext_resource type="Texture2D" uid="uid://775mdwsc6m3d" path="res://ASSETS/Modern tiles_Free/Interiors_free/16x16/Vent_Builder.png" id="1_4f1si"]
 [ext_resource type="Texture2D" uid="uid://c40km73gt4utv" path="res://ASSETS/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="1_rbr8n"]
 [ext_resource type="Texture2D" uid="uid://6r38nc7yw4fk" path="res://ASSETS/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="2_4f1si"]
 [ext_resource type="Texture2D" uid="uid://7oc74te2flb3" path="res://ASSETS/Modern tiles_Free/Interiors_free/16x16/Vault Animation.png" id="4_lqwk0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l7w7w"]
-texture = ExtResource("1_4f1si")
+texture = ExtResource("2_4f1si")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0

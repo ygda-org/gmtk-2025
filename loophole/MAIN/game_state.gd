@@ -2,6 +2,7 @@ extends Node
 
 var player_inventory = [BaseItemResource] # what data type should this hold?
 
+var starting_cutscene = true
 
 const SAVE_PATH: String = "user://savedata.json"
 const START_SAVE_DATA : Dictionary[String, Variant] = {
