@@ -45,6 +45,7 @@ shape = SubResource("RectangleShape2D_jc8d2")
 [node name="Bob" parent="." index="8" instance=ExtResource("6_jjj4k")]
 position = Vector2(-35, -88)
 animation = &"idle-right"
+autoplay = "idle-right"
 frame_progress = 0.0
 dialogue = ExtResource("7_dysqv")
 disabled = true
