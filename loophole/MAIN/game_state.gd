@@ -14,6 +14,9 @@ const START_SAVE_DATA : Dictionary[String, Variant] = {
 }
 
 var loaded_save_data: Dictionary = {}
+var current_ending: String = "none"
+const VAULT = preload("res://ROOMS/vault.tscn")
+const OUTSIDE = preload("res://ROOMS/Outside.tscn")
 
 var can_player_move: bool = true
 
@@ -115,3 +118,21 @@ func has_watched_intro():
 
 func get_cutscene_player() -> AnimationPlayer:
 	return get_tree().current_scene.get_node("CutscenePlayer")
+
+func send_to_vault(ending: String):
+	if not START_SAVE_DATA.keys().has(ending):
+		print("Tried to call send_to_vault() with invalid ending!")
+		return
+	
+	GameState.can_player_move = false
+	current_ending = ending
+	SceneSwitcher.goto_scene(VAULT, "PrevaultDoor")
+	
+	
+func restart_game():
+	if current_ending == "intro":
+		loaded_save_data["has_watched_intro"] = true
+	elif START_SAVE_DATA.keys().has(current_ending):
+		loaded_save_data[current_ending] += 1
+	
+	SceneSwitcher.goto_scene(OUTSIDE, "")

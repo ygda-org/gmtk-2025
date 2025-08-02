@@ -1,0 +1,22 @@
+~ start
+% That was easy enough.
+% About time!
+% Oooooo... shiny..
+
+if GameState.current_ending == "disguise_path"
+	They didn't even know I don't work here!!
+elif GameState.current_ending == "vent_path"
+	That was like really easy
+elif GameState.current_ending == "inspector_path"
+	Time to "inspect"...
+elif GameState.current_ending == "sewer_path"
+	Why the hell does the sewer lead to the vault??
+else
+	If you are seeing this, the game is broken!
+	The current ending variable in GameState was not set.
+
+Wait... what is going on??
+
+do GameState.get_cutscene_player().play("ending")
+
+=> END

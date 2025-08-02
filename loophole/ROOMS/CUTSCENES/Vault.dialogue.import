@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cwihn6o0yv8uc"
+path="res://.godot/imported/Vault.dialogue-85f2b72a72bb824f6ae836d243a66e89.tres"
+
+[deps]
+
+source_file="res://ROOMS/CUTSCENES/Vault.dialogue"
+dest_files=["res://.godot/imported/Vault.dialogue-85f2b72a72bb824f6ae836d243a66e89.tres"]
+
+[params]
+
+defaults=true

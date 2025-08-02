@@ -1,27 +1,105 @@
-[gd_scene load_steps=4 format=4 uid="uid://du7xgyhdp15aa"]
+[gd_scene load_steps=9 format=4 uid="uid://du7xgyhdp15aa"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_13c00"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_oehni"]
+[ext_resource type="PackedScene" uid="uid://druwyapeq51bv" path="res://ROOMS/SCENE_MANAGEMENT/CutsceneManager.tscn" id="2_xd1ld"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="3_u57lo"]
+[ext_resource type="Script" uid="uid://bs3iho1uqflkc" path="res://ROOMS/call_end_game.gd" id="5_c7tf6"]
+
+[sub_resource type="Animation" id="Animation_xd1ld"]
+resource_name = "ending"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/WhiteTransition:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.63333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CutscenePlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.83333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"restart_game"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_c7tf6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/WhiteTransition:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c7tf6"]
+_data = {
+&"RESET": SubResource("Animation_c7tf6"),
+&"ending": SubResource("Animation_xd1ld")
+}
 
 [node name="Vault" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_13c00")]
 node_with_locations = NodePath("StartingLocations")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." index="2"]
+[node name="CutsceneManager" parent="." index="0" instance=ExtResource("2_xd1ld")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
+
+[node name="WhiteTransition" type="ColorRect" parent="CanvasLayer" index="0"]
+offset_left = -251.0
+offset_top = -244.0
+offset_right = 249.0
+offset_bottom = 256.0
+scale = Vector2(1, 1.16)
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect" parent="Background" index="0"]
+offset_left = -3235.0
+offset_top = -2490.0
+offset_right = -3195.0
+offset_bottom = -2450.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="4"]
 tile_map_data = PackedByteArray("AAD9////AwAPAAwAAAD+////AwAPAAwAAAD/////AwAPAAwAAAAAAP//AwAPAAwAAAABAP//AwAPAAwAAAACAP//AwAOAAwAABD8////AwAOAAwAAAD8/wAAAwAOAAsAACACAAAAAwAOAAsAADABAAAAAwAPAAsAACAAAAAAAwAPAAsAACD//wAAAwAPAAsAACD+/wAAAwAPAAsAACD9/wAAAwAPAAsAACD8//7/AwAOAAwAAAD8//3/AwAOAAwAAAD8//z/AwAOAAwAAAD8//v/AwAOAAwAAAACAP7/AwAOAAwAABACAP3/AwAOAAwAABACAPz/AwAOAAwAABACAPv/AwAOAAwAABD8//r/AwAOAAsAAAACAPr/AwAOAAsAABABAPr/AwAPAAsAAAAAAPr/AwAPAAsAAAD///r/AwAPAAsAAAD+//r/AwAPAAsAAAD9//r/AwAPAAsAAAD+//7/AwAPAAwAAAD+//3/AwAPAAwAAAD+//z/AwAPAAwAAAD+//v/AwAPAAwAAAD9//v/AwAPAAwAAAD9//z/AwAPAAwAAAD9//3/AwAPAAwAAAD9//7/AwAPAAwAAAD///v/AwAPAAwAAAD///z/AwAPAAwAAAD///3/AwAPAAwAAAD///7/AwAPAAwAAAAAAP7/AwAPAAwAAAAAAP3/AwAPAAwAAAAAAPz/AwAPAAwAAAAAAPv/AwAPAAwAAAABAPv/AwAPAAwAAAABAPz/AwAPAAwAAAABAP3/AwAPAAwAAAABAP7/AwAPAAwAAAD8//n/AAADAAEAAAD9//n/AAAEAAEAAAD+//n/AAAEAAEAAAD///n/AAAEAAEAAAAAAPn/AAAEAAEAAAABAPn/AAAEAAEAAAACAPn/AAAFAAEAAAACAPj/AAAFAAAAAAABAPj/AAAEAAAAAAAAAPj/AAAEAAAAAAD///j/AAAEAAAAAAD+//j/AAAEAAAAAAD9//j/AAAEAAAAAAD8//j/AAADAAAAAAD7//j/AwALAAEAAAADAPj/AwANAAEAAAADAPn/AwANAAIAAAADAPr/AwANAAIAAAADAPv/AwANAAIAAAADAPz/AwANAAIAAAADAP3/AwANAAIAAAADAP7/AwANAAIAAAADAP//AwANAAIAAAADAAAAAwANAAIAAAD7//n/AwALAAIAAAD7//r/AwALAAIAAAD7//v/AwALAAIAAAD7//z/AwALAAIAAAD7//3/AwALAAIAAAD7//7/AwALAAIAAAD7////AwALAAIAAAD7/wAAAwALAAIAAAD7/wEAAwALAAMAAAADAAEAAwANAAMAAAACAAEAAwAMAAMAAAABAAEAAwAMAAMAAAD9/wEAAwAMAAMAAAD8/wEAAwAMAAMAAAA=")
 tile_set = ExtResource("2_oehni")
 
-[node name="Decor" type="TileMapLayer" parent="." index="3"]
+[node name="Decor" type="TileMapLayer" parent="." index="5"]
 tile_map_data = PackedByteArray("AAACAP3/AQANAFQAAAACAP7/AQANAFUAAAACAP//AQANAFQAAAACAAAAAQANAFUAAAD8////AQANAFQAAAD8/wAAAQANAFUAAAD8//3/AQANAFQAAAD8//7/AQANAFUAAAD8//z/AQACABEAAAD9//z/AQADABEAAAD9//v/AQAEABAAAAD8//v/AQABABAAAAACAPz/AQADABEAAAABAPz/AQACABEAAAACAPv/AQAEABAAAAABAPv/AQABABAAAAA=")
 tile_set = ExtResource("2_oehni")
 
-[node name="Decor2" type="TileMapLayer" parent="." index="4"]
+[node name="Decor2" type="TileMapLayer" parent="." index="6"]
 tile_set = ExtResource("2_oehni")
 
-[node name="Player" parent="." index="5" instance=ExtResource("3_u57lo")]
-position = Vector2(-8, -81)
+[node name="Player" parent="." index="7" instance=ExtResource("3_u57lo")]
+position = Vector2(-7, 10)
 
-[node name="StartingLocations" type="Node" parent="." index="6"]
+[node name="StartingLocations" type="Node" parent="." index="8"]
 
 [node name="PrevaultDoor" type="Node2D" parent="StartingLocations" index="0"]
 position = Vector2(-7, 10)
+
+[node name="CutscenePlayer" type="AnimationPlayer" parent="." index="9"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_c7tf6")
+}
+script = ExtResource("5_c7tf6")
