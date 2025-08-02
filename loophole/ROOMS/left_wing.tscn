@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://dawrstliu4qq6"]
+[gd_scene load_steps=11 format=4 uid="uid://dawrstliu4qq6"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_4535g"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_2vrdx"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_owqic"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="4_w15kf"]
 [ext_resource type="PackedScene" uid="uid://bwuv52dujgg5m" path="res://NPCs/Guard/Guard.tscn" id="5_gdds7"]
-[ext_resource type="Resource" uid="uid://pjxrymlcqyjn" path="res://NPCs/Guard/Guard.dialogue" id="6_6fs7b"]
 [ext_resource type="PackedScene" uid="uid://h3q8kxfdxsde" path="res://NPCs/Guard/Guard_Detection_Zone.tscn" id="6_06jf4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owqic"]
@@ -71,7 +70,6 @@ position = Vector2(22, -24)
 
 [node name="Guard" parent="." index="9" instance=ExtResource("5_gdds7")]
 position = Vector2(101, -145)
-dialogue = ExtResource("6_6fs7b")
 
 [node name="GuardDetectionZone" parent="Guard" index="1" instance=ExtResource("6_06jf4")]
 
