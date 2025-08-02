@@ -20,5 +20,9 @@ Receptionist: [[Hi|Hello|Howdy]], tell me what you need.
 				Receptionist: Okay. Let me take you there.
 				do GameState.send_to_vault("inspector_path") 
 			elif GameState.loaded_save_data["inspector_path"] == 1:
-				Receptionist: I'm sorry but as per recent rules, all inspections need to be confirmed over phone in advance by at least two hours.
+				if GameState.player_has_called and GameState.player_has_timeskipped:
+					Receptionist: Ah, right on time. Please come with me, inspector
+					do GameState.send_to_vault("inspector_path")
+				else:
+					Receptionist: I'm sorry but as per recent rules, all inspections need to be confirmed over phone in advance by at least two hours.
 => END
