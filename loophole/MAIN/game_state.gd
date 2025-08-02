@@ -77,7 +77,7 @@ func create_new_save_file() -> int:
 	file_access.close()
 	print("Created save file at: " + file_access.get_path_absolute())
 	
-	loaded_save_data = START_SAVE_DATA
+	loaded_save_data.assign(START_SAVE_DATA)
 	return OK
 	
 func load_save_file() -> int:
@@ -114,7 +114,7 @@ func save_game() -> int:
 	return OK	
 
 func has_watched_intro():
-	return loaded_save_data["has_watched_intro"]
+	return loaded_save_data["has_watched_intro"] == true
 
 func get_cutscene_player() -> AnimationPlayer:
 	return get_tree().current_scene.get_node("CutscenePlayer")
@@ -126,6 +126,7 @@ func send_to_vault(ending: String):
 	
 	GameState.can_player_move = false
 	current_ending = ending
+	print("Set ending to: " + ending)
 
 	SceneSwitcher.goto_scene(VAULT, "PrevaultDoor")
 	
