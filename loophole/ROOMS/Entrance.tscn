@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=4 uid="uid://bnifs01dflka5"]
+[gd_scene load_steps=18 format=4 uid="uid://bnifs01dflka5"]
 
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="1_d6wng"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_qa1l5"]
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_sedmv"]
 [ext_resource type="PackedScene" uid="uid://bbx3sp1xwulb8" path="res://NPCs/Amelia/amelia.tscn" id="4_2pfv7"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="5_0oaqi"]
+[ext_resource type="PackedScene" uid="uid://b6oxst7mopyj8" path="res://NPCs/Sam/sam.tscn" id="6_g5jtj"]
 [ext_resource type="PackedScene" uid="uid://dnubw7x6o5y7c" path="res://INTERACTABLES/Locked_Door/Locked_Door.tscn" id="6_t122x"]
 [ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="7_2pfv7"]
 [ext_resource type="Resource" uid="uid://b2wrdl66r2bqr" path="res://INTERACTABLES/ITEMS/Janitor_Key/Janitor_Key.tres" id="7_g5jtj"]
@@ -66,7 +67,7 @@ tile_map_data = PackedByteArray("AAAGAN//AQALABgAAAAGAOD/AQALABkAAAD7/+D/AQANACw
 tile_set = ExtResource("1_qa1l5")
 
 [node name="Decor2" type="TileMapLayer" parent="." index="4"]
-tile_map_data = PackedByteArray("AAD9/9//AQADABwAAAD+/9//AQADABwAAAD//9//AQADABwAAAAAAN//AQADABwAAAABAN//AQADABwAAAACAN//AQADABwAAAADAN//AQADABwAAAA=")
+tile_map_data = PackedByteArray("AAD9/9//AQADABwAAAD+/9//AQADABwAAAD//9//AQADABwAAAAAAN//AQADABwAAAABAN//AQADABwAAAACAN//AQADABwAAAADAN//AQADABwAAAD7/+T/AQAFAE8AAAD7/+X/AQAFAE0AAAD7/+b/AQAFAE4AAAD8/+T/AQAGAE8AAAD8/+X/AQAGAE0AAAD8/+b/AQAGAE4AAAAGAOX/AQADAE0AAAAGAOb/AQADAE4AAAAHAOX/AQAEAE0AAAAHAOb/AQAEAE4AAAAGAOT/AQADAE8AAAAHAOT/AQAEAE8AAAAGAOP/AQADAEwAAAAHAOP/AQAEAEwAAAD7/+P/AQAFAEwAAAD8/+P/AQAGAEwAAAAGAOj/AQADAEwAAAAGAOn/AQADAE0AAAAGAOr/AQADAE4AAAAHAOj/AQAEAEwAAAAHAOn/AQAEAE0AAAAHAOr/AQAEAE4AAAD7/+j/AQAFAEwAAAD7/+n/AQAFAE0AAAD7/+r/AQAFAE4AAAD8/+j/AQAGAEwAAAD8/+n/AQAGAE0AAAD8/+r/AQAGAE4AAAACANn/AQAMAEcAAAACANr/AQAMAEgAAAACANv/AQAMAEkAAAADANn/AQANAEcAAAADANr/AQANAEgAAAADANv/AQANAEkAAAD//9n/AQAMAEcAAAD//9r/AQAMAEgAAAD//9v/AQAMAEkAAAAAANn/AQANAEcAAAAAANr/AQANAEgAAAAAANv/AQANAEkAAAD8/9n/AQAMAEcAAAD8/9r/AQAMAEgAAAD8/9v/AQAMAEkAAAD9/9n/AQANAEcAAAD9/9r/AQANAEgAAAD9/9v/AQANAEkAAAAFANn/AQAMAEcAAAAFANr/AQAMAEgAAAAFANv/AQAMAEkAAAAGANn/AQANAEcAAAAGANr/AQANAEgAAAAGANv/AQANAEkAAAD7/9n/AQAMADgAAAD7/9r/AQAMADkAAAD7/9v/AQAMADoAAAAHANn/AQAMADgAAAAHANr/AQAMADkAAAAHANv/AQAMADoAAAD+/9n/AQAAAEgAAAD+/9r/AQAAAEkAAAAEANn/AQAAAEoAAAAEANr/AQAAAEsAAAABANn/AQAMADgAAAABANr/AQAMADkAAAABANv/AQAMADoAAAD8/9z/AQADACoAAAD8/93/AQADACsAAAD9/9z/AQAEACoAAAD9/93/AQAEACsAAAD+/9z/AQAFACoAAAD+/93/AQAFACsAAAAEANz/AQADACoAAAAEAN3/AQADACsAAAAFANz/AQAEACoAAAAFAN3/AQAEACsAAAAGANz/AQAFACoAAAAGAN3/AQAFACsAAAAAANz/AQADACoAAAAAAN3/AQADACsAAAABANz/AQAEACoAAAABAN3/AQAEACsAAAACANz/AQAFACoAAAACAN3/AQAFACsAAAAEAN//AQACABgAAAAEAOD/AQACABkAAAAFAN//AQADABgAAAAFAOD/AQADABkAAAD+/+L/AQAOAA8AAAD+/+P/AQAOAA8AAAD+/+T/AQAOABIAAAAAAOL/AQAOAA8AAAAAAOP/AQAOAA8AAAAAAOT/AQAOABIAAAACAOL/AQAOAA8AAAACAOP/AQAOAA8AAAACAOT/AQAOABIAAAACAOH/AQAOABEAAAAAAOH/AQAOABEAAAD+/+H/AQAOABEAAAA=")
 tile_set = ExtResource("1_qa1l5")
 
 [node name="Player" parent="." index="5" instance=ExtResource("1_d6wng")]
@@ -163,3 +164,19 @@ to_scene = "res://ROOMS/meeting_room.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_Meeting" index="0"]
 position = Vector2(-106, -383.5)
 shape = SubResource("RectangleShape2D_8hmr8")
+
+[node name="Sam1" parent="." index="16" instance=ExtResource("6_g5jtj")]
+position = Vector2(-14, -404)
+animation = &"bob"
+frame_progress = 0.0
+anim = "Bob"
+
+[node name="Sam2" parent="." index="17" instance=ExtResource("6_g5jtj")]
+position = Vector2(81, -424)
+animation = &"alex"
+frame_progress = 0.0
+anim = "alex"
+
+[node name="Sam" parent="." index="18" instance=ExtResource("6_g5jtj")]
+position = Vector2(63, -498)
+anim = "adam"
