@@ -120,18 +120,19 @@ func get_cutscene_player() -> AnimationPlayer:
 	return get_tree().current_scene.get_node("CutscenePlayer")
 
 func send_to_vault(ending: String):
-	if not START_SAVE_DATA.keys().has(ending):
+	if not START_SAVE_DATA.keys().has(ending) and ending != "intro":
 		print("Tried to call send_to_vault() with invalid ending!")
 		return
 	
 	GameState.can_player_move = false
 	current_ending = ending
+
 	SceneSwitcher.goto_scene(VAULT, "PrevaultDoor")
 	
 	
 func restart_game():
 	if current_ending == "intro":
-		loaded_save_data["has_watched_intro"] = true
+		loaded_save_data.set("has_watched_intro", true)
 	elif START_SAVE_DATA.keys().has(current_ending):
 		loaded_save_data[current_ending] += 1
 	

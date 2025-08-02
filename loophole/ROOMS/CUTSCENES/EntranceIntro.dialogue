@@ -1,0 +1,9 @@
+~ start
+if not GameState.has_watched_intro()
+	Everybody get down!!
+	do GameState.get_cutscene_player().play_entrance_intro_animation()
+	Lead me to the vault!
+	Receptionist: Yeah sure I don't get paid enough for this.
+	do GameState.send_to_vault("intro")	
+
+=> END

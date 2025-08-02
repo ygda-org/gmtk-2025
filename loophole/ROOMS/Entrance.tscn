@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bnifs01dflka5"]
+[gd_scene load_steps=24 format=4 uid="uid://bnifs01dflka5"]
 
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="1_d6wng"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_qa1l5"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dnubw7x6o5y7c" path="res://INTERACTABLES/Locked_Door/Locked_Door.tscn" id="6_t122x"]
 [ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="7_2pfv7"]
 [ext_resource type="Resource" uid="uid://b2wrdl66r2bqr" path="res://INTERACTABLES/ITEMS/Janitor_Key/Janitor_Key.tres" id="7_g5jtj"]
+[ext_resource type="Script" uid="uid://b51c86rwyskqh" path="res://ROOMS/entrance_cutscene.gd" id="10_j3g3i"]
+[ext_resource type="PackedScene" uid="uid://druwyapeq51bv" path="res://ROOMS/SCENE_MANAGEMENT/CutsceneManager.tscn" id="11_8hmr8"]
+[ext_resource type="Resource" uid="uid://kvx2jq5oaq12" path="res://ROOMS/CUTSCENES/EntranceIntro.dialogue" id="12_vxjj2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0oaqi"]
 size = Vector2(62, 6)
@@ -33,6 +36,43 @@ size = Vector2(20, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hmr8"]
 size = Vector2(20, 33)
+
+[sub_resource type="Animation" id="Animation_lf7vp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(26, -309)]
+}
+
+[sub_resource type="Animation" id="Animation_j3g3i"]
+resource_name = "run_to_teller"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.82, 1.1, 1.76667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(26, -309), Vector2(26, -434), Vector2(11, -434), Vector2(11, -485)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8hmr8"]
+_data = {
+&"RESET": SubResource("Animation_lf7vp"),
+&"run_to_teller": SubResource("Animation_j3g3i")
+}
 
 [node name="Entrance" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_sedmv")]
 node_with_locations = NodePath("StartingLocations")
@@ -71,7 +111,7 @@ tile_map_data = PackedByteArray("AAD9/9//AQADABwAAAD+/9//AQADABwAAAD//9//AQADABw
 tile_set = ExtResource("1_qa1l5")
 
 [node name="Player" parent="." index="5" instance=ExtResource("1_d6wng")]
-position = Vector2(-3, -441)
+position = Vector2(26, -309)
 
 [node name="StartingLocations" type="Node" parent="." index="6"]
 
@@ -129,10 +169,10 @@ position = Vector2(156, -464.5)
 shape = SubResource("RectangleShape2D_lf7vp")
 
 [node name="ColorRect" parent="Background" index="0"]
-offset_left = -2825.0
-offset_top = -2566.0
-offset_right = -2785.0
-offset_bottom = -2526.0
+offset_left = -2815.0
+offset_top = -2627.0
+offset_right = -2775.0
+offset_bottom = -2587.0
 
 [node name="LockedDoor" parent="." index="13" instance=ExtResource("6_t122x")]
 position = Vector2(96, -516)
@@ -180,3 +220,13 @@ anim = "alex"
 [node name="Sam" parent="." index="18" instance=ExtResource("6_g5jtj")]
 position = Vector2(63, -498)
 anim = "adam"
+
+[node name="CutscenePlayer" type="AnimationPlayer" parent="." index="19"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_8hmr8")
+}
+script = ExtResource("10_j3g3i")
+
+[node name="CutsceneManager" parent="." index="20" instance=ExtResource("11_8hmr8")]
+dialogue_resource = ExtResource("12_vxjj2")

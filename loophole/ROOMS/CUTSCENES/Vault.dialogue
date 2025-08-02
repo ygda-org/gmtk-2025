@@ -11,6 +11,8 @@ elif GameState.current_ending == "inspector_path"
 	Time to "inspect"...
 elif GameState.current_ending == "sewer_path"
 	Why the hell does the sewer lead to the vault??
+elif GameState.current_ending == "intro"
+	Lets get out of here.
 else
 	If you are seeing this, the game is broken!
 	The current ending variable in GameState was not set.

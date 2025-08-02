@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://kvx2jq5oaq12"
+path="res://.godot/imported/EntranceIntro.dialogue-8083d8290334b8ecbf7e74082dd98bea.tres"
+
+[deps]
+
+source_file="res://ROOMS/CUTSCENES/EntranceIntro.dialogue"
+dest_files=["res://.godot/imported/EntranceIntro.dialogue-8083d8290334b8ecbf7e74082dd98bea.tres"]
+
+[params]
+
+defaults=true

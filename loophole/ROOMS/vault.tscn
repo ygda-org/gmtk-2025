@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://du7xgyhdp15aa"]
+[gd_scene load_steps=10 format=4 uid="uid://du7xgyhdp15aa"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_13c00"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_oehni"]
 [ext_resource type="PackedScene" uid="uid://druwyapeq51bv" path="res://ROOMS/SCENE_MANAGEMENT/CutsceneManager.tscn" id="2_xd1ld"]
+[ext_resource type="Resource" uid="uid://cwihn6o0yv8uc" path="res://ROOMS/CUTSCENES/Vault.dialogue" id="3_jyt6p"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="3_u57lo"]
 [ext_resource type="Script" uid="uid://bs3iho1uqflkc" path="res://ROOMS/call_end_game.gd" id="5_c7tf6"]
 
@@ -61,15 +62,16 @@ _data = {
 node_with_locations = NodePath("StartingLocations")
 
 [node name="CutsceneManager" parent="." index="0" instance=ExtResource("2_xd1ld")]
+dialogue_resource = ExtResource("3_jyt6p")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
 
 [node name="WhiteTransition" type="ColorRect" parent="CanvasLayer" index="0"]
-offset_left = -251.0
-offset_top = -244.0
-offset_right = 249.0
-offset_bottom = 256.0
-scale = Vector2(1, 1.16)
+offset_left = -133.0
+offset_top = -21.0
+offset_right = 367.0
+offset_bottom = 479.0
+scale = Vector2(3.38757, 3.41639)
 color = Color(1, 1, 1, 0)
 
 [node name="ColorRect" parent="Background" index="0"]
