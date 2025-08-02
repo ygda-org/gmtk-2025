@@ -10,7 +10,8 @@ const START_SAVE_DATA : Dictionary[String, Variant] = {
 	"vent_path": 0,
 	"sewer_path": 0,
 	"inspector_path": 0,
-	"has_watched_intro": false
+	"has_watched_intro": false,
+	"has_watched_first": false
 }
 
 var loaded_save_data: Dictionary = {}
@@ -67,7 +68,6 @@ func player_has_item(item: Variant):
 func reset_player_inventory():
 	GameState.player_inventory = [null, null, null, null, null, null]
 
-
 func create_new_save_file() -> int:
 	var json_save_data: String = JSON.stringify(START_SAVE_DATA)
 	
@@ -117,7 +117,13 @@ func save_game() -> int:
 	return OK	
 
 func has_watched_intro():
-	return loaded_save_data["has_watched_intro"] == true
+	return loaded_save_data["has_watched_intro"]
+
+func has_watched_first():
+	return loaded_save_data["has_watched_first"]
+
+func set_watched_first():
+	loaded_save_data.set("has_watched_first", true)
 
 func get_cutscene_player() -> AnimationPlayer:
 	return get_tree().current_scene.get_node("CutscenePlayer")

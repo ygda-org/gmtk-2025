@@ -2,10 +2,9 @@
 if not GameState.has_watched_intro()
 	Robbing this place will be a piece of cake!
 	do GameState.get_cutscene_player().play("intro_cutscene")
-else:
+elif not GameState.has_watched_first():
 	When did they install metal detectors??
 	Guess I'll need a new strategy...
 	**Go explore and try to find a way into the vault!**
-
-
+	do GameState.set_watched_first()
 => END
