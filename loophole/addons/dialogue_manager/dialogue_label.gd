@@ -18,6 +18,8 @@ signal skipped_typing()
 ## Emitted when typing finishes.
 signal finished_typing()
 
+# Default Font
+@export var font: String = "[font=res://ASSETS/Fonts/BoldText.otf][font_size=1]"
 
 # The action to press to skip typing.
 @export var skip_action: StringName = &"ui_cancel"
@@ -48,7 +50,7 @@ var dialogue_line:
 		dialogue_line = next_dialogue_line
 		custom_minimum_size = Vector2.ZERO
 		text = ""
-		text = dialogue_line.text
+		text = font + dialogue_line.text 
 	get:
 		return dialogue_line
 
@@ -95,7 +97,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 ## Start typing out the text
 func type_out() -> void:
-	text = dialogue_line.text
+	text = font + dialogue_line.text
 	visible_characters = 0
 	visible_ratio = 0
 	_waiting_seconds = 0

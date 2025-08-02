@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="4_pss4y"]
 [ext_resource type="PackedScene" uid="uid://b6oxst7mopyj8" path="res://NPCs/Sam/sam.tscn" id="5_kmgci"]
 [ext_resource type="PackedScene" uid="uid://cva7e054eo1x0" path="res://NPCs/Wall_Phone/wall_phone.tscn" id="6_jkf2s"]
-[ext_resource type="PackedScene" uid="uid://6601lajhql6q" path="res://NPCs/Wall_Phone/WaitingArea.tscn" id="7_treab"]
+[ext_resource type="PackedScene" path="res://NPCs/Wall_Phone/WaitingArea.tscn" id="7_treab"]
 [ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="8_egnfu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svgu2"]
