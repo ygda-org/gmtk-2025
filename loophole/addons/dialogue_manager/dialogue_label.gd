@@ -19,7 +19,7 @@ signal skipped_typing()
 signal finished_typing()
 
 # Default Font
-@export var font: String = "[font=res://ASSETS/Fonts/BoldText.otf][font_size=1]"
+@export var font: String = "[font=res://ASSETS/Fonts/Jersey10-Regular.ttf][font_size=36]"
 
 # The action to press to skip typing.
 @export var skip_action: StringName = &"ui_cancel"
