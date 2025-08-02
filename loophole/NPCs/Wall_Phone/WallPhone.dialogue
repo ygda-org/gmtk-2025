@@ -1,6 +1,6 @@
 ~ start
 : It's a phone.
-- Enter pin => EnterPin
+- Enter number => EnterPin
 - Leave => END
 ~ EnterPin
 - 1
