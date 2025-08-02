@@ -20,6 +20,8 @@ const OUTSIDE = preload("res://ROOMS/Outside.tscn")
 
 var can_player_move: bool = true
 
+var player_has_timeskipped: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	DialogueManager.dialogue_ended.connect(dialogue_finished)
@@ -133,6 +135,7 @@ func send_to_vault(ending: String):
 	
 func restart_game():
 	reset_player_inventory()
+	player_has_timeskipped = false
 	if current_ending == "intro":
 		loaded_save_data.set("has_watched_intro", true)
 	elif START_SAVE_DATA.keys().has(current_ending):
