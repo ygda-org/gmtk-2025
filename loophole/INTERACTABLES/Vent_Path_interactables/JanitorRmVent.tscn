@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://w3p2cc6464wu"]
+
+[ext_resource type="Script" uid="uid://cid3q6b8n7a8d" path="res://INTERACTABLES/Vent_Path_interactables/janitor_rm_vent.gd" id="1_7l25a"]
+[ext_resource type="Texture2D" uid="uid://bgy1mk4kyqrra" path="res://ASSETS/Modern tiles_Free/Interiors_free/16x16/RandomMetalStuff.png" id="2_tuyew"]
+[ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="3_5xui3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbrys"]
+size = Vector2(16, 20)
+
+[node name="JanitorRmVent" type="Node2D"]
+script = ExtResource("1_7l25a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tuyew")
+region_enabled = true
+region_rect = Rect2(48, 66, 16, 12)
+
+[node name="Interactable" parent="." instance=ExtResource("3_5xui3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_bbrys")

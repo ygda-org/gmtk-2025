@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://ce1g8urev5wwn"]
+[gd_scene load_steps=7 format=4 uid="uid://ce1g8urev5wwn"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_31icf"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_m154b"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_3gcgw"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="4_6ftm7"]
+[ext_resource type="PackedScene" uid="uid://ds0dcdbq8t811" path="res://INTERACTABLES/Vent_Path_interactables/VentToVault.tscn" id="5_pxdrk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ftm7"]
 size = Vector2(12, 11)
@@ -22,7 +23,7 @@ tile_map_data = PackedByteArray("AAAAAAAABgANAAYAAAD//wAABgANAAYAAAD+/wAABgANAAY
 tile_set = ExtResource("2_m154b")
 
 [node name="Decor" type="TileMapLayer" parent="." index="3"]
-tile_map_data = PackedByteArray("AAASAAMABgADAAQAAAAGAPj/BgADAAQAAAANAP7/BgADAAQAAAD/////BgADAAQAAAD+/wQABgADAAQAAAA=")
+tile_map_data = PackedByteArray("AAASAAMABgADAAQAAAANAP7/BgADAAQAAAD/////BgADAAQAAAD+/wQABgADAAQAAAA=")
 tile_set = ExtResource("2_m154b")
 
 [node name="Starting Locations" type="Node" parent="." index="4"]
@@ -48,4 +49,7 @@ position = Vector2(-8, 5.5)
 shape = SubResource("RectangleShape2D_6ftm7")
 
 [node name="Player" parent="." index="6" instance=ExtResource("4_6ftm7")]
-position = Vector2(104, 50)
+position = Vector2(103, 44)
+
+[node name="VentToVault" parent="." index="7" instance=ExtResource("5_pxdrk")]
+position = Vector2(104, -120)

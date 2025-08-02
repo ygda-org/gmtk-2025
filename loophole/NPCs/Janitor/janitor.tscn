@@ -28,7 +28,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srqb8"]
-size = Vector2(20, 39)
+size = Vector2(15, 39)
 
 [node name="Janitor" instance=ExtResource("1_n8wrc")]
 sprite_frames = SubResource("SpriteFrames_srqb8")
@@ -40,5 +40,5 @@ dialogue = ExtResource("3_qd01f")
 [node name="Interactable" parent="." index="0" instance=ExtResource("4_0xbvm")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" index="0"]
-position = Vector2(0, 9.5)
+position = Vector2(2.5, 9.5)
 shape = SubResource("RectangleShape2D_srqb8")

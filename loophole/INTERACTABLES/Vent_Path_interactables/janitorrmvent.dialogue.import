@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://buy0qk1xwwk68"
+path="res://.godot/imported/janitorrmvent.dialogue-b88a51c3a365fbb2e536931b1030f729.tres"
+
+[deps]
+
+source_file="res://INTERACTABLES/Vent_Path_interactables/janitorrmvent.dialogue"
+dest_files=["res://.godot/imported/janitorrmvent.dialogue-b88a51c3a365fbb2e536931b1030f729.tres"]
+
+[params]
+
+defaults=true
