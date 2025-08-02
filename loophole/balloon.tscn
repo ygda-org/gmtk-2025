@@ -112,7 +112,7 @@ scroll_active = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-font = "[font=res://ASSETS/Fonts/BasicText.otf]"
+font = ""
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
