@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://bbviqqxi80n4p"]
+[gd_scene load_steps=9 format=4 uid="uid://bbviqqxi80n4p"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_jj1f0"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_o3fjv"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="2_5ploj"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_per5x"]
-[ext_resource type="PackedScene" uid="uid://ccdndpo8alnju" path="res://INTERACTABLES/ITEMS/Screwdriver/Screwdriver.tscn" id="5_a2qu3"]
 [ext_resource type="PackedScene" uid="uid://xsxwb0rxr3bf" path="res://INTERACTABLES/ITEMS/Janitor_Uniform/Janitor_Uniform.tscn" id="7_fkl0b"]
 [ext_resource type="PackedScene" uid="uid://dntmx05tc2bbt" path="res://NPCs/Janitor/janitor.tscn" id="7_kli5p"]
 [ext_resource type="PackedScene" uid="uid://w3p2cc6464wu" path="res://INTERACTABLES/Vent_Path_interactables/JanitorRmVent.tscn" id="8_fkl0b"]
@@ -47,20 +46,17 @@ to_scene = "res://ROOMS/Entrance.tscn"
 position = Vector2(115.5, 0)
 shape = SubResource("RectangleShape2D_kli5p")
 
-[node name="Screwdriver" parent="." index="7" instance=ExtResource("5_a2qu3")]
-position = Vector2(97, -21)
-
 [node name="ColorRect" parent="Background" index="0"]
 offset_left = -2809.0
 offset_top = -2207.0
 offset_right = -2769.0
 offset_bottom = -2167.0
 
-[node name="Janitor" parent="." index="9" instance=ExtResource("7_kli5p")]
+[node name="Janitor" parent="." index="8" instance=ExtResource("7_kli5p")]
 position = Vector2(-3, -33)
 
-[node name="JanitorUniform" parent="." index="10" instance=ExtResource("7_fkl0b")]
+[node name="JanitorUniform" parent="." index="9" instance=ExtResource("7_fkl0b")]
 position = Vector2(8, 19)
 
-[node name="JanitorRmVent" parent="." index="11" instance=ExtResource("8_fkl0b")]
+[node name="JanitorRmVent" parent="." index="10" instance=ExtResource("8_fkl0b")]
 position = Vector2(-23, -40)

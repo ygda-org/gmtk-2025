@@ -17,6 +17,7 @@ const START_SAVE_DATA : Dictionary[String, Variant] = {
 	"last_playthrough": "intro",
 	"flooded": false
 }
+const SCREWDRIVER = preload("res://INTERACTABLES/ITEMS/Screwdriver/Screwdriver.tres")
 
 var loaded_save_data: Dictionary = {}
 var current_ending: String = "none"
@@ -33,6 +34,7 @@ func _ready():
 	DialogueManager.dialogue_ended.connect(dialogue_finished)
 	DialogueManager.dialogue_started.connect(dialogue_started)
 	reset_player_inventory()
+	print(check_win_file())
 
 func dialogue_finished(resource):
 	can_player_move = true
@@ -168,3 +170,12 @@ func restart_game():
 	save_game()
 	
 	SceneSwitcher.goto_scene(OUTSIDE, "")
+
+func check_win_file():
+	var file = FileAccess.open("res://SUPERDUPERIMPORSTUFF/game_state_conditions.txt", FileAccess.READ)
+	var content = file.get_as_text()
+	var content_list = content.split("\n", false)
+	return content_list
+
+func give_screwdriver(): # the other way of doing this was really tedious ok
+	add_item_to_player_inventory(SCREWDRIVER)
