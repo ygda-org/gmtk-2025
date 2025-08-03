@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://druwyapeq51bv" path="res://ROOMS/SCENE_MANAGEMENT/CutsceneManager.tscn" id="5_028p6"]
 [ext_resource type="Resource" uid="uid://dh0wk22ufu566" path="res://ROOMS/CUTSCENES/OutsideIntro.dialogue" id="6_susxu"]
 [ext_resource type="PackedScene" uid="uid://b6oxst7mopyj8" path="res://NPCs/Sam/sam.tscn" id="7_rg6lw"]
-[ext_resource type="Script" path="res://ROOMS/metal_detectors.gd" id="8_ejw3m"]
+[ext_resource type="Script" uid="uid://fiu5lqfji2yg" path="res://ROOMS/metal_detectors.gd" id="8_ejw3m"]
 [ext_resource type="Texture2D" uid="uid://burv1yoy1gxtu" path="res://ASSETS/metal_detector.png" id="8_l7uwf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cabt"]
