@@ -25,9 +25,18 @@ do AudioManager.create_audio(SFXSettings.SOUND_EFFECT_LABEL.TimeWarp)
 do GameState.get_cutscene_player().play("ending")
 => END
 ~ true_end
+if GameState.ceo_has_time_power:
+	CEO: Hmm you can also use console?
+	CEO: To bad I still have my powers!
+	do GameState.create_win_file()
+	do GameState.final_scene = true
+	do  SceneSwitcher.goto_scene(SceneSwitcher.outside_load, "OutsideSpawn")
+	=> END
 : I did it, no more turning back time! This money is mine!
 CEO: What happened to my power? 
 CEO: Noooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 CEO: Fine. I give up. Take it. And get out of my sight! I never want to see you again.
 : Finally, I'm rich!
+do  AudioManager.clear_all_audio()
+do  SceneSwitcher.goto_scene(SceneSwitcher.main_load, "")
 => END

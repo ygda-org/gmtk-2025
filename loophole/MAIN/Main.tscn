@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b73ti8uendry"]
+[gd_scene load_steps=5 format=3 uid="uid://b73ti8uendry"]
 
 [ext_resource type="Script" uid="uid://bac6cdou3yksv" path="res://MAIN/main.gd" id="1_gqgiv"]
-[ext_resource type="Texture2D" uid="uid://wskb6h1ejv8e" path="res://ASSETS/placeholder_bg_art.png" id="2_kevqq"]
+[ext_resource type="Texture2D" uid="uid://bb6wn7u4pvdbj" path="res://ASSETS/CoonTitle.png" id="2_gqgiv"]
 [ext_resource type="FontFile" uid="uid://b5d3s5g2svclm" path="res://ASSETS/Fonts/BasicText.otf" id="2_pf8bj"]
-[ext_resource type="Texture2D" uid="uid://gn7bc47h831h" path="res://ASSETS/play_button.jpeg" id="3_kevqq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gqgiv"]
 font = ExtResource("2_pf8bj")
@@ -15,7 +14,7 @@ script = ExtResource("1_gqgiv")
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 960.0
 offset_bottom = 540.0
-texture = ExtResource("2_kevqq")
+texture = ExtResource("2_gqgiv")
 
 [node name="PlayButton" type="TextureButton" parent="Background"]
 layout_mode = 1
@@ -30,11 +29,6 @@ offset_right = -34.0
 offset_bottom = -52.0
 grow_horizontal = 0
 grow_vertical = 0
-texture_normal = ExtResource("3_kevqq")
-texture_pressed = ExtResource("3_kevqq")
-texture_hover = ExtResource("3_kevqq")
-texture_disabled = ExtResource("3_kevqq")
-texture_focused = ExtResource("3_kevqq")
 
 [node name="GrayOut" type="ColorRect" parent="Background"]
 visible = false
