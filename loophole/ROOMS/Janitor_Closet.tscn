@@ -66,7 +66,7 @@ offset_bottom = -2167.0
 position = Vector2(-3, -33)
 
 [node name="JanitorUniform" parent="." index="9" instance=ExtResource("7_fkl0b")]
-position = Vector2(8, 19)
+position = Vector2(-23, 22)
 
 [node name="JanitorRmVent" parent="." index="10" instance=ExtResource("8_fkl0b")]
 position = Vector2(-23, -40)
