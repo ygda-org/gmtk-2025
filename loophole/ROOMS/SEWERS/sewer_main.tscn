@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://c6jl8byekudod"]
+[gd_scene load_steps=9 format=4 uid="uid://c6jl8byekudod"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_e64s8"]
+[ext_resource type="Script" uid="uid://d2e6tpowav562" path="res://ROOMS/SEWERS/sewer_main.gd" id="2_6242m"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_y456t"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="3_kitq2"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="4_xvxxy"]
-[ext_resource type="Script" path="res://ROOMS/SEWERS/sewer_to_vault.gd" id="5_djrnx"]
+[ext_resource type="Script" uid="uid://w7pmfamdul03" path="res://ROOMS/SEWERS/sewer_to_vault.gd" id="5_djrnx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djrnx"]
 size = Vector2(15, 70)
@@ -13,6 +14,7 @@ size = Vector2(15, 70)
 size = Vector2(14, 31)
 
 [node name="sewer_main" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_e64s8")]
+script = ExtResource("2_6242m")
 node_with_locations = NodePath("StartingLocations")
 
 [node name="StartingLocations" type="Node" parent="." index="0"]
@@ -38,18 +40,30 @@ tile_map_data = PackedByteArray("AAD2//3/BwALAAEAAAA=")
 tile_set = ExtResource("2_y456t")
 
 [node name="planks" type="TileMapLayer" parent="." index="5"]
+visible = false
 tile_map_data = PackedByteArray("AAD5/wAAAQAFADsAAAD6/wAAAQAGADsAAAD7/wAAAQAFADsAAAD8/wAAAQAGADsAAAD9/wAAAQAFADsAAAD+/wAAAQAGADsAAAD//wAAAQAFADsAAAAAAAAAAQAGADsAAAABAAAAAQAFADsAAAACAAAAAQAGADsAAAA=")
 tile_set = ExtResource("2_y456t")
 
-[node name="extra" type="TileMapLayer" parent="." index="6"]
+[node name="planksbroken" type="TileMapLayer" parent="." index="6"]
+visible = false
+tile_map_data = PackedByteArray("AAABAAAAAQAIADwAAAACAAAAAQAJADwAAAD5/wAAAQAKADwAAAA=")
+tile_set = ExtResource("2_y456t")
+
+[node name="extra" type="TileMapLayer" parent="." index="7"]
 tile_map_data = PackedByteArray("AAD1////AQAKAD8AAAD1//7/AQAKAD4AAAD0/wEAAQAHADsAAADz////AQAHAEAAAAD0////AQAIAEAAAAD8//z/BwAEAAMAAAD///z/BwAEAAMAAAD+////BwACAAMAAAABAAAAAQAMAEoAAAACAAAAAQANAEoAAAA=")
 tile_set = ExtResource("2_y456t")
 collision_enabled = false
 
-[node name="barriers" type="TileMapLayer" parent="." index="7"]
+[node name="barriers" type="TileMapLayer" parent="." index="8"]
 visible = false
 tile_map_data = PackedByteArray("AAD6////AwABAAUAAAD6/wEAAwABAAUAAAD7////AwABAAUAAAD7/wEAAwABAAUAAAD8////AwABAAUAAAD8/wEAAwABAAUAAAD9////AwABAAUAAAD9/wEAAwABAAUAAAD+//7/AwAHAAUAAAD+/wEAAwABAAUAAAD/////AwABAAUAAAD//wEAAwABAAUAAAAAAP//AwABAAUAAAAAAAEAAwABAAUAAAABAP//AwABAAUAAAABAAEAAwABAAUAAAD6//7/AwABAAUAAAABAP7/AwABAAUAAAA=")
 tile_set = ExtResource("2_y456t")
+
+[node name="barriers2" type="TileMapLayer" parent="." index="9"]
+visible = false
+tile_map_data = PackedByteArray("AAAAAAAAAwABAAUAAAA=")
+tile_set = ExtResource("2_y456t")
+collision_enabled = false
 
 [node name="ColorRect" parent="Background" index="0"]
 offset_left = -2747.0
@@ -57,10 +71,10 @@ offset_top = -2196.0
 offset_right = -2707.0
 offset_bottom = -2156.0
 
-[node name="Player" parent="." index="10" instance=ExtResource("3_kitq2")]
+[node name="Player" parent="." index="12" instance=ExtResource("3_kitq2")]
 position = Vector2(103, 2)
 
-[node name="SSA_Sewers" parent="." index="11" instance=ExtResource("4_xvxxy")]
+[node name="SSA_Sewers" parent="." index="13" instance=ExtResource("4_xvxxy")]
 position = Vector2(144, -3)
 starting_location = "MainEntrance"
 to_scene = "res://ROOMS/SEWERS/sewer_entrance.tscn"
@@ -76,13 +90,13 @@ offset_right = 19.0
 offset_bottom = -32.0
 color = Color(0, 1, 1, 1)
 
-[node name="extra2" type="TileMapLayer" parent="." index="12"]
+[node name="extra2" type="TileMapLayer" parent="." index="14"]
 modulate = Color(1, 1, 1, 0.607843)
 tile_map_data = PackedByteArray("AAD+////BgAEAAMAAAA=")
 tile_set = ExtResource("2_y456t")
 collision_enabled = false
 
-[node name="SewerToVault" type="Area2D" parent="." index="13" groups=["interactable"]]
+[node name="SewerToVault" type="Area2D" parent="." index="15" groups=["interactable"]]
 position = Vector2(-24, -11)
 script = ExtResource("5_djrnx")
 
