@@ -33,6 +33,9 @@ var player_has_called: bool = false
 const WINCOND_PATH: String = "user://properties.txt"
 var absolute_wincond_path : String
 var final_scene : bool = false
+var ceo_has_time_power : bool = true
+
+var played_rant = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -54,7 +57,8 @@ func _process(delta):
 		return
 	var current_properties = get_win_file()
 	can_player_move = int(current_properties[3])
-	if int(current_properties[5]) == 1 and int(current_properties[1]) == 0:
+	ceo_has_time_power = int(current_properties[1])
+	if int(current_properties[5]) == 1: #and int(current_properties[1]) == 0:
 		send_to_vault("ending")
 		final_scene = false
 

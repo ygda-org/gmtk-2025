@@ -1,6 +1,8 @@
 extends Node
 
 var vent_room_load = load("res://ROOMS/vent_room.tscn") as PackedScene
+var outside_load = load("res://ROOMS/Outside.tscn") as PackedScene
+var main_load = load("res://MAIN/Main.tscn") as PackedScene
 
 func goto_scene(scene: PackedScene, starting_spot: String):
 	var current_scene = get_tree().current_scene
