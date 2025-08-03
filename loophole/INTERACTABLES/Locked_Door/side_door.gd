@@ -13,11 +13,13 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
+		AudioManager.create_audio(SFXSettings.SOUND_EFFECT_LABEL.DoorOpen)
 		play("Open")
 
 
 func _on_area_2d_body_exited(body):
 	if body.name == "Player":
+		AudioManager.create_audio(SFXSettings.SOUND_EFFECT_LABEL.DoorClose)
 		play("Close")
 
 

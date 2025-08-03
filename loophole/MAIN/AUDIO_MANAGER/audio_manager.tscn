@@ -13,7 +13,7 @@
 script = ExtResource("2_0qod5")
 label = 0
 stream = ExtResource("3_ej25p")
-volume = 1.0
+volume = -16.316
 pitch = 1.0
 audio_start_offset = 0.0
 metadata/_custom_type_script = "uid://dop677pnbgxb7"

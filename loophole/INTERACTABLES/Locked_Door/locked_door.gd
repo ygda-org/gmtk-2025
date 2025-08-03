@@ -36,6 +36,7 @@ func unlock():
 	animations = get_node("Anim")
 	if animations == null:
 		return
+	AudioManager.create_audio(SFXSettings.SOUND_EFFECT_LABEL.DoorOpen)
 	animations.play("open")
 	animations.animation_finished.connect(_animation_finished)
 

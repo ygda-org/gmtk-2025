@@ -19,6 +19,7 @@ func prepare():
 
 
 func add_to_guess(addition: String):
+	AudioManager.create_audio_with_variance(SFXSettings.SOUND_EFFECT_LABEL.KeypadPress, Vector2(0.5,2))
 	current_user_guess += addition
 
 func check_current_guess():
