@@ -18,6 +18,7 @@ if GameState.loaded_save_data["disguise_path"] >= 1:
 - Leave => END
 ~ Locked
 : There's two buttons, one saying, "open" and the other saying, "close". In addition, there is a keypad with numbers one through six.
+I don't remember the guy me anything about a password!
 - Press "open"
 	: Despite your valiant pressing efforts, nothing happens. => Locked
 - Press "close"
