@@ -29,3 +29,11 @@ func set_player_location(starting_location: String):
 func fade_out():
 	transition_layer.visible = true
 	transition_player.play("fade_out")
+
+func fade_out_and_in():
+	transition_layer.visible = true
+	transition_player.play("fade_out")
+	await transition_player.animation_finished
+	transition_player.play("fade_in")
+	await transition_player.animation_finished
+	transition_layer.visible = false

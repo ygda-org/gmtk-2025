@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b6fi5qx47x44u"
+path="res://.godot/imported/GuyOutsideDoor.dialogue-a992d9c28721f9ca318095c4c73b9950.tres"
+
+[deps]
+
+source_file="res://NPCs/Sam/GuyOutsideDoor.dialogue"
+dest_files=["res://.godot/imported/GuyOutsideDoor.dialogue-a992d9c28721f9ca318095c4c73b9950.tres"]
+
+[params]
+
+defaults=true

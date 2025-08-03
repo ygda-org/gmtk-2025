@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://6601lajhql6q"]
+
+[ext_resource type="Script" uid="uid://de0b4s4o68rku" path="res://NPCs/Wall_Phone/waiting_area.gd" id="1_yaw0f"]
+
+[node name="WaitingArea" type="Node2D"]
+script = ExtResource("1_yaw0f")

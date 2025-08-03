@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b73ti8uendry"]
+[gd_scene load_steps=6 format=3 uid="uid://b73ti8uendry"]
 
 [ext_resource type="Script" uid="uid://bac6cdou3yksv" path="res://MAIN/main.gd" id="1_gqgiv"]
+[ext_resource type="Texture2D" uid="uid://wskb6h1ejv8e" path="res://ASSETS/placeholder_bg_art.png" id="2_kevqq"]
 [ext_resource type="FontFile" uid="uid://b5d3s5g2svclm" path="res://ASSETS/Fonts/BasicText.otf" id="2_pf8bj"]
+[ext_resource type="Texture2D" uid="uid://gn7bc47h831h" path="res://ASSETS/play_button.jpeg" id="3_kevqq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gqgiv"]
 font = ExtResource("2_pf8bj")
@@ -10,60 +12,159 @@ font_size = 36
 [node name="Main" type="Node2D"]
 script = ExtResource("1_gqgiv")
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 960.0
+offset_bottom = 540.0
+texture = ExtResource("2_kevqq")
 
-[node name="Label" type="Label" parent="UI"]
-offset_left = 216.0
-offset_top = 148.0
-offset_right = 717.0
-offset_bottom = 245.0
-text = "Welcome to Loophole!"
+[node name="PlayButton" type="TextureButton" parent="Background"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -344.0
+offset_top = -280.0
+offset_right = -34.0
+offset_bottom = -52.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("3_kevqq")
+texture_pressed = ExtResource("3_kevqq")
+texture_hover = ExtResource("3_kevqq")
+texture_disabled = ExtResource("3_kevqq")
+texture_focused = ExtResource("3_kevqq")
+
+[node name="GrayOut" type="ColorRect" parent="Background"]
+visible = false
+layout_mode = 1
+offset_right = 960.0
+offset_bottom = 540.0
+color = Color(0.11, 0.11, 0.11, 0.603922)
+
+[node name="UI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Popup" type="ColorRect" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -150.0
+offset_right = 250.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.24, 0.48, 1)
+
+[node name="Label" type="Label" parent="UI/Popup"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.5
+offset_top = 50.0
+offset_right = 250.5
+offset_bottom = 147.0
+grow_horizontal = 2
+text = "Welcome to Coon Con Loop!"
 label_settings = SubResource("LabelSettings_gqgiv")
 horizontal_alignment = 1
 
-[node name="Load" type="Button" parent="UI"]
-offset_left = 355.0
-offset_top = 236.0
-offset_right = 578.0
-offset_bottom = 288.0
+[node name="Load" type="Button" parent="UI/Popup"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.5
+offset_top = -26.0
+offset_right = 111.5
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Load from Save"
 
-[node name="NewGame" type="Button" parent="UI"]
-offset_left = 355.0
-offset_top = 299.0
-offset_right = 578.0
-offset_bottom = 351.0
+[node name="NewGame" type="Button" parent="UI/Popup"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.5
+offset_top = 30.0
+offset_right = 111.5
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "New Game"
 
-[node name="Credits" type="Button" parent="UI"]
-offset_top = 508.0
+[node name="Credits" type="Button" parent="UI/Popup"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
 offset_right = 63.0
-offset_bottom = 539.0
+grow_vertical = 0
 text = "Credits"
 
 [node name="Credits" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="Back" type="Button" parent="Credits"]
-offset_top = 509.0
+[node name="Popup" type="ColorRect" parent="Credits"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -150.0
+offset_right = 250.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.24, 0.48, 1)
+
+[node name="Back" type="Button" parent="Credits/Popup"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
 offset_right = 45.0
-offset_bottom = 540.0
+grow_vertical = 0
 text = "Back"
 
-[node name="Label" type="Label" parent="Credits"]
-offset_left = 224.0
-offset_top = 179.0
-offset_right = 681.0
-offset_bottom = 358.0
-text = "gmtk-2025
-Our GMTK game jam submission
+[node name="Label" type="Label" parent="Credits/Popup"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.0
+offset_top = -89.5
+offset_right = 231.0
+offset_bottom = 89.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Made by YGDA, 
+a group of high school students interested in making games
 
 Acknowledgements
-
  - Modern Interior Assets by LimuZu (https://limezu.itch.io/)
- - All Fonts by Pixel Overload( https://pixeloverload.itch.io/)"
+ - All Fonts by Pixel Overload( https://pixeloverload.itch.io/)
+-  - Water+ by SciGho (https://ninjikin.itch.io/water)
+"
 
-[connection signal="pressed" from="UI/Load" to="." method="_on_load_pressed"]
-[connection signal="pressed" from="UI/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="UI/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="Credits/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Background/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="UI/Popup/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="UI/Popup/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="UI/Popup/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Credits/Popup/Back" to="." method="_on_back_pressed"]

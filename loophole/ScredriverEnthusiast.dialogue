@@ -1,0 +1,35 @@
+~ start
+if not GameState.player_has_item("Janitor_Uniform"):
+	Bob: Hey I don't think you're supposed to be back here...
+	Amelia: Not our job to worry about them. The guards will take care of it.
+	Bob: Yep. Not my problem.
+	**You might want a disguise to get any further...**
+	**Maybe you can find something in the janitors closet?**
+else:
+	if GameState.loaded_save_data.get("disguise_path") == 0:
+		Bob: What's up, janitor?
+		- Just robbin` the place.
+			Amelia: Haha! Good one.
+		- Just cleanin` up the place.
+			Bob: Thats... odd... the janitor I know is always asleep...
+			Bob: Guards!!!
+			do GameState.restart_game()
+		- I swear I just saw you in the other room!
+			Bob: Yeah we walk fast. Gotta lot of work to do.
+	elif GameState.loaded_save_data.get("disguise_path") == 1:
+		Bob: Aren't these new security measures sudden?
+		Amelia: Yeah I swear just yesterday there wasn't a code on the vault.
+		- I'm robbing the place, need that code
+			Bob: You always crack us up!
+			Amelia: Haha! The code is 5324. Go on and "rob this bank"!
+		- I need to clean up the vault. Could you remind me of the password?
+			Amelia: Why would you need to clean inside the vault?
+			Bob: Thats suspicious... Guards!!!
+			do GameState.restart_game()
+	elif GameState.loaded_save_data.get("disguise_path") == 2:
+		Bob: The CEO installed a code on the vault overnight and won't even tell us the password.
+		Amelia: How am I supposed to embezzle funds now?
+		Bob: Yeah! Thats the only reason I got this job! I have half a mind to quit right now!
+		- Soo.. where can I, an innocent janitor, get the password from?
+			Bob: Only guy who knows it is the CEO now.
+=> END

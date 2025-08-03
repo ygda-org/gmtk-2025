@@ -1,10 +1,11 @@
-[gd_scene load_steps=46 format=3 uid="uid://b6oxst7mopyj8"]
+[gd_scene load_steps=48 format=3 uid="uid://b6oxst7mopyj8"]
 
 [ext_resource type="PackedScene" uid="uid://h77mgx7ql5u2" path="res://NPCs/BaseNPC.tscn" id="1_v8dey"]
 [ext_resource type="Texture2D" uid="uid://dp4jbh16qohl4" path="res://ASSETS/Modern tiles_Free/Characters_free/Adam_phone_16x16.png" id="2_7ueot"]
 [ext_resource type="Texture2D" uid="uid://bisd87fv7hek" path="res://ASSETS/Modern tiles_Free/Characters_free/Alex_phone_16x16.png" id="3_461a4"]
 [ext_resource type="Texture2D" uid="uid://dumydmuifsegv" path="res://ASSETS/Modern tiles_Free/Characters_free/Amelia_phone_16x16.png" id="3_xjbgi"]
 [ext_resource type="Texture2D" uid="uid://ceuu0mmvm3v45" path="res://ASSETS/Modern tiles_Free/Characters_free/Bob_phone_16x16.png" id="4_461a4"]
+[ext_resource type="Texture2D" uid="uid://bsfdnsktgpin8" path="res://ASSETS/Modern tiles_Free/Characters_free/Alex_idle_16x16.png" id="4_r6epv"]
 [ext_resource type="Script" uid="uid://nb6rpgoi7j5y" path="res://NPCs/Sam/sam.gd" id="6_461a4"]
 [ext_resource type="Resource" uid="uid://cdmuxkcoude7f" path="res://NPCs/Sam/sam.dialogue" id="7_4ibol"]
 [ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="8_kmrdh"]
@@ -76,6 +77,10 @@ region = Rect2(112, 9, 16, 23)
 [sub_resource type="AtlasTexture" id="AtlasTexture_7j58w"]
 atlas = ExtResource("3_461a4")
 region = Rect2(128, 9, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52ndt"]
+atlas = ExtResource("4_r6epv")
+region = Rect2(0, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ople"]
 atlas = ExtResource("3_xjbgi")
@@ -301,6 +306,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_52ndt")
+}],
+"loop": true,
+"name": &"alex-right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6ople")
 }, {
 "duration": 1.0,
@@ -459,8 +472,7 @@ size = Vector2(20, 39)
 
 [node name="Sam" instance=ExtResource("1_v8dey")]
 sprite_frames = SubResource("SpriteFrames_fyyh5")
-animation = &"adam"
-frame_progress = 0.493293
+animation = &"alex-right"
 script = ExtResource("6_461a4")
 anim = ""
 dialogue = ExtResource("7_4ibol")

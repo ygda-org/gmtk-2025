@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c7lksfvw5ssm5"
+path="res://.godot/imported/Tips.dialogue-df2be47f764aa2e62dacc9cd94b9a4ea.tres"
+
+[deps]
+
+source_file="res://NPCs/Bob/Tips.dialogue"
+dest_files=["res://.godot/imported/Tips.dialogue-df2be47f764aa2e62dacc9cd94b9a4ea.tres"]
+
+[params]
+
+defaults=true

@@ -1,21 +1,25 @@
 ~ start
 if GameState.loaded_save_data["disguise_path"] == 0:
 	=> Unlocked
-if GameState.loaded_save_data["disguise_path"] == 1:
+if GameState.loaded_save_data["disguise_path"] >= 1:
 	=> Locked
 ~ Unlocked
-: There's two buttons, one saying, "open" and the other saying, "close".
+: There's three buttons on a panel, one saying, "open", one saying, "close", and one saying, "clopen".
 - Press "open"
 	: The vault swings open.
 	do  GameState.send_to_vault("disguise_path")
 - Press "close"
 	: Interestingly enough, the already closed vault could not close any more.
 	=> Unlocked
+- Press "clopen"
+	: What does that even mean?
+	: As far as you can tell, nothing happened.
+	=> Unlocked
 - Leave => END
 ~ Locked
 : There's two buttons, one saying, "open" and the other saying, "close". In addition, there is a keypad with numbers one through six.
 - Press "open"
-	: Despite your valiant pressing attempt, nothing happens. => Locked
+	: Despite your valiant pressing efforts, nothing happens. => Locked
 - Press "close"
 	: Interestingly enough, the already closed vault could not close any more. => Locked
 - Inspect keypad
@@ -23,25 +27,25 @@ if GameState.loaded_save_data["disguise_path"] == 1:
 	=> Keypad
 - Leave => END
 ~ Keypad
-- Press "1"
+- 1
 	do KeypadManager.add_to_guess("1")
 	=> Keypad
-- Press "2"
+- 2
 	do KeypadManager.add_to_guess("2")
 	=> Keypad
-- Press "3"
+- 3
 	do KeypadManager.add_to_guess("3")
 	=> Keypad
-- Press "4"
+- 4
 	do KeypadManager.add_to_guess("4")
 	=> Keypad
-- Press "5"
+- 5
 	do KeypadManager.add_to_guess("5")
 	=> Keypad
-- Press "6"
+- 6
 	do KeypadManager.add_to_guess("6")
 	=> Keypad
-- Press "Submit"
+- Submit
 	if KeypadManager.check_current_guess():
 		: The keypad buzzes to tell you that your guess was correct!
 		=> Unlocked

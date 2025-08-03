@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://n1npjsbvqda3"]
+
+[ext_resource type="Script" uid="uid://pqla0j76fguw" path="res://NPCs/Inspector/inspector_logic.gd" id="1_a18mr"]
+
+[node name="InspectorLogic" type="Node2D"]
+script = ExtResource("1_a18mr")

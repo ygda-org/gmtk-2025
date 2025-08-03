@@ -1,0 +1,54 @@
+~ start
+: It's a phone.
+- Enter number => EnterPin
+- Leave => END
+~ EnterPin
+- 1
+	do KeypadManager.add_to_dial("1")
+- 2
+	do KeypadManager.add_to_dial("2")
+- 3
+	do KeypadManager.add_to_dial("3")
+- 4
+	do KeypadManager.add_to_dial("4")
+- 5
+	do KeypadManager.add_to_dial("5")
+- 6
+	do KeypadManager.add_to_dial("6")
+- 7
+	do KeypadManager.add_to_dial("7")
+- 8
+	do KeypadManager.add_to_dial("8")
+- 9
+	do KeypadManager.add_to_dial("9")
+- 0
+	do KeypadManager.add_to_dial("0")
+if KeypadManager.check_dial_length():
+	if KeypadManager.check_dial():
+		=> BankCall
+	else:
+		: The phone rings, but no one picks up.
+		=> END
+else:
+	=> EnterPin
+~ BankCall
+Receptionist: Hello, this is the bank.
+- What times are you open?
+	Receptionist: From nine to two. If that's all you need, goodbye.
+	=> END
+- I've called to schedule an inspection.
+	Receptionist: Alright. When?
+	- In one hour.
+		Receptionist: I'm sorry, but our rules state that inspections must be scheduled at least one hour in advance. Goodbye.
+		=> END
+	- In two hours.
+		=> Succeed
+	- In three hours.
+		=> Succeed
+- What's your favorite color?
+	Receptionist: Green, for the color of money. If that's all you need, goodbye.
+	=> END
+~ Succeed
+Receptionist: Alright. Thank you for scheduling an inspection in advance. Have a good day.
+do GameState.player_has_called = true
+=> END

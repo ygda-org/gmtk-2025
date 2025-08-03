@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds0dcdbq8t811"]
+
+[ext_resource type="Texture2D" uid="uid://bgy1mk4kyqrra" path="res://ASSETS/Modern tiles_Free/Interiors_free/16x16/RandomMetalStuff.png" id="1_g0als"]
+[ext_resource type="Script" uid="uid://b38i7rhyfdjtq" path="res://INTERACTABLES/Vent_Path_interactables/vent_to_vault.gd" id="1_wlc4b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0als"]
+size = Vector2(16, 20)
+
+[node name="VentToVault" type="Area2D"]
+script = ExtResource("1_wlc4b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g0als")
+region_enabled = true
+region_rect = Rect2(48, 66, 16, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_g0als")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

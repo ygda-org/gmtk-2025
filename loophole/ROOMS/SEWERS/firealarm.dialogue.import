@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c8082n3d3mff"
+path="res://.godot/imported/firealarm.dialogue-061aa6514983babf63e4c21c6888e5f5.tres"
+
+[deps]
+
+source_file="res://ROOMS/SEWERS/firealarm.dialogue"
+dest_files=["res://.godot/imported/firealarm.dialogue-061aa6514983babf63e4c21c6888e5f5.tres"]
+
+[params]
+
+defaults=true

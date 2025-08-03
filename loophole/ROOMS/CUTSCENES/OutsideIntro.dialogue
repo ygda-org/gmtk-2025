@@ -1,11 +1,11 @@
 ~ start
 if not GameState.has_watched_intro()
-	Robbing this place will be a piece of cake!
+	Robbing this place will be like taking candy from a baby! Just I'll be a little bit richer afterwards.
 	do GameState.get_cutscene_player().play("intro_cutscene")
-else:
-	When did they install metal detectors??
-	Guess I'll need a new strategy...
-	**Go explore and try to find a way into the vault!**
-
-
+elif not GameState.has_watched_first():
+	do GameState.get_cutscene_player().play("walk_to_metal_detectors")
+	What? When did they add metal detectors? I checked this place last night!
+	Guess I can't bring this in here... I'm gonna need a new strategy.
+	**Go explore and fine your way inside that vault!!*
+	do GameState.set_watched_first()
 => END

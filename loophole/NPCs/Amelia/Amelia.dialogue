@@ -1,9 +1,40 @@
 ~ start
-Receptionist: [[Hi|Hello|Howdy]], tell me what you need.
-- I'd like to make a deposit
-	Receptionist: Please tell me your account n
-- I'd like to make a withdrawl
+Receptionist: [[Hi|Hello|Good morning]], tell me what you need.
+- I'd like to make a deposit.
+	Receptionist: Please tell me your account number and how much you wish to deposit.
+	- Account number 9001 and I'd like to deposit negative 500 dollars.
+		Receptionist: I'm sorry, I can't find your account.
+	- Nevermind, sorry.
+	=> END
+- I'd like to make a withdrawl.
+	Receptionist: Please tell me your account number and how much you wish to withdraw.
+	- Could I withdraw everything this bank has?
+		Receptionist: Ha! That's a lot more than you might think. The only way to get that much would be to take it directly.
+	- Nevermind, sorry.
+	=> END
 - Could you tell me the bank's phone number?
-	Receptionist: 
-- Hello. It's a pleasure to meet you.
+	Receptionist: Sure. For contact, every inquiry goes through the number, (986) 457-2384
+- I'm here on orders from the Federal Bank Security Administration.
+	Receptionist: Then it must be important. What can I do for you?
+	- I need to inspect your vault in order to make sure it's up to code.
+		if GameState.loaded_save_data["inspector_path"] == 0:
+			Receptionist: Okay. Let me take you there.
+			do GameState.send_to_vault("inspector_path") 
+		elif GameState.loaded_save_data["inspector_path"] > 0:
+			if GameState.player_has_called and GameState.player_has_timeskipped:
+				Receptionist: Ah, right on time. Please come with me, inspector.
+				if GameState.loaded_save_data["inspector_path"] == 2:
+					Receptionist: But quickly I have to make sure, you have your ID, right?
+					if GameState.player_has_item("ID"):
+						- Show ID
+							Receptionist: I see it, thank you. Alright, to the vault we go.
+						- Leave => END
+					else:
+						- Sorry, I left it at home. (leave) => END
+				do GameState.send_to_vault("inspector_path")
+			else:
+				if GameState.player_has_called:
+					Receptionist: You're a bit early, aren't you? I suggest you wait for the scheduled time. We have a waiting room behind you and to your right.
+				else:
+					Receptionist: I'm sorry but as per recent rules, all inspections need to be confirmed over phone in advance by at least two hours.
 => END

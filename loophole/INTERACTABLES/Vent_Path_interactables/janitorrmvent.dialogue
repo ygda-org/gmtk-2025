@@ -1,0 +1,25 @@
+~ start
+if GameState.loaded_save_data["vent_path"] == 0:
+	=> open_vent
+if GameState.loaded_save_data["vent_path"] >= 1:
+	=> bolted_vent
+~ open_vent
+: Enter the vent?
+- Yes
+	: You crawl into the vents...
+	do  SceneSwitcher.goto_scene(SceneSwitcher.vent_room_load, "JanitorRmVent")
+	=> END
+- No => END
+~ bolted_vent
+: The vent appears to be secured with screws.
+if GameState.player_has_item("Screwdriver"):
+	: Unscrew the vent?
+	- Yes
+		do AudioManager.create_audio(SFXSettings.SOUND_EFFECT_LABEL.UnscrewingBolt)
+		: [wait=2.68] The vent is unlocked!
+		=> open_vent
+	- No
+		=> END
+else:
+	=> END
+=> END

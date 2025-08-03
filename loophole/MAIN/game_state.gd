@@ -2,6 +2,8 @@ extends Node
 
 var player_inventory = [BaseItemResource] # what data type should this hold?
 
+var FLOOD_CUTSCENE = false
+
 var starting_cutscene = true
 
 const SAVE_PATH: String = "user://savedata.json"
@@ -10,7 +12,10 @@ const START_SAVE_DATA : Dictionary[String, Variant] = {
 	"vent_path": 0,
 	"sewer_path": 0,
 	"inspector_path": 0,
-	"has_watched_intro": false
+	"has_watched_intro": false,
+	"has_watched_first": false,
+	"last_playthrough": "intro",
+	"flooded": false
 }
 
 var loaded_save_data: Dictionary = {}
@@ -19,6 +24,9 @@ const VAULT = preload("res://ROOMS/vault.tscn")
 const OUTSIDE = preload("res://ROOMS/Outside.tscn")
 
 var can_player_move: bool = true
+
+var player_has_timeskipped: bool = false
+var player_has_called: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,6 +47,7 @@ func _process(delta):
 func add_item_to_player_inventory(item):
 	for i in range(len(player_inventory)):
 		if player_inventory[i] == null:
+			AudioManager.create_audio_with_variance(SFXSettings.SOUND_EFFECT_LABEL.ItemPickup, Vector2(0.9,1.1))
 			player_inventory[i] = item # BaseItemResources go into the inventory array
 			break
 
@@ -63,7 +72,6 @@ func player_has_item(item: Variant):
 
 func reset_player_inventory():
 	GameState.player_inventory = [null, null, null, null, null, null]
-
 
 func create_new_save_file() -> int:
 	var json_save_data: String = JSON.stringify(START_SAVE_DATA)
@@ -114,7 +122,19 @@ func save_game() -> int:
 	return OK	
 
 func has_watched_intro():
-	return loaded_save_data["has_watched_intro"] == true
+	return loaded_save_data["has_watched_intro"]
+
+func has_watched_first():
+	return loaded_save_data["has_watched_first"]
+
+func set_watched_first():
+	loaded_save_data.set("has_watched_first",true)
+
+func has_flooded():
+	return loaded_save_data["flooded"]
+
+func set_flooded():
+	loaded_save_data.set("flooded",not loaded_save_data["flooded"])
 
 func get_cutscene_player() -> AnimationPlayer:
 	return get_tree().current_scene.get_node("CutscenePlayer")
@@ -133,11 +153,18 @@ func send_to_vault(ending: String):
 	
 func restart_game():
 	reset_player_inventory()
+	player_has_timeskipped = false
+	player_has_called = false
+	loaded_save_data.set("flooded",false)
+	FLOOD_CUTSCENE = false
+	
 	if current_ending == "intro":
 		loaded_save_data.set("has_watched_intro", true)
 	elif START_SAVE_DATA.keys().has(current_ending):
+		loaded_save_data.set("last_playthrough", current_ending)
 		loaded_save_data[current_ending] += 1
 	
+	current_ending = "none"
 	save_game()
 	
 	SceneSwitcher.goto_scene(OUTSIDE, "")

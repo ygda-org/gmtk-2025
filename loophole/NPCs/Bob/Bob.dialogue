@@ -1,14 +1,21 @@
 ~ start
 if GameState.player_has_item("Janitor_Uniform"):
-	CEO: What could a janitor possibly need from me?
-	- Tell me the vault code.
-		CEO: You ought to show some respect. Get out.
-	- I'm off to clean the vault, but I can't get in without the code.
-		CEO: After that break-in? No can do.
-		- What break in?
-			CEO: Break-in? What about it? Why would our bank ever be breached? Impossible. Get out.
-		- Okay.
-			CEO: I see you understand. Now get out.
+	if GameState.loaded_save_data["disguise_path"] == 2:
+		CEO: So anyway, the new password is 6-
+		CEO: HEY!! What are you doing in here??
+		**Can't listen in if he sees you...**
+		**Maybe there's someone who can help**
+	else:
+		CEO: What could a janitor possibly need from me?
+		- Tell me the vault code.
+			CEO: You ought to show some respect to your superior. Get out before I fire you on the spot.
+		- I'm off to clean the vault, but I can't get in without the code.
+			CEO: After that recent break-in? No can do. No one I don't trust will be getting that code.
+			- What break in?
+				CEO: Break-in? What about it? Why would our bank ever be breached? Impossible. Get out.
+			- Okay.
+				CEO: I see you understand. Now get out.
+	
 else:
 	CEO: Who are you to be in here? Get out.
 => END

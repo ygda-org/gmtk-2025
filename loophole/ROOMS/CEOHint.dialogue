@@ -1,0 +1,10 @@
+~ start
+if GameState.loaded_save_data["disguise_path"] == 3:
+	Odd Stranger: My favorite hobby is snooping on the CEO.
+	Odd Stranger: But last night they installed sound proof walls!
+	Odd Stranger: Might as well take up yoga.
+else:
+	Odd Stranger: I love snooping on the CEO. Maybe I can use what I learn to make lots of money.
+	Odd Stranger: If you try hugging that wall and press a certain button, then you can snoop too!
+	Odd Stranger: Don't ask me what a button is.
+=> END

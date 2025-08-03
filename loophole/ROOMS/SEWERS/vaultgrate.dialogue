@@ -1,0 +1,17 @@
+~ start
+if GameState.loaded_save_data["sewer_path"] < 2:
+	=> open_grate
+if GameState.loaded_save_data["sewer_path"] == 2:
+	=> closed_grate
+~ open_grate
+: There is a drainage grate connecting to the vault. It appears to be screwed shut.
+if GameState.player_has_item("Screwdriver"):
+	: Unlock the grate?
+	- Yes
+		: The grate is unlocked!
+		do GameState.send_to_vault("sewer_path")
+	- No
+		=> END
+~ closed_grate
+: The drainage grate seems to be completely covered. It appears that the vault is no longer capable of handling drainage as a result.
+=> END

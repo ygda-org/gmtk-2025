@@ -1,0 +1,10 @@
+~ start
+: There is a fire alarm on the wall which appears to set off the vault's internal sprinkler system.
+if GameState.loaded_save_data["sewer_path"] == 2:
+	: Set off fire alarm?
+	- Drenched cash is better than none...
+		do GameState.FLOOD_CUTSCENE = true
+		do reset_scene()
+	- No
+		=> END
+=> END
