@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/door_close.mp3-911e73e8c695e42bbdbd9d5f3d1805
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

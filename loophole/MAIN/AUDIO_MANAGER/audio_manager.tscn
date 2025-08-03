@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cqm2yunv223da"]
+[gd_scene load_steps=21 format=3 uid="uid://cqm2yunv223da"]
 
 [ext_resource type="Script" uid="uid://dai3thsuli1r7" path="res://MAIN/AUDIO_MANAGER/audio_manager.gd" id="1_umqkn"]
 [ext_resource type="Script" uid="uid://dop677pnbgxb7" path="res://MAIN/AUDIO_MANAGER/sfx_settings.gd" id="2_0qod5"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://dylmwqb8sq4xx" path="res://ASSETS/Audio/time_warp.mp3" id="8_fqgr3"]
 [ext_resource type="AudioStream" uid="uid://bfpy8fcvhtjdk" path="res://ASSETS/Audio/base_footsteps.mp3" id="9_bevy1"]
 [ext_resource type="AudioStream" uid="uid://5lofblx44ms4" path="res://ASSETS/Audio/unscrewing_bolt.mp3" id="10_bdu88"]
+[ext_resource type="AudioStream" uid="uid://1t5fk7vyoshh" path="res://ASSETS/Audio/beep.mp3" id="11_bdu88"]
 
 [sub_resource type="Resource" id="Resource_1tgwj"]
 script = ExtResource("2_0qod5")
@@ -83,6 +84,15 @@ pitch = 1.0
 audio_start_offset = 0.0
 metadata/_custom_type_script = "uid://dop677pnbgxb7"
 
+[sub_resource type="Resource" id="Resource_fqgr3"]
+script = ExtResource("2_0qod5")
+label = 8
+stream = ExtResource("11_bdu88")
+volume = -7.329
+pitch = 1.0
+audio_start_offset = 0.02
+metadata/_custom_type_script = "uid://dop677pnbgxb7"
+
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_umqkn")
-sound_effect_settings = Array[ExtResource("2_0qod5")]([SubResource("Resource_1tgwj"), SubResource("Resource_0epao"), SubResource("Resource_eavjr"), SubResource("Resource_skk36"), SubResource("Resource_4dgq0"), SubResource("Resource_5dcgn"), SubResource("Resource_ilnfc"), SubResource("Resource_yln7l")])
+sound_effect_settings = Array[ExtResource("2_0qod5")]([SubResource("Resource_1tgwj"), SubResource("Resource_0epao"), SubResource("Resource_eavjr"), SubResource("Resource_skk36"), SubResource("Resource_4dgq0"), SubResource("Resource_5dcgn"), SubResource("Resource_ilnfc"), SubResource("Resource_yln7l"), SubResource("Resource_fqgr3")])

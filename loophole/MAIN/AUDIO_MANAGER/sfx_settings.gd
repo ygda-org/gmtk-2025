@@ -11,6 +11,7 @@ enum SOUND_EFFECT_LABEL{
 	TimeWarp,
 	BaseFootsteps,
 	UnscrewingBolt,
+	Beep,
 }
 
 @export var label : SOUND_EFFECT_LABEL
