@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b4ifj7ul6i7q7"
+path="res://.godot/imported/janitor_table.dialogue-ca6a991f6308df8dc362cdc88a886761.tres"
+
+[deps]
+
+source_file="res://INTERACTABLES/ExtraDialogues/janitor_table.dialogue"
+dest_files=["res://.godot/imported/janitor_table.dialogue-ca6a991f6308df8dc362cdc88a886761.tres"]
+
+[params]
+
+defaults=true

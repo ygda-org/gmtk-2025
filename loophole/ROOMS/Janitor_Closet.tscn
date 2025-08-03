@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bbviqqxi80n4p"]
+[gd_scene load_steps=17 format=4 uid="uid://bbviqqxi80n4p"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_jj1f0"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_o3fjv"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://btpx48aykm0gc" path="res://INTERACTABLES/StandardObjectManager.tscn" id="9_jn223"]
 [ext_resource type="Resource" uid="uid://bgmqiio148dgh" path="res://INTERACTABLES/ExtraDialogues/supplies.dialogue" id="10_dwa1y"]
 [ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="11_cbjxf"]
+[ext_resource type="Resource" uid="uid://b4ifj7ul6i7q7" path="res://INTERACTABLES/ExtraDialogues/janitor_table.dialogue" id="12_cbjxf"]
 [ext_resource type="Resource" uid="uid://di1bgsm7aktkl" path="res://INTERACTABLES/ExtraDialogues/info_board.dialogue" id="12_dwa1y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kli5p"]
@@ -20,6 +21,9 @@ size = Vector2(51, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jn223"]
 size = Vector2(22, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_br01o"]
+size = Vector2(26, 17)
 
 [node name="JanitorCloset" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_jj1f0")]
 node_with_locations = NodePath("StartingLocations")
@@ -70,7 +74,7 @@ offset_bottom = -2167.0
 position = Vector2(-3, -33)
 
 [node name="JanitorUniform" parent="." index="10" instance=ExtResource("7_fkl0b")]
-position = Vector2(7, 41)
+position = Vector2(11, 41)
 
 [node name="JanitorRmVent" parent="." index="11" instance=ExtResource("8_fkl0b")]
 position = Vector2(-23, -40)
@@ -92,3 +96,12 @@ dialogue = ExtResource("12_dwa1y")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StandardObjectManager2/Interactable" index="0"]
 position = Vector2(96, -33.5)
 shape = SubResource("RectangleShape2D_jn223")
+
+[node name="StandardObjectManager3" parent="." index="14" instance=ExtResource("9_jn223")]
+dialogue = ExtResource("12_cbjxf")
+
+[node name="Interactable" parent="StandardObjectManager3" index="0" instance=ExtResource("11_cbjxf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandardObjectManager3/Interactable" index="0"]
+position = Vector2(-19, 39.5)
+shape = SubResource("RectangleShape2D_br01o")

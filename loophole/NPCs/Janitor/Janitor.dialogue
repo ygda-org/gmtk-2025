@@ -5,13 +5,17 @@ if not GameState.player_has_item("Janitor_Key"):
 	- Pickpocket
 		: You stole the janitor's keys!
 		do GameState.add_item_to_player_inventory(load("res://INTERACTABLES/ITEMS/Janitor_Key/Janitor_Key.tres"))
+	- Try to wake
+		: You shake the janitor.
+		: Hmm, must not be a light sleeper.
 	- Leave
 		: You left the janitor alone.
 		=> END
 else:
 	: You should probably just leave him alone.
 	- Try to wake
-		: Hmm, must not be a light sleper
+		: You shake the janitor.
+		: Hmm, must not be a light sleeper.
 	- Leave
 		=> END
 => END
