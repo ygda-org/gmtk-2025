@@ -179,6 +179,6 @@ func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -
 	if letter_index % frequency != 0:
 		return
 	if letter not in "., ":
-		AudioManager.create_audio_with_variance(SFXSettings.SOUND_EFFECT_LABEL.Beep, Vector2(0.5,2))
+		AudioManager.create_audio_with_variance(SFXSettings.SOUND_EFFECT_LABEL.Beep, Vector2(0.5,1.5))
 
 #endregion
