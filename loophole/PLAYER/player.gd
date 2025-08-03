@@ -50,3 +50,6 @@ func _physics_process(delta):
 	
 	
 	move_and_slide()
+
+func set_animation(animation: String) -> void:
+	anim.play(animation)
