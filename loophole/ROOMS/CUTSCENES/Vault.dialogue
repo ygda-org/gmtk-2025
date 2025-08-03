@@ -27,7 +27,7 @@ do GameState.get_cutscene_player().play("ending")
 ~ true_end
 : I did it no more turning back time! This money is mine!
 CEO: What happened to my power? 
-CEO: Noooooooooooooooooooooooooooooooooo
+CEO: Noooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 CEO: Fine. I give up. Take it. And get out of my sight! I never want to see you again.
 : Finally, I'm rich!
 => END
