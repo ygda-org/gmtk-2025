@@ -46,9 +46,9 @@ Receptionist: Hello, this is the bank.
 	- In three hours.
 		=> Succeed
 - What's your favorite color?
-	Receptionist: Green for the color of money. If that's all you need, goodbye.
+	Receptionist: Green, for the color of money. If that's all you need, goodbye.
 	=> END
 ~ Succeed
-Receptionist: Alright. Thank you for scheduling an inspection. Have a good day.
+Receptionist: Alright. Thank you for scheduling an inspection in advance. Have a good day.
 do GameState.player_has_called = true
 => END

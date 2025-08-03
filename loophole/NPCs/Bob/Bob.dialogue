@@ -4,7 +4,7 @@ if GameState.player_has_item("Janitor_Uniform"):
 		CEO: So anyway, the new password is 6-
 		CEO: HEY!! What are you doing in here??
 		**Can't listen in if he sees you...**
-		**Maybe the suspicious guy outside the door can help**
+		**Maybe there's someone who can help**
 	else:
 		CEO: What could a janitor possibly need from me?
 		- Tell me the vault code.
