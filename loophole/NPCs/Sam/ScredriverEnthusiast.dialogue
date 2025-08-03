@@ -3,14 +3,14 @@
 % Screwdriver Enthusiast: Did you know oil workers used to stir their cocktails with screwdrivers?
 % Screwdriver Enthusiast: My favorite screwdriver head is the torx.
 - Can you give me one?
-	Screwdriver Enthusiast: Sure! I'm glad I found someone who loves screwdrivers as much as I do!!
+	Screwdriver Enthusiast: Sure! I'm glad I found someone who loves screwdrivers as much as I do!
 	do GameState.give_screwdriver()
 	- No, I'm just trying to rob the bank.
 		Screwdriver Enthusiast: Oh... **Screwdriver enthusiast will remember that.**
-		**This will have devestating consequences later on.**
+		**This will have devastating consequences later on.**
 	- I'm in it for the love of the game.
 		Screwdriver Enthusiast: Yay!! **Screwdriver enthusiast gains respect for you**
 - I don't care.
 	Screwdriver Enthusiast: Oh... **Screwdriver enthusiast will remember that.**
-	**This will have devestating consequences later on.**
+	**This will have devastating consequences later on.**
 => END
