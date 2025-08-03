@@ -4,12 +4,16 @@ if GameState.loaded_save_data["disguise_path"] == 0:
 if GameState.loaded_save_data["disguise_path"] >= 1:
 	=> Locked
 ~ Unlocked
-: There's two buttons on a panel, one saying, "open", and the other saying, "close".
+: There's three buttons on a panel, one saying, "open", one saying, "close", and one saying, "clopen".
 - Press "open"
 	: The vault swings open.
 	do  GameState.send_to_vault("disguise_path")
 - Press "close"
 	: Interestingly enough, the already closed vault could not close any more.
+	=> Unlocked
+- Press "clopen"
+	: What does that even mean?
+	: As far as you can tell, nothing happened.
 	=> Unlocked
 - Leave => END
 ~ Locked
