@@ -208,7 +208,7 @@ z_index = 2
 sprite_frames = SubResource("SpriteFrames_w35dc")
 animation = &"walk_down"
 autoplay = "idle_up"
-frame_progress = 0.809651
+frame_progress = 0.0102334
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
 position = Vector2(0, 6.25)
