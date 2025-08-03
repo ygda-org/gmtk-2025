@@ -1,11 +1,15 @@
 ~ start
-Receptionist: [[Hi|Hello]], tell me what you need.
+Receptionist: [[Hi|Hello|Good morning]], tell me what you need.
 - I'd like to make a deposit.
 	Receptionist: Please tell me your account number and how much you wish to deposit.
+	- Account number 9001 and I'd like to deposit negative 500 dollars.
+		Receptionist: I'm sorry, I can't find your account.
 	- Nevermind, sorry.
 	=> END
 - I'd like to make a withdrawl.
 	Receptionist: Please tell me your account number and how much you wish to withdraw.
+	- Could I withdraw everything this bank has?
+		Receptionist: Ha! That's a lot more than you might think. The only way to get that much would be to take it directly.
 	- Nevermind, sorry.
 	=> END
 - Could you tell me the bank's phone number?

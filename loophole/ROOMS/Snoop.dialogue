@@ -9,8 +9,11 @@ if GameState.loaded_save_data["disguise_path"] == 2:
 	CEO: Thanks to that, when I was 23, fresh out of college, I got my first job.
 	CEO: That job was titled, "son of CEO". It was a low start, but every man has humble beginnings.
 	CEO: It took me years to work my way up in the company, going from son of CEO to CEO proper.
-	CEO: It was here that I met a mysterious british vampire from egypt.
-	CEO: I discovered I had the ability to stop and turn back time.
+	CEO: I had many enemies along the way.
+	CEO: Such as the hard working guy and the aliens I hired to abduct him.
+	CEO: This was important for my career.
+	CEO: It was also here that I met a mysterious british vampire from egypt.
+	CEO: Thanks to the vampire, I discovered I had the ability to stop and turn back time.
 	CEO: But man is this job hard.
 	CEO: Some guy keeps managing to break into our vault. I mean, I designed all the original security measures myself.
 	CEO: They must be some sort of genius if they can manage it.
@@ -18,7 +21,7 @@ if GameState.loaded_save_data["disguise_path"] == 2:
 	CEO: For example, one time this person broke into the vault, so I had to change the password to 6234.
 	CEO: I've made sure there's no way they can get this password. So I think I'm good to kick back and relax.
 elif GameState.loaded_save_data["disguise_path"] >= 3:
-	??
+	???
 	**Sound proof walls??**
 else:
 	match GameState.loaded_save_data["last_playthrough"]:

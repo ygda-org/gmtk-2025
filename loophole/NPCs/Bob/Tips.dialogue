@@ -5,6 +5,6 @@ if GameState.player_has_item("Janitor_Uniform")
 else
 	Worker: Hey.. you aren't allowed here!
 	Worker: Don't worry I'm trying to rob the place too.
-	Worker: You are gonna need to disguise as am employee if you want to get anywhere near the vault!
+	Worker: You are gonna need to disguise as an employee if you want to get anywhere near the vault!
 	Worker: I hear there's an extra janitor uniform in the janitor closet...
 => END

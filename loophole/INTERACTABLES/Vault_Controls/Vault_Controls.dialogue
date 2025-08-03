@@ -4,7 +4,7 @@ if GameState.loaded_save_data["disguise_path"] == 0:
 if GameState.loaded_save_data["disguise_path"] >= 1:
 	=> Locked
 ~ Unlocked
-: There's two buttons, one saying, "open" and the other saying, "close".
+: There's two buttons on a panel, one saying, "open", and the other saying, "close".
 - Press "open"
 	: The vault swings open.
 	do  GameState.send_to_vault("disguise_path")
@@ -15,7 +15,7 @@ if GameState.loaded_save_data["disguise_path"] >= 1:
 ~ Locked
 : There's two buttons, one saying, "open" and the other saying, "close". In addition, there is a keypad with numbers one through six.
 - Press "open"
-	: Despite your valiant pressing attempt, nothing happens. => Locked
+	: Despite your valiant pressing efforts, nothing happens. => Locked
 - Press "close"
 	: Interestingly enough, the already closed vault could not close any more. => Locked
 - Inspect keypad
