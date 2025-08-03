@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://75pttfuuxfbm"
+path="res://.godot/imported/Vent.dialogue-c0a81a343d905e2c46e4180c77d2b6b9.tres"
+
+[deps]
+
+source_file="res://NPCs/Sam/Vent.dialogue"
+dest_files=["res://.godot/imported/Vent.dialogue-c0a81a343d905e2c46e4180c77d2b6b9.tres"]
+
+[params]
+
+defaults=true

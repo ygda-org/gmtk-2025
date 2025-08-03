@@ -1,0 +1,8 @@
+~ start
+Vent Enthusiast: Vents are the only place I can relax.
+if GameState.loaded_save_data["vent_path"] == 0:
+	Vent Enthusiast: The vault is right up there.
+elif GameState.loaded_save_data["vent_path"] == 1:
+	Vent Enthusiast: They tried bolting the vents, but they can't stop me.
+
+=> END

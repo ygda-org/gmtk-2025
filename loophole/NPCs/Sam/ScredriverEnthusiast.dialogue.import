@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dhb5hhstjpt2f"
+path="res://.godot/imported/ScredriverEnthusiast.dialogue-a11e97f6ae4814bb223187218b0d1dd5.tres"
+
+[deps]
+
+source_file="res://NPCs/Sam/ScredriverEnthusiast.dialogue"
+dest_files=["res://.godot/imported/ScredriverEnthusiast.dialogue-a11e97f6ae4814bb223187218b0d1dd5.tres"]
+
+[params]
+
+defaults=true
