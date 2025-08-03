@@ -6,6 +6,6 @@ if GameState.player_has_item("Janitor_Uniform"):
 	% Guard: Hey, can I see your passport?
 	% Guard: Haven't seen you before.
 else:
-	Guard: Hey, you shouldn't be back here. Leave now and I'll look the other way.
-	Guard: Human, turn back now. The back of this bank is not for you. Turn back, or you shall be crossing the rules.
+	% Guard: Hey, you shouldn't be back here. Leave now and I'll look the other way.
+	% Guard: Human, turn back now. The back of this bank is not for you. Turn back, or you shall be crossing the rules.
 => END
