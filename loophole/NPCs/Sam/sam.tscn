@@ -468,7 +468,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6epv"]
-size = Vector2(20, 39)
+size = Vector2(20, 29)
 
 [node name="Sam" instance=ExtResource("1_v8dey")]
 sprite_frames = SubResource("SpriteFrames_fyyh5")
@@ -480,5 +480,5 @@ dialogue = ExtResource("7_4ibol")
 [node name="Interactable" parent="." index="0" instance=ExtResource("8_kmrdh")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" index="0"]
-position = Vector2(0, 9.5)
+position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_r6epv")
