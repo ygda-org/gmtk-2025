@@ -49,7 +49,6 @@ shape = SubResource("RectangleShape2D_svgu2")
 [node name="Sam" parent="." index="8" instance=ExtResource("5_kmgci")]
 position = Vector2(157, -44)
 animation = &"alex"
-frame_progress = 0.0
 anim = "amelia"
 
 [node name="Sam2" parent="." index="9" instance=ExtResource("5_kmgci")]

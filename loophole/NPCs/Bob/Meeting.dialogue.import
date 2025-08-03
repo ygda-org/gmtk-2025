@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cujeb1lfqlnnx"
+path="res://.godot/imported/Meeting.dialogue-ac6ba602be317c6223bb89bb138e6911.tres"
+
+[deps]
+
+source_file="res://NPCs/Bob/Meeting.dialogue"
+dest_files=["res://.godot/imported/Meeting.dialogue-ac6ba602be317c6223bb89bb138e6911.tres"]
+
+[params]
+
+defaults=true
