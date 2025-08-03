@@ -189,7 +189,7 @@ func create_win_file():
 		print("Error occured while trying to write save data:", FileAccess.get_open_error())
 		return FAILED
 
-	file_access.store_line("time_warp_enabled=")
+	file_access.store_line("ceo_has_time_warp_power=")
 	file_access.store_line("true")
 	file_access.store_line("player_can_move=")
 	file_access.store_line("false")
