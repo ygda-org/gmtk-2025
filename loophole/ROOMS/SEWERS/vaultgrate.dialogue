@@ -4,7 +4,7 @@ if GameState.loaded_save_data["sewer_path"] < 2:
 if GameState.loaded_save_data["sewer_path"] == 2:
 	=> closed_grate
 ~ open_grate
-: There is a drainage grate connecting to the vault. It appears to be bolted.
+: There is a drainage grate connecting to the vault. It appears to be screwed shut.
 if GameState.player_has_item("Screwdriver"):
 	: Unlock the grate?
 	- Yes
