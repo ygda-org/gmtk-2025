@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dhv55jj4gh7i7"
+path="res://.godot/imported/window.dialogue-8f6bf066f54ac673d4c4f89cbf4bdb25.tres"
+
+[deps]
+
+source_file="res://INTERACTABLES/ExtraDialogues/window.dialogue"
+dest_files=["res://.godot/imported/window.dialogue-8f6bf066f54ac673d4c4f89cbf4bdb25.tres"]
+
+[params]
+
+defaults=true

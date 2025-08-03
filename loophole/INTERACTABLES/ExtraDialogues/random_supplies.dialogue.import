@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cq0e7ttihpe3a"
+path="res://.godot/imported/random_supplies.dialogue-1e915a9eab06688783a0094eef28bffd.tres"
+
+[deps]
+
+source_file="res://INTERACTABLES/ExtraDialogues/random_supplies.dialogue"
+dest_files=["res://.godot/imported/random_supplies.dialogue-1e915a9eab06688783a0094eef28bffd.tres"]
+
+[params]
+
+defaults=true

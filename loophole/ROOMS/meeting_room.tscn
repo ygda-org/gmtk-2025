@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://ousln3x4vjkc"]
+[gd_scene load_steps=22 format=4 uid="uid://ousln3x4vjkc"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_4e8gj"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_w6pm4"]
@@ -8,9 +8,30 @@
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="4_v6jdu"]
 [ext_resource type="PackedScene" uid="uid://b6oxst7mopyj8" path="res://NPCs/Sam/sam.tscn" id="6_5gtwq"]
 [ext_resource type="Resource" uid="uid://dhb5hhstjpt2f" path="res://NPCs/Sam/ScredriverEnthusiast.dialogue" id="8_h3p6l"]
+[ext_resource type="PackedScene" uid="uid://btpx48aykm0gc" path="res://INTERACTABLES/StandardObjectManager.tscn" id="9_tgsrc"]
+[ext_resource type="Resource" uid="uid://cq0e7ttihpe3a" path="res://INTERACTABLES/ExtraDialogues/random_supplies.dialogue" id="10_8ukdg"]
+[ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="10_piygc"]
+[ext_resource type="Resource" uid="uid://dhv55jj4gh7i7" path="res://INTERACTABLES/ExtraDialogues/window.dialogue" id="12_8ukdg"]
+[ext_resource type="Resource" uid="uid://bbubb80heiv5o" path="res://INTERACTABLES/ExtraDialogues/tv.dialogue" id="12_skf1p"]
+[ext_resource type="Resource" uid="uid://b41al2eaa8i6o" path="res://INTERACTABLES/ExtraDialogues/plant.dialogue" id="13_skf1p"]
+[ext_resource type="Resource" uid="uid://bgagh85drbumq" path="res://INTERACTABLES/ExtraDialogues/light.dialogue" id="14_bqxqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tx13a"]
 size = Vector2(6, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqxqf"]
+size = Vector2(19, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgsrc"]
+size = Vector2(65, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_piygc"]
+size = Vector2(19, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_skf1p"]
+size = Vector2(19, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfajl"]
 
 [node name="MeetingRoom" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_4e8gj")]
 node_with_locations = NodePath("StartingLocations")
@@ -19,61 +40,107 @@ node_with_locations = NodePath("StartingLocations")
 tile_map_data = PackedByteArray("AAAAAP7/AwAPAAUAAAABAP7/AwAOAAUAABABAP//AwAPAAYAAAABAAAAAwAPAAYAAAABAAEAAwAOAAYAABABAAIAAwAOAAYAABABAAMAAwAOAAYAABABAAQAAwAOAAUAADAAAAQAAwAPAAUAACD//wQAAwAPAAUAACD+/wQAAwAPAAUAACD9/wQAAwAPAAUAACD8/wQAAwAPAAUAACD7/wQAAwAPAAUAACD6/wQAAwAPAAUAACD5/wQAAwAPAAUAACD4/wQAAwAPAAUAACD3/wQAAwAOAAUAACD3/wMAAwAOAAYAAAD3/wIAAwAOAAYAAAD3/wEAAwAOAAYAAAD3/wAAAwAOAAYAAAD3////AwAOAAYAAAD3//7/AwAOAAUAAAD4//7/AwAPAAUAAAD5//7/AwAPAAUAAAD6//7/AwAPAAUAAAD7//7/AwAPAAUAAAD8//7/AwAPAAUAAAD9//7/AwAPAAUAAAD+//7/AwAPAAUAAAD///7/AwAPAAUAAAD6/wIAAwAPAAYAAAD6/wEAAQAKABMAAAD6/wAAAQAKABIAAAD6////AwAPAAYAAAD5////AwAPAAYAAAD4////AwAPAAYAAAD4/wAAAwAPAAYAAAD4/wEAAwAPAAYAAAD4/wIAAwAPAAYAAAD4/wMAAwAPAAYAAAD5/wMAAwAPAAYAAAD5/wIAAwAPAAYAAAD5/wEAAwAPAAYAAAD5/wAAAwAPAAYAAAD6/wMAAwAPAAYAAAD7/wMAAwAPAAYAAAD7/wIAAwAPAAYAAAD7////AwAPAAYAAAD8////AwAPAAYAAAD8/wAAAQAKABIAAAD8/wEAAQAKABMAAAD8/wIAAwAPAAYAAAD8/wMAAwAPAAYAAAD9/wMAAwAPAAYAAAD9/wIAAwAPAAYAAAD9////AwAPAAYAAAD+////AwAPAAYAAAD+/wAAAQAKABIAAAD+/wEAAQAKABMAAAD+/wIAAwAPAAYAAAD+/wMAAwAPAAYAAAD//wMAAwAPAAYAAAD//wIAAwAPAAYAAAD//wEAAwAPAAYAAAD//wAAAwAPAAYAAAD/////AwAPAAYAAAAAAP//AwAPAAYAAAAAAAAAAwAPAAYAAAAAAAEAAwAPAAYAAAD3//3/AwAAABIAAAD3//z/AwAAABEAAAD4//z/AwABABEAAAD5//z/AwABABEAAAD6//z/AwABABEAAAD7//z/AwABABEAAAD8//z/AwABABEAAAD9//z/AwABABEAAAD+//z/AwABABEAAAD///z/AwABABEAAAAAAPz/AwABABEAAAABAPz/AwACABEAAAABAP3/AwACABIAAAAAAP3/AwABABIAAAD///3/AwABABIAAAD+//3/AwABABIAAAD9//3/AwABABIAAAD8//3/AwABABIAAAD7//3/AwABABIAAAD6//3/AwABABIAAAD5//3/AwABABIAAAD4//3/AwABABIAAAD2//z/AwALAAEAAAACAPz/AwANAAEAAAACAP3/AwANAAIAAAACAP7/AwANAAEAACACAAEAAwANAAEAAAACAAIAAwANAAIAAAACAAMAAwANAAIAAAACAAQAAwANAAIAAAACAAUAAwANAAMAAAABAAUAAwAMAAMAAAAAAAUAAwAMAAMAAAD//wUAAwAMAAMAAAD+/wUAAwAMAAMAAAD9/wUAAwAMAAMAAAD8/wUAAwAMAAMAAAD7/wUAAwAMAAMAAAD6/wUAAwAMAAMAAAD5/wUAAwAMAAMAAAD4/wUAAwAMAAMAAAD3/wUAAwAMAAMAAAD2/wUAAwALAAMAAAD2/wQAAwALAAIAAAD2/wMAAwALAAIAAAD2/wIAAwALAAIAAAD2/wEAAwALAAIAAAD2/wAAAwALAAIAAAD2////AwALAAIAAAD2//7/AwALAAIAAAD2//3/AwALAAIAAAAAAAIAAwAPAAYAAAAAAAMAAwAPAAYAAAD9/wAAAwAPAAYAAAD7/wAAAwAPAAYAAAA=")
 tile_set = ExtResource("2_w6pm4")
 
-[node name="Bob6" parent="." index="3" instance=ExtResource("3_365e1")]
+[node name="Bob12" parent="." index="3" instance=ExtResource("3_365e1")]
 z_index = 1
-position = Vector2(-56, 39)
-animation = &"idle-up"
+position = Vector2(-17, 15)
+animation = &"idle-left"
+autoplay = "idle-left"
+frame_progress = 0.0
+dialogue = ExtResource("4_5gtwq")
+
+[node name="Bob11" parent="." index="4" instance=ExtResource("3_365e1")]
+z_index = 1
+position = Vector2(-93, 16)
+animation = &"idle-right"
+autoplay = "idle-right"
+frame_progress = 0.0
+dialogue = ExtResource("4_5gtwq")
+
+[node name="Bob10" parent="." index="5" instance=ExtResource("3_365e1")]
+position = Vector2(-40, -2)
+animation = &"idle-down"
 autoplay = "idle-down"
 frame_progress = 0.0
 dialogue = ExtResource("4_5gtwq")
 
-[node name="Bob5" parent="." index="4" instance=ExtResource("3_365e1")]
+[node name="Bob8" parent="." index="6" instance=ExtResource("3_365e1")]
+position = Vector2(-72, -2)
+animation = &"idle-down"
+autoplay = "idle-down"
+frame_progress = 0.0
+dialogue = ExtResource("4_5gtwq")
+
+[node name="Bob9" parent="." index="7" instance=ExtResource("3_365e1")]
+z_index = 1
+position = Vector2(-39, 39)
+animation = &"idle-up"
+autoplay = "idle-up"
+frame_progress = 0.0
+dialogue = ExtResource("4_5gtwq")
+
+[node name="Bob7" parent="." index="8" instance=ExtResource("3_365e1")]
+z_index = 1
+position = Vector2(-72, 39)
+animation = &"idle-up"
+autoplay = "idle-up"
+frame_progress = 0.0
+dialogue = ExtResource("4_5gtwq")
+
+[node name="Bob6" parent="." index="9" instance=ExtResource("3_365e1")]
+z_index = 1
+position = Vector2(-56, 39)
+animation = &"idle-up"
+autoplay = "idle-up"
+frame_progress = 0.0
+dialogue = ExtResource("4_5gtwq")
+
+[node name="Bob5" parent="." index="10" instance=ExtResource("3_365e1")]
 position = Vector2(-56, -2)
 animation = &"idle-down"
 autoplay = "idle-down"
 frame_progress = 0.0
 dialogue = ExtResource("4_5gtwq")
 
-[node name="Bob4" parent="." index="5" instance=ExtResource("3_365e1")]
+[node name="Bob4" parent="." index="11" instance=ExtResource("3_365e1")]
 position = Vector2(-24, -2)
 animation = &"idle-down"
 autoplay = "idle-down"
 frame_progress = 0.0
 dialogue = ExtResource("4_5gtwq")
 
-[node name="Bob3" parent="." index="6" instance=ExtResource("3_365e1")]
+[node name="Bob3" parent="." index="12" instance=ExtResource("3_365e1")]
 z_index = 1
 position = Vector2(-88, 39)
 animation = &"idle-up"
-autoplay = "idle-down"
+autoplay = "idle-up"
 frame_progress = 0.0
 dialogue = ExtResource("4_5gtwq")
 
-[node name="Bob2" parent="." index="7" instance=ExtResource("3_365e1")]
+[node name="Bob2" parent="." index="13" instance=ExtResource("3_365e1")]
 z_index = 2
 position = Vector2(-22, 39)
 animation = &"idle-up"
-autoplay = "idle-down"
+autoplay = "idle-up"
 frame_progress = 0.0
 dialogue = ExtResource("4_5gtwq")
 
-[node name="Bob" parent="." index="8" instance=ExtResource("3_365e1")]
+[node name="Bob" parent="." index="14" instance=ExtResource("3_365e1")]
 position = Vector2(-88, -2)
 animation = &"idle-down"
 autoplay = "idle-down"
 frame_progress = 0.0
 dialogue = ExtResource("4_5gtwq")
 
-[node name="Decor" type="TileMapLayer" parent="." index="9"]
-tile_map_data = PackedByteArray("AAD6//3/AQAFABMAAAD6/wAAAQAIAC0AAAD6/wEAAQAIAC4AAAD6/wIAAQAIAC8AAAD7/wAAAQAIAC0AAAD7/wEAAQAIAC4AAAD7/wIAAQAIAC8AAAD8/wAAAQAIAC0AAAD8/wEAAQAIAC4AAAD8/wIAAQAIAC8AAAD9/wAAAQAIAC0AAAD9/wEAAQAIAC4AAAD9/wIAAQAIAC8AAAD+/wAAAQAIAC0AAAD+/wEAAQAIAC4AAAD+/wIAAQAIAC8AAAD//wAAAQAJAC0AAAD//wEAAQAJAC4AAAD//wIAAQAJAC8AAAD5/wEAAQAHAC4AAAD5/wIAAQAHAC8AAAD3//z/AQACABIAAAD3//3/AQACABMAAAD3//7/AQACABQAAAD4//z/AQADABIAAAD4//3/AQADABMAAAD4//7/AQADABQAAAD5//z/AQAEABIAAAD5//3/AQAEABMAAAD5//7/AQAEABQAAAD6//z/AQAFABIAAAD6//7/AQAFABQAAAD8//z/AQACABgAAAD8//3/AQACABkAAAD9//z/AQADABgAAAD9//3/AQADABkAAAD///z/AQAHABgAAAD///3/AQAHABkAAAAAAPz/AQAIABgAAAAAAP3/AQAIABkAAAD5/wAAAQAHAC0AAAABAP3/AQAMAC0AAAABAP7/AQAMAC4AAAA=")
+[node name="Decor" type="TileMapLayer" parent="." index="15"]
+tile_map_data = PackedByteArray("AAD6//3/AQAFABMAAAD6/wAAAQAIAC0AAAD6/wEAAQAIAC4AAAD6/wIAAQAIAC8AAAD7/wAAAQAIAC0AAAD7/wEAAQAIAC4AAAD7/wIAAQAIAC8AAAD8/wAAAQAIAC0AAAD8/wEAAQAIAC4AAAD8/wIAAQAIAC8AAAD9/wAAAQAIAC0AAAD9/wEAAQAIAC4AAAD9/wIAAQAIAC8AAAD+/wAAAQAIAC0AAAD+/wEAAQAIAC4AAAD+/wIAAQAIAC8AAAD//wAAAQAJAC0AAAD//wEAAQAJAC4AAAD//wIAAQAJAC8AAAD5/wEAAQAHAC4AAAD5/wIAAQAHAC8AAAD3//z/AQACABIAAAD3//3/AQACABMAAAD3//7/AQACABQAAAD4//z/AQADABIAAAD4//3/AQADABMAAAD4//7/AQADABQAAAD5//z/AQAEABIAAAD5//3/AQAEABMAAAD5//7/AQAEABQAAAD6//z/AQAFABIAAAD6//7/AQAFABQAAAD8//z/AQACABgAAAD8//3/AQACABkAAAD9//z/AQADABgAAAD9//3/AQADABkAAAD///z/AQAHABgAAAD///3/AQAHABkAAAAAAPz/AQAIABgAAAAAAP3/AQAIABkAAAD5/wAAAQAHAC0AAAABAP3/AQAMAC0AAAABAP7/AQAMAC4AAAABAAIAAQAMADUAAAABAAMAAQAMADYAAAABAAQAAQAMADcAAAA=")
 tile_set = ExtResource("2_w6pm4")
 
-[node name="StartingLocations" type="Node" parent="." index="10"]
+[node name="StartingLocations" type="Node" parent="." index="16"]
 
 [node name="EntranceDoor" type="Node2D" parent="StartingLocations" index="0"]
 position = Vector2(12, 0)
 
-[node name="SSA_Entrance" parent="." index="11" instance=ExtResource("3_tx13a")]
+[node name="SSA_Entrance" parent="." index="17" instance=ExtResource("3_tx13a")]
 starting_location = "MeetingDoor"
 to_scene = "res://ROOMS/Entrance.tscn"
 
@@ -81,10 +148,55 @@ to_scene = "res://ROOMS/Entrance.tscn"
 position = Vector2(35, 0)
 shape = SubResource("RectangleShape2D_tx13a")
 
-[node name="Player" parent="." index="12" instance=ExtResource("4_v6jdu")]
+[node name="Player" parent="." index="18" instance=ExtResource("4_v6jdu")]
 position = Vector2(1, -5)
 
-[node name="ScrewdriverEnthusiast" parent="." index="13" instance=ExtResource("6_5gtwq")]
-position = Vector2(-113, 18)
+[node name="ScrewdriverEnthusiast" parent="." index="19" instance=ExtResource("6_5gtwq")]
+position = Vector2(-134, 51)
 autoplay = "alex-right"
 dialogue = ExtResource("8_h3p6l")
+
+[node name="StandardObjectManager" parent="." index="20" instance=ExtResource("9_tgsrc")]
+dialogue = ExtResource("13_skf1p")
+
+[node name="Interactable" parent="StandardObjectManager" index="0" instance=ExtResource("10_piygc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandardObjectManager/Interactable" index="0"]
+position = Vector2(23.5, -25.5)
+shape = SubResource("RectangleShape2D_bqxqf")
+
+[node name="StandardObjectManager2" parent="." index="21" instance=ExtResource("9_tgsrc")]
+dialogue = ExtResource("10_8ukdg")
+
+[node name="Interactable" parent="StandardObjectManager2" index="0" instance=ExtResource("10_piygc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandardObjectManager2/Interactable" index="0"]
+position = Vector2(-111.5, -32)
+shape = SubResource("RectangleShape2D_tgsrc")
+
+[node name="StandardObjectManager3" parent="." index="22" instance=ExtResource("9_tgsrc")]
+dialogue = ExtResource("12_8ukdg")
+
+[node name="Interactable" parent="StandardObjectManager3" index="0" instance=ExtResource("10_piygc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandardObjectManager3/Interactable" index="0"]
+position = Vector2(-1, -39)
+shape = SubResource("RectangleShape2D_piygc")
+
+[node name="StandardObjectManager4" parent="." index="23" instance=ExtResource("9_tgsrc")]
+dialogue = ExtResource("12_skf1p")
+
+[node name="Interactable" parent="StandardObjectManager4" index="0" instance=ExtResource("10_piygc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandardObjectManager4/Interactable" index="0"]
+position = Vector2(-47.5, -38)
+shape = SubResource("RectangleShape2D_skf1p")
+
+[node name="StandardObjectManager5" parent="." index="24" instance=ExtResource("9_tgsrc")]
+dialogue = ExtResource("14_bqxqf")
+
+[node name="Interactable" parent="StandardObjectManager5" index="0" instance=ExtResource("10_piygc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandardObjectManager5/Interactable" index="0"]
+position = Vector2(22, 67)
+shape = SubResource("RectangleShape2D_rfajl")
