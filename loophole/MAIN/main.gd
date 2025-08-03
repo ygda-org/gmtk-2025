@@ -1,6 +1,7 @@
 extends Node2D
 
 const STARTING_SCENE = preload("res://ROOMS/Outside.tscn")
+@onready var play_button: TextureButton = $Background/PlayButton
 
 func _on_load_pressed() -> void:
 	if GameState.load_save_file() == OK:
@@ -25,3 +26,11 @@ func _on_credits_pressed():
 func _on_back_pressed():
 	$UI.visible = true
 	$Credits.visible = false
+
+
+func _on_play_button_pressed() -> void:
+	play_button.disabled = true
+	play_button.button_pressed = false
+	$Background/GrayOut.visible = true
+	$UI.visible = true
+	pass # Replace with function body.
