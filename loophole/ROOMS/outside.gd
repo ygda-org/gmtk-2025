@@ -5,7 +5,7 @@ func _ready() -> void:
 		$sewercover.visible = true
 		$sewercover2.collision_enabled = true
 	# WARNING CHANGE BEFORE EXPORT
-	if GameState.check_lazy():
+	if GameState.check_all_paths_finished():
 		print("ACTIVATE FINAL ENDING")
 		DialogueManager.show_dialogue_balloon(load("res://ROOMS/CUTSCENES/final_fix.dialogue"))
 		await DialogueManager.dialogue_ended
