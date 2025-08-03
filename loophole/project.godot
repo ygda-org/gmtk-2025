@@ -21,6 +21,7 @@ GameState="*res://MAIN/game_state.gd"
 SceneSwitcher="*res://MAIN/scene_switcher.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 KeypadManager="*res://INTERACTABLES/Vault_Controls/VaultKeypadManager.gd"
+AudioManager="*res://MAIN/AUDIO_MANAGER/audio_manager.tscn"
 
 [dialogue_manager]
 

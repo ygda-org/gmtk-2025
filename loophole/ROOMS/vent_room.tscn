@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_31icf"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_m154b"]
-[ext_resource type="Script" path="res://ROOMS/vent_layout_manager.gd" id="2_slknr"]
+[ext_resource type="Script" uid="uid://11woaanpivam" path="res://ROOMS/vent_layout_manager.gd" id="2_slknr"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_3gcgw"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="4_6ftm7"]
 [ext_resource type="PackedScene" uid="uid://ds0dcdbq8t811" path="res://INTERACTABLES/Vent_Path_interactables/VentToVault.tscn" id="5_pxdrk"]
