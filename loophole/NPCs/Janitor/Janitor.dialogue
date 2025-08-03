@@ -1,12 +1,17 @@
 ~ start
 : The janitor is asleep.
-: You can see some keys dangling from his side.
-- Pickpocket
-	if not GameState.player_has_item("Janitor_Key"):
+if not GameState.player_has_item("Janitor_Key"):
+	: You can see some keys dangling from his side.
+	- Pickpocket
 		: You stole the janitor's keys!
 		do GameState.add_item_to_player_inventory(load("res://INTERACTABLES/ITEMS/Janitor_Key/Janitor_Key.tres"))
-	else:
-		: But there was nothing left to steal!
-- Leave
-	: You left the janitor alone.
+	- Leave
+		: You left the janitor alone.
+		=> END
+else:
+	: You should probably just leave him alone.
+	- Try to wake
+		: Hmm, must not be a light sleper
+	- Leave
+		=> END
 => END

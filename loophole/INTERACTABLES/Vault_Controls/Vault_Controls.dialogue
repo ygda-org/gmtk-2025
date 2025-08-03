@@ -23,25 +23,25 @@ if GameState.loaded_save_data["disguise_path"] == 1:
 	=> Keypad
 - Leave => END
 ~ Keypad
-- Press "1"
+- 1
 	do KeypadManager.add_to_guess("1")
 	=> Keypad
-- Press "2"
+- 2
 	do KeypadManager.add_to_guess("2")
 	=> Keypad
-- Press "3"
+- 3
 	do KeypadManager.add_to_guess("3")
 	=> Keypad
-- Press "4"
+- 4
 	do KeypadManager.add_to_guess("4")
 	=> Keypad
-- Press "5"
+- 5
 	do KeypadManager.add_to_guess("5")
 	=> Keypad
-- Press "6"
+- 6
 	do KeypadManager.add_to_guess("6")
 	=> Keypad
-- Press "Submit"
+- Submit
 	if KeypadManager.check_current_guess():
 		: The keypad buzzes to tell you that your guess was correct!
 		=> Unlocked

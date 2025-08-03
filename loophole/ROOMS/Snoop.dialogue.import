@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://byuqv8pvkwa13"
+path="res://.godot/imported/Snoop.dialogue-20626d52061d1dfeeb488760bf23805a.tres"
+
+[deps]
+
+source_file="res://ROOMS/Snoop.dialogue"
+dest_files=["res://.godot/imported/Snoop.dialogue-20626d52061d1dfeeb488760bf23805a.tres"]
+
+[params]
+
+defaults=true

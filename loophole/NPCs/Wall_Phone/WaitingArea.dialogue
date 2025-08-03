@@ -1,7 +1,8 @@
 ~ start
-: Would you like to wait here?
+: Would you like to pass the time here?
 - Yes
 	do GameState.player_has_timeskipped = true
 	do get_tree().current_scene.fade_out_and_in()
+	=> END
 - No => END
 => END

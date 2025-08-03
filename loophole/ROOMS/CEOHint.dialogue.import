@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://yoy4iede8876"
+path="res://.godot/imported/CEOHint.dialogue-bd8b1a6029e5dbff990a0f11f1bde151.tres"
+
+[deps]
+
+source_file="res://ROOMS/CEOHint.dialogue"
+dest_files=["res://.godot/imported/CEOHint.dialogue-bd8b1a6029e5dbff990a0f11f1bde151.tres"]
+
+[params]
+
+defaults=true

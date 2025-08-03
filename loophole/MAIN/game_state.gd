@@ -11,7 +11,8 @@ const START_SAVE_DATA : Dictionary[String, Variant] = {
 	"sewer_path": 0,
 	"inspector_path": 0,
 	"has_watched_intro": false,
-	"has_watched_first": false
+	"has_watched_first": false,
+	"last_playthrough": "intro"
 }
 
 var loaded_save_data: Dictionary = {}
@@ -144,11 +145,14 @@ func restart_game():
 	reset_player_inventory()
 	player_has_timeskipped = false
 	player_has_called = false
+	
 	if current_ending == "intro":
 		loaded_save_data.set("has_watched_intro", true)
 	elif START_SAVE_DATA.keys().has(current_ending):
+		loaded_save_data.set("last_playthrough", current_ending)
 		loaded_save_data[current_ending] += 1
 	
+	current_ending = "none"
 	save_game()
 	
 	SceneSwitcher.goto_scene(OUTSIDE, "")
