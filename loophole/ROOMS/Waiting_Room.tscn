@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cs16wr38l3i8d"]
+[gd_scene load_steps=15 format=4 uid="uid://cs16wr38l3i8d"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_15mew"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_kmgci"]
@@ -9,12 +9,16 @@
 [ext_resource type="PackedScene" uid="uid://6601lajhql6q" path="res://NPCs/Wall_Phone/WaitingArea.tscn" id="7_treab"]
 [ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="8_egnfu"]
 [ext_resource type="PackedScene" uid="uid://dfhag6tlfhvig" path="res://NPCs/Inspector/inspector.tscn" id="9_egnfu"]
+[ext_resource type="PackedScene" uid="uid://btpx48aykm0gc" path="res://INTERACTABLES/StandardObjectManager.tscn" id="10_isccs"]
+[ext_resource type="Resource" uid="uid://cxhcngp6kcngv" path="res://INTERACTABLES/ExtraDialogues/wallstuff.dialogue" id="11_0nalm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svgu2"]
 size = Vector2(20, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isccs"]
 size = Vector2(46, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nalm"]
 
 [node name="WaitingRoom" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_15mew")]
 node_with_locations = NodePath("StartingLocations")
@@ -73,3 +77,12 @@ shape = SubResource("RectangleShape2D_isccs")
 
 [node name="Inspector" parent="." index="13" instance=ExtResource("9_egnfu")]
 position = Vector2(47, -58)
+
+[node name="StandardObjectManager" parent="." index="14" instance=ExtResource("10_isccs")]
+dialogue = ExtResource("11_0nalm")
+
+[node name="Interactable" parent="StandardObjectManager" index="0" instance=ExtResource("8_egnfu")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandardObjectManager/Interactable" index="0"]
+position = Vector2(47, -52)
+shape = SubResource("RectangleShape2D_0nalm")
