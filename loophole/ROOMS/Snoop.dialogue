@@ -1,4 +1,25 @@
 ~ start
 **You put your ear against the wall**
-**Nothing interesting**
+if GameState.loaded_save_data["disguise_path"] == 2:
+	CEO: Before I tell you the very impotant top secret new vault password
+	CEO: Let me tell you about my life history.
+	CEO: blah blah blah blah
+	CEO: blah blah blah blah
+	CEO: blah blah blah blah
+	CEO: blah blah blah blah
+	CEO: blah blah blah blah
+	CEO: blah blah blah blah
+	CEO: blah blah blah blah
+	CEO: blah blah blah blah
+	CEO: blah blah blah blah
+	CEO: blah blah blah blah
+	CEO: blah blah blah blah
+	CEO: blah blah blah blah
+	CEO: blah blah blah blah
+	CEO: Yeah so anyway its 6234
+elif GameState.loaded_save_data["disguise_path"] == 3:
+	??
+	**Sound proof walls??**
+else:
+	**You hear them muttering something about metal detectors**
 => END
