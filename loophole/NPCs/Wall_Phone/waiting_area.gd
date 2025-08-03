@@ -11,5 +11,5 @@ func _process(delta):
 	pass
 
 func interact():
-	if GameState.player_has_called:
+	if GameState.player_has_called and not GameState.player_has_timeskipped:
 		DialogueManager.show_dialogue_balloon(load("res://NPCs/Wall_Phone/WaitingArea.dialogue"))
