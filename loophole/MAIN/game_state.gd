@@ -47,6 +47,7 @@ func _process(delta):
 func add_item_to_player_inventory(item):
 	for i in range(len(player_inventory)):
 		if player_inventory[i] == null:
+			AudioManager.create_audio_with_variance(SFXSettings.SOUND_EFFECT_LABEL.ItemPickup, Vector2(0.9,1.1))
 			player_inventory[i] = item # BaseItemResources go into the inventory array
 			break
 

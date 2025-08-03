@@ -12,6 +12,7 @@ enum SOUND_EFFECT_LABEL{
 	BaseFootsteps,
 	UnscrewingBolt,
 	Beep,
+	ItemPickup,
 }
 
 @export var label : SOUND_EFFECT_LABEL
