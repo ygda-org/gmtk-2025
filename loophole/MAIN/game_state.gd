@@ -33,6 +33,7 @@ func _ready():
 	DialogueManager.dialogue_ended.connect(dialogue_finished)
 	DialogueManager.dialogue_started.connect(dialogue_started)
 	reset_player_inventory()
+	print(check_win_file())
 
 func dialogue_finished(resource):
 	can_player_move = true
@@ -168,3 +169,9 @@ func restart_game():
 	save_game()
 	
 	SceneSwitcher.goto_scene(OUTSIDE, "")
+
+func check_win_file():
+	var file = FileAccess.open("res://SUPERDUPERIMPORSTUFF/game_state_conditions.txt", FileAccess.READ)
+	var content = file.get_as_text()
+	var content_list = content.split("\n", false)
+	return content_list
