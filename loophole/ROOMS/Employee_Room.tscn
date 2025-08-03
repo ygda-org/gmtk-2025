@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://dwv1asu0eh8s6"]
+[gd_scene load_steps=16 format=4 uid="uid://dwv1asu0eh8s6"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_pys8n"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_q0276"]
@@ -7,9 +7,22 @@
 [ext_resource type="PackedScene" uid="uid://5uyawl4p53aa" path="res://NPCs/Bob/Bob.tscn" id="6_jjj4k"]
 [ext_resource type="PackedScene" uid="uid://bbx3sp1xwulb8" path="res://NPCs/Amelia/amelia.tscn" id="7_atvdi"]
 [ext_resource type="Resource" uid="uid://cs1sbqwbw5bh6" path="res://ROOMS/WorkerPassword.dialogue" id="7_dysqv"]
+[ext_resource type="PackedScene" uid="uid://btpx48aykm0gc" path="res://INTERACTABLES/StandardObjectManager.tscn" id="8_elbue"]
+[ext_resource type="Resource" uid="uid://btv7ausjj7x8y" path="res://INTERACTABLES/ExtraDialogues/locker.dialogue" id="9_d8o4a"]
+[ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="10_q1t4r"]
+[ext_resource type="Resource" uid="uid://bfpg3yas2ohim" path="res://INTERACTABLES/ExtraDialogues/computer.dialogue" id="11_d8o4a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jc8d2"]
 size = Vector2(7, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spq7t"]
+size = Vector2(50, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbeyu"]
+size = Vector2(52, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1t4r"]
+size = Vector2(20, 27)
 
 [node name="EmployeeRoom" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_pys8n")]
 node_with_locations = NodePath("StartingLocations")
@@ -39,7 +52,7 @@ position = Vector2(67.5, 48)
 shape = SubResource("RectangleShape2D_jc8d2")
 
 [node name="Bob" parent="." index="7" instance=ExtResource("6_jjj4k")]
-position = Vector2(-35, -88)
+position = Vector2(-35, -75)
 animation = &"idle-right"
 autoplay = "idle-right"
 frame_progress = 0.0
@@ -47,5 +60,29 @@ dialogue = ExtResource("7_dysqv")
 disabled = true
 
 [node name="Amelia" parent="." index="8" instance=ExtResource("7_atvdi")]
-position = Vector2(-16, -107)
+position = Vector2(-16, -92)
 dialogue = ExtResource("7_dysqv")
+
+[node name="StandardObjectManager" parent="." index="9" instance=ExtResource("8_elbue")]
+dialogue = ExtResource("9_d8o4a")
+
+[node name="Interactable" parent="StandardObjectManager" index="0" instance=ExtResource("10_q1t4r")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandardObjectManager/Interactable" index="0"]
+position = Vector2(-39, -117)
+shape = SubResource("RectangleShape2D_spq7t")
+
+[node name="Interactable2" parent="StandardObjectManager" index="1" instance=ExtResource("10_q1t4r")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandardObjectManager/Interactable2" index="0"]
+position = Vector2(38, -117)
+shape = SubResource("RectangleShape2D_sbeyu")
+
+[node name="StandardObjectManager2" parent="." index="10" instance=ExtResource("8_elbue")]
+dialogue = ExtResource("11_d8o4a")
+
+[node name="Interactable" parent="StandardObjectManager2" index="0" instance=ExtResource("10_q1t4r")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandardObjectManager2/Interactable" index="0"]
+position = Vector2(-41, -8.5)
+shape = SubResource("RectangleShape2D_q1t4r")

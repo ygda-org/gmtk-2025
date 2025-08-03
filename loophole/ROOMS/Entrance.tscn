@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://bnifs01dflka5"]
+[gd_scene load_steps=50 format=4 uid="uid://bnifs01dflka5"]
 
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="1_d6wng"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_qa1l5"]
@@ -11,16 +11,19 @@
 [ext_resource type="Resource" uid="uid://b2wrdl66r2bqr" path="res://INTERACTABLES/ITEMS/Janitor_Key/Janitor_Key.tres" id="7_g5jtj"]
 [ext_resource type="Texture2D" uid="uid://beiibego5xrww" path="res://ASSETS/door_front_animation.png" id="9_vxjj2"]
 [ext_resource type="PackedScene" uid="uid://nkuh2inbdsfa" path="res://INTERACTABLES/Locked_Door/Side_Door.tscn" id="9_wbsbj"]
-[ext_resource type="Script" uid="uid://b51c86rwyskqh" path="res://ROOMS/entrance_cutscene.gd" id="10_j3g3i"]
+[ext_resource type="Script" path="res://ROOMS/entrance_cutscene.gd" id="10_j3g3i"]
 [ext_resource type="PackedScene" uid="uid://druwyapeq51bv" path="res://ROOMS/SCENE_MANAGEMENT/CutsceneManager.tscn" id="11_8hmr8"]
 [ext_resource type="Resource" uid="uid://yoy4iede8876" path="res://ROOMS/CEOHint.dialogue" id="11_v3of8"]
 [ext_resource type="Resource" uid="uid://b6fi5qx47x44u" path="res://NPCs/Sam/GuyOutsideDoor.dialogue" id="12_ruruj"]
 [ext_resource type="Resource" uid="uid://kvx2jq5oaq12" path="res://ROOMS/CUTSCENES/EntranceIntro.dialogue" id="12_vxjj2"]
-[ext_resource type="PackedScene" uid="uid://dskowm0dsprnl" path="res://ROOMS/SnoopWall.tscn" id="16_tex4p"]
+[ext_resource type="PackedScene" path="res://ROOMS/SnoopWall.tscn" id="16_tex4p"]
 [ext_resource type="Resource" uid="uid://byuqv8pvkwa13" path="res://ROOMS/Snoop.dialogue" id="17_el35e"]
 [ext_resource type="PackedScene" uid="uid://5uyawl4p53aa" path="res://NPCs/Bob/Bob.tscn" id="18_qpco8"]
 [ext_resource type="Resource" uid="uid://c7lksfvw5ssm5" path="res://NPCs/Bob/Tips.dialogue" id="19_ruruj"]
 [ext_resource type="PackedScene" uid="uid://6601lajhql6q" path="res://NPCs/Wall_Phone/WaitingArea.tscn" id="21_fgswv"]
+[ext_resource type="PackedScene" uid="uid://btpx48aykm0gc" path="res://INTERACTABLES/StandardObjectManager.tscn" id="22_5o77m"]
+[ext_resource type="Resource" uid="uid://b41al2eaa8i6o" path="res://INTERACTABLES/ExtraDialogues/plant.dialogue" id="23_g603d"]
+[ext_resource type="Resource" uid="uid://bbubb80heiv5o" path="res://INTERACTABLES/ExtraDialogues/tv.dialogue" id="24_jrrl7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0oaqi"]
 size = Vector2(62, 6)
@@ -184,6 +187,12 @@ size = Vector2(18, 46)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g603d"]
 size = Vector2(20, 31)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrrl7"]
+size = Vector2(18, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upl4m"]
+size = Vector2(15, 22)
+
 [node name="Entrance" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_sedmv")]
 node_with_locations = NodePath("StartingLocations")
 
@@ -336,7 +345,7 @@ anim = "alex"
 dialogue = ExtResource("11_v3of8")
 
 [node name="Sam" parent="." index="18" instance=ExtResource("6_g5jtj")]
-position = Vector2(63, -498)
+position = Vector2(54, -498)
 anim = "adam"
 dialogue = ExtResource("12_ruruj")
 
@@ -396,3 +405,23 @@ position = Vector2(-63, -447)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaitingArea3/Interactable" index="0"]
 position = Vector2(171, 92.5)
 shape = SubResource("RectangleShape2D_g603d")
+
+[node name="StandardObjectManager" parent="." index="27" instance=ExtResource("22_5o77m")]
+position = Vector2(-69, -492)
+dialogue = ExtResource("23_g603d")
+
+[node name="Interactable" parent="StandardObjectManager" index="0" instance=ExtResource("7_2pfv7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandardObjectManager/Interactable" index="0"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_jrrl7")
+
+[node name="StandardObjectManager2" parent="." index="28" instance=ExtResource("22_5o77m")]
+position = Vector2(73, -509)
+dialogue = ExtResource("24_jrrl7")
+
+[node name="Interactable" parent="StandardObjectManager2" index="0" instance=ExtResource("7_2pfv7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandardObjectManager2/Interactable" index="0"]
+position = Vector2(7.5, 9)
+shape = SubResource("RectangleShape2D_upl4m")

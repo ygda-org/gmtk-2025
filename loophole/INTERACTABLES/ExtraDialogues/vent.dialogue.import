@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://2hnv5gikcwev"
+path="res://.godot/imported/vent.dialogue-f6296704833cc5b0e12ba3de353003ee.tres"
+
+[deps]
+
+source_file="res://INTERACTABLES/ExtraDialogues/vent.dialogue"
+dest_files=["res://.godot/imported/vent.dialogue-f6296704833cc5b0e12ba3de353003ee.tres"]
+
+[params]
+
+defaults=true

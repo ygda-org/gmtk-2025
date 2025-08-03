@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b41al2eaa8i6o"
+path="res://.godot/imported/plant.dialogue-ea82e77924633080f3009bd4163fc655.tres"
+
+[deps]
+
+source_file="res://INTERACTABLES/ExtraDialogues/plant.dialogue"
+dest_files=["res://.godot/imported/plant.dialogue-ea82e77924633080f3009bd4163fc655.tres"]
+
+[params]
+
+defaults=true

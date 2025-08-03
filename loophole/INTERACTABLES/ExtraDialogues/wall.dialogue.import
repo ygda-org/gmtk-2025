@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cqnsjocyncgw6"
+path="res://.godot/imported/wall.dialogue-5fb4650e46e9762ab9c0609520cf16ca.tres"
+
+[deps]
+
+source_file="res://INTERACTABLES/ExtraDialogues/wall.dialogue"
+dest_files=["res://.godot/imported/wall.dialogue-5fb4650e46e9762ab9c0609520cf16ca.tres"]
+
+[params]
+
+defaults=true

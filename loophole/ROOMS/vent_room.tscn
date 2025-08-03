@@ -1,14 +1,20 @@
-[gd_scene load_steps=8 format=4 uid="uid://ce1g8urev5wwn"]
+[gd_scene load_steps=12 format=4 uid="uid://ce1g8urev5wwn"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_31icf"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_m154b"]
-[ext_resource type="Script" uid="uid://11woaanpivam" path="res://ROOMS/vent_layout_manager.gd" id="2_slknr"]
+[ext_resource type="Script" path="res://ROOMS/vent_layout_manager.gd" id="2_slknr"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_3gcgw"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="4_6ftm7"]
 [ext_resource type="PackedScene" uid="uid://ds0dcdbq8t811" path="res://INTERACTABLES/Vent_Path_interactables/VentToVault.tscn" id="5_pxdrk"]
+[ext_resource type="PackedScene" uid="uid://btpx48aykm0gc" path="res://INTERACTABLES/StandardObjectManager.tscn" id="7_03ldl"]
+[ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="8_f2vej"]
+[ext_resource type="Resource" uid="uid://2hnv5gikcwev" path="res://INTERACTABLES/ExtraDialogues/vent.dialogue" id="8_o8fje"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ftm7"]
 size = Vector2(12, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8fje"]
+size = Vector2(15, 20)
 
 [node name="VentRoom" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_31icf")]
 node_with_locations = NodePath("Starting Locations")
@@ -62,3 +68,24 @@ position = Vector2(103, 44)
 
 [node name="VentToVault" parent="." index="9" instance=ExtResource("5_pxdrk")]
 position = Vector2(104, -120)
+
+[node name="StandardObjectManager" parent="." index="10" instance=ExtResource("7_03ldl")]
+dialogue = ExtResource("8_o8fje")
+
+[node name="Interactable" parent="StandardObjectManager" index="0" instance=ExtResource("8_f2vej")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandardObjectManager/Interactable" index="0"]
+position = Vector2(215.5, -18)
+shape = SubResource("RectangleShape2D_o8fje")
+
+[node name="Interactable2" parent="StandardObjectManager" index="1" instance=ExtResource("8_f2vej")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandardObjectManager/Interactable2" index="0"]
+position = Vector2(-24, 77)
+shape = SubResource("RectangleShape2D_o8fje")
+
+[node name="Interactable3" parent="StandardObjectManager" index="2" instance=ExtResource("8_f2vej")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandardObjectManager/Interactable3" index="0"]
+position = Vector2(296, 61)
+shape = SubResource("RectangleShape2D_o8fje")

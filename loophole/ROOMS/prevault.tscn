@@ -84,6 +84,7 @@ position = Vector2(-44, -89)
 script = ExtResource("6_ulgid")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireAlarm" index="0"]
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_ulgid")
 
 [node name="SewerTimer" type="Timer" parent="." index="13"]
