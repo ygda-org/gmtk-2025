@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://druwyapeq51bv" path="res://ROOMS/SCENE_MANAGEMENT/CutsceneManager.tscn" id="2_xd1ld"]
 [ext_resource type="Resource" uid="uid://cwihn6o0yv8uc" path="res://ROOMS/CUTSCENES/Vault.dialogue" id="3_jyt6p"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="3_u57lo"]
-[ext_resource type="Script" path="res://ROOMS/call_end_game.gd" id="5_c7tf6"]
+[ext_resource type="Script" uid="uid://bs3iho1uqflkc" path="res://ROOMS/call_end_game.gd" id="5_c7tf6"]
 
 [sub_resource type="Animation" id="Animation_c7tf6"]
 length = 0.001
@@ -85,7 +85,7 @@ tile_map_data = PackedByteArray("AAD9////AwAPAAwAAAD+////AwAPAAwAAAD/////AwAPAAw
 tile_set = ExtResource("2_oehni")
 
 [node name="Decor" type="TileMapLayer" parent="." index="5"]
-tile_map_data = PackedByteArray("AAACAP3/AQANAFQAAAACAP7/AQANAFUAAAACAP//AQANAFQAAAACAAAAAQANAFUAAAD8////AQANAFQAAAD8/wAAAQANAFUAAAD8//3/AQANAFQAAAD8//7/AQANAFUAAAD8//z/AQACABEAAAD9//z/AQADABEAAAD9//v/AQAEABAAAAD8//v/AQABABAAAAACAPz/AQADABEAAAABAPz/AQACABEAAAACAPv/AQAEABAAAAABAPv/AQABABAAAAA=")
+tile_map_data = PackedByteArray("AAACAP3/AQANAFQAAAACAP7/AQANAFUAAAACAP//AQANAFQAAAACAAAAAQANAFUAAAD8////AQANAFQAAAD8/wAAAQANAFUAAAD8//3/AQANAFQAAAD8//7/AQANAFUAAAD8//z/AQACABEAAAD9//z/AQADABEAAAD9//v/AQAEABAAAAD8//v/AQABABAAAAACAPz/AQADABEAAAABAPz/AQACABEAAAACAPv/AQAEABAAAAABAPv/AQABABAAAAD///7/BgAEAAMAAAA=")
 tile_set = ExtResource("2_oehni")
 
 [node name="Decor2" type="TileMapLayer" parent="." index="6"]

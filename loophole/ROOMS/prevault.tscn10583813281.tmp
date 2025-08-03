@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=4 uid="uid://cretdq7ls85te"]
+
+[ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_lr8gl"]
+[ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_w3e06"]
+[ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="3_eqefy"]
+[ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="4_r6nrq"]
+[ext_resource type="PackedScene" uid="uid://cpsu45s3du6v8" path="res://INTERACTABLES/Vault_Controls/VaultControls.tscn" id="5_7fjqr"]
+[ext_resource type="Script" uid="uid://b5bwrwtuu1sji" path="res://ROOMS/fire_alarm.gd" id="6_ulgid"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqefy"]
+size = Vector2(7, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6nrq"]
+size = Vector2(48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulgid"]
+size = Vector2(8, 30)
+
+[node name="Prevault" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_lr8gl")]
+node_with_locations = NodePath("StartingLocations")
+
+[node name="StartingLocations" type="Node" parent="." index="0"]
+
+[node name="LeftDoor" type="Node2D" parent="StartingLocations" index="0"]
+position = Vector2(-35, -16)
+
+[node name="RightDoor" type="Node2D" parent="StartingLocations" index="1"]
+position = Vector2(17, -16)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="3"]
+tile_map_data = PackedByteArray("AAD9/wAAAwAOAAUAACD+/wAAAwAPAAUAACD//wAAAwAPAAUAACAAAAAAAwAPAAUAACABAAAAAwAOAAUAADD9////AwAQAAUAACD9//7/AwAQAAUAAAD+//7/AwAPAAYAAAD///7/AwAPAAYAAAAAAP7/AwAPAAYAAAABAP7/AwAQAAUAABABAP//AwAQAAUAADAAAP//AwAPAAYAAAD/////AwAPAAYAAAD+////AwAPAAYAAAD9//3/AwAOAAYAAAD9//z/AwAOAAYAAAD9//v/AwAOAAUAAAABAPv/AwAOAAUAABABAPz/AwAOAAYAABABAP3/AwAOAAYAABAAAPv/AwAPAAUAAAD///v/AwAPAAUAAAD+//v/AwAPAAUAAAAAAP3/AwAPAAYAAAD///3/AwAPAAYAAAD+//3/AwAPAAYAAAD+//z/AwAPAAYAAAD///z/AwAPAAYAAAAAAPz/AwAPAAYAAAABAPn/AwAGABEAAAD9//n/AwAEABEAAAD9//r/AwAAABIAAAABAPr/AwACABIAAAD8//r/AwAQAAYAAAD8//v/AwAQAAYAAAACAPr/AwAQAAYAAAACAPv/AwAQAAYAAAD8//j/AwAFABEAAAD8//n/AwABABIAAAACAPn/AwABABIAAAACAPj/AwAFABEAAAD7//j/AwALAAIAAAD7//n/AwALAAIAAAD7//r/AwALAAIAAAD7//v/AwALAAIAAAADAPj/AwANAAIAAAADAPn/AwANAAIAAAADAPr/AwANAAIAAAADAPv/AwANAAIAAAD7//z/AwALAAMAAAADAPz/AwANAAMAAAACAPz/AwAGAAIAAAD8//z/AwAFAAIAAAD8//3/AwALAAEAACACAP3/AwALAAEAADACAAAAAwALAAEAABD8/wAAAwALAAEAAAD8/wEAAwALAAMAAAD9/wEAAwAMAAMAAAD+/wEAAwAMAAMAAAD//wEAAwAMAAMAAAAAAAEAAwAMAAMAAAABAAEAAwAMAAMAAAACAAEAAwANAAMAAAD///n/BAADAAAAAAADAPf/AwANAAIAAAD7//f/AwALAAIAAAD9//j/AwAEABEAAAABAPj/AwAGABEAAAACAPf/AwAFABEAAAD8//f/AwAFABEAAAD9//f/AwAAABEAAAABAPf/AwACABEAAAD+//f/AwABABEAAAD///f/AwABABEAAAAAAPf/AwABABEAAAD8//b/AwABABEAAAACAPb/AwABABEAAAADAPb/AwANAAEAAAD7//b/AwALAAEAAAD9//b/AwANAAEAAAABAPb/AwALAAEAAAA=")
+tile_set = ExtResource("2_w3e06")
+
+[node name="decor" type="TileMapLayer" parent="." index="4"]
+tile_map_data = PackedByteArray("AAACAPn/AQAMACgAAAACAPr/AQAMACkAAAD8//n/AQAMACgAAAD8//r/AQAMACkAAAACAPf/AQABAEYAAAACAPj/AQABAEcAAAD8//f/AQAAAEYAAAD8//j/AQAAAEcAAAD9//n/AQABABMAAAA=")
+tile_set = ExtResource("2_w3e06")
+
+[node name="SSA_LeftWing" parent="." index="5" instance=ExtResource("3_eqefy")]
+starting_location = "VaultDoor"
+to_scene = "res://ROOMS/left_wing.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_LeftWing" index="0"]
+position = Vector2(-51.5, -16)
+shape = SubResource("RectangleShape2D_eqefy")
+
+[node name="Player" parent="." index="6" instance=ExtResource("4_r6nrq")]
+position = Vector2(-2, -10)
+
+[node name="SSA_RightWing" parent="." index="7" instance=ExtResource("3_eqefy")]
+starting_location = "VaultDoor"
+to_scene = "res://ROOMS/right_wing.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_RightWing" index="0"]
+position = Vector2(35.5, -16)
+shape = SubResource("RectangleShape2D_eqefy")
+
+[node name="SSA_Vault" parent="." index="8" instance=ExtResource("3_eqefy")]
+starting_location = "PrevaultDoor"
+to_scene = "res://ROOMS/vault.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_Vault" index="0"]
+position = Vector2(-8, -104)
+shape = SubResource("RectangleShape2D_r6nrq")
+
+[node name="VaultControls" parent="." index="9" instance=ExtResource("5_7fjqr")]
+position = Vector2(19, -91)
+
+[node name="FireAlarm" type="Area2D" parent="." index="10" groups=["interactable"]]
+position = Vector2(-44, -89)
+script = ExtResource("6_ulgid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireAlarm" index="0"]
+shape = SubResource("RectangleShape2D_ulgid")

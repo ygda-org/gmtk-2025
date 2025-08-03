@@ -1,0 +1,15 @@
+~ start
+: The panels on the wall appear to be sewer drainage controls.
+if GameState.has_flooded():
+	: Lower water levels?
+	- Yes
+		do GameState.set_flooded()
+	- No
+		=> END
+else:
+	: Raise water levels?
+	- Yes
+		do GameState.set_flooded()
+	- No
+		=> END
+=> END
