@@ -47,6 +47,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-7, 359), Vector2(-7, 213)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["walk_up"],
+"method": &"set_animation"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rg6lw"]
 _data = {
