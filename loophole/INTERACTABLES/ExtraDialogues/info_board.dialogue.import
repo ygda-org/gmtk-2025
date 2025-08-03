@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://di1bgsm7aktkl"
+path="res://.godot/imported/info_board.dialogue-3602877747834baeb86b6181f5829a21.tres"
+
+[deps]
+
+source_file="res://INTERACTABLES/ExtraDialogues/info_board.dialogue"
+dest_files=["res://.godot/imported/info_board.dialogue-3602877747834baeb86b6181f5829a21.tres"]
+
+[params]
+
+defaults=true

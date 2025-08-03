@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://4qighc3yxqc4"]
+[gd_scene load_steps=21 format=4 uid="uid://4qighc3yxqc4"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_6cabt"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_m8e51"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://b6oxst7mopyj8" path="res://NPCs/Sam/sam.tscn" id="7_rg6lw"]
 [ext_resource type="Script" uid="uid://fiu5lqfji2yg" path="res://ROOMS/metal_detectors.gd" id="8_ejw3m"]
 [ext_resource type="Texture2D" uid="uid://burv1yoy1gxtu" path="res://ASSETS/metal_detector.png" id="8_l7uwf"]
+[ext_resource type="PackedScene" uid="uid://btpx48aykm0gc" path="res://INTERACTABLES/StandardObjectManager.tscn" id="11_4oy2y"]
+[ext_resource type="Resource" uid="uid://cqnsjocyncgw6" path="res://INTERACTABLES/ExtraDialogues/wall.dialogue" id="12_l2d75"]
+[ext_resource type="PackedScene" uid="uid://by5no5n5rin3c" path="res://INTERACTABLES/Interactable.tscn" id="13_raar0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cabt"]
 size = Vector2(48.25, 47.25)
@@ -100,6 +103,9 @@ _data = {
 &"intro_cutscene": SubResource("Animation_susxu"),
 &"walk_to_metal_detectors": SubResource("Animation_c1rky")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxsgq"]
+size = Vector2(496, 32)
 
 [node name="Outside" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_6cabt")]
 script = ExtResource("2_c1rky")
@@ -194,7 +200,7 @@ libraries = {
 }
 
 [node name="Sam" parent="." index="14" instance=ExtResource("7_rg6lw")]
-position = Vector2(-117, 223)
+position = Vector2(-116, 227)
 autoplay = "adam"
 anim = "adam"
 
@@ -212,3 +218,12 @@ position = Vector2(20, 199)
 texture = ExtResource("8_l7uwf")
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 32)
+
+[node name="StandardObjectManager" parent="." index="16" instance=ExtResource("11_4oy2y")]
+dialogue = ExtResource("12_l2d75")
+
+[node name="Interactable" parent="StandardObjectManager" index="0" instance=ExtResource("13_raar0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StandardObjectManager/Interactable" index="0"]
+position = Vector2(-25, 200)
+shape = SubResource("RectangleShape2D_uxsgq")

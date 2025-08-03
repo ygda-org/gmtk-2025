@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://btpx48aykm0gc"]
+
+[ext_resource type="Script" uid="uid://cuta4kug7o56s" path="res://INTERACTABLES/standard_object_manager.gd" id="1_qpi2a"]
+
+[node name="StandardObjectManager" type="Node2D"]
+script = ExtResource("1_qpi2a")

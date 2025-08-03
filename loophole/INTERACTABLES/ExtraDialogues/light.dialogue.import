@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bgagh85drbumq"
+path="res://.godot/imported/light.dialogue-aca7b939a6a83830a4baec3e8bbea16f.tres"
+
+[deps]
+
+source_file="res://INTERACTABLES/ExtraDialogues/light.dialogue"
+dest_files=["res://.godot/imported/light.dialogue-aca7b939a6a83830a4baec3e8bbea16f.tres"]
+
+[params]
+
+defaults=true
