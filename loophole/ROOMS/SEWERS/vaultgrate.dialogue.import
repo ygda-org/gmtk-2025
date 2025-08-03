@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d0ryd7vtbrlrv"
+path="res://.godot/imported/vaultgrate.dialogue-3d26fc6ef01a21aefd00e217734b2e5f.tres"
+
+[deps]
+
+source_file="res://ROOMS/SEWERS/vaultgrate.dialogue"
+dest_files=["res://.godot/imported/vaultgrate.dialogue-3d26fc6ef01a21aefd00e217734b2e5f.tres"]
+
+[params]
+
+defaults=true

@@ -1,5 +1,9 @@
 extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
-		GameState.send_to_vault("sewer_path")
+	pass
+	#if body.name == "Player":
+	#	DialogueManager.show_dialogue_balloon(load("res://ROOMS/SEWERS/vaultgrate.dialogue"))
+
+func interact():
+	DialogueManager.show_dialogue_balloon(load("res://ROOMS/SEWERS/vaultgrate.dialogue"))
