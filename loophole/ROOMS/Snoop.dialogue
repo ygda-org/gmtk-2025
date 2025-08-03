@@ -1,22 +1,21 @@
 ~ start
 **You put your ear against the wall**
 if GameState.loaded_save_data["disguise_path"] == 2:
-	CEO: Before I tell you the very impotant top secret new vault password
-	CEO: Let me tell you about my life history.
-	CEO: blah blah blah blah
-	CEO: blah blah blah blah
-	CEO: blah blah blah blah
-	CEO: blah blah blah blah
-	CEO: blah blah blah blah
-	CEO: blah blah blah blah
-	CEO: blah blah blah blah
-	CEO: blah blah blah blah
-	CEO: blah blah blah blah
-	CEO: blah blah blah blah
-	CEO: blah blah blah blah
-	CEO: blah blah blah blah
-	CEO: blah blah blah blah
-	CEO: Yeah so anyway its 6234
+	CEO: Before I tell you what you need, let me tell you about my life history.
+	CEO: I remember, I was 14 back when calamity first struck.
+	CEO: It was my dog. He met an unfortunate end.
+	CEO: Losing my beloved pet at first gave me a lot of difficulty.
+	CEO: But over time the struggle has helped shape me to who I am today.
+	CEO: Thanks to that, when I was 23, fresh out of college, I got my first job.
+	CEO: That job was titled, "son of CEO". It was a low start, but every man has humble beginnings.
+	CEO: It took me years to work my way up in the company, going from son of CEO to CEO proper.
+	CEO: It was here that I discovered the ability to turn back time.
+	CEO: But man is this job hard.
+	CEO: Some guy keeps managing to break into our vault. I mean, I designed all the original security measures myself.
+	CEO: They must be some sort of genius if they can manage it.
+	CEO: But every time they do, I turn back time and fix it.
+	CEO: For example, one time this person broke into the vault, so I had to change the password to 6234.
+	CEO: I've made sure there's no way they can get this password. So I think I'm good to kick back and relax.
 elif GameState.loaded_save_data["disguise_path"] == 3:
 	??
 	**Sound proof walls??**
