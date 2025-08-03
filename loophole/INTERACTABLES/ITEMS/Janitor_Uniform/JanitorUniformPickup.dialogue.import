@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://81xfwukrtnd"
+path="res://.godot/imported/JanitorUniformPickup.dialogue-d2fcb7de1e07c31f4550ab48f4c25de6.tres"
+
+[deps]
+
+source_file="res://INTERACTABLES/ITEMS/Janitor_Uniform/JanitorUniformPickup.dialogue"
+dest_files=["res://.godot/imported/JanitorUniformPickup.dialogue-d2fcb7de1e07c31f4550ab48f4c25de6.tres"]
+
+[params]
+
+defaults=true

@@ -1,7 +1,7 @@
 ~ start
 if GameState.loaded_save_data["disguise_path"] == 0:
 	=> Unlocked
-if GameState.loaded_save_data["disguise_path"] == 1:
+if GameState.loaded_save_data["disguise_path"] >= 1:
 	=> Locked
 ~ Unlocked
 : There's two buttons, one saying, "open" and the other saying, "close".
