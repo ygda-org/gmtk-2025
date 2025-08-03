@@ -159,7 +159,9 @@ a group of high school students interested in making games
 
 Acknowledgements
  - Modern Interior Assets by LimuZu (https://limezu.itch.io/)
- - All Fonts by Pixel Overload( https://pixeloverload.itch.io/)"
+ - All Fonts by Pixel Overload( https://pixeloverload.itch.io/)
+-  - Water+ by SciGho (https://ninjikin.itch.io/water)
+"
 
 [connection signal="pressed" from="Background/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="UI/Popup/Load" to="." method="_on_load_pressed"]
