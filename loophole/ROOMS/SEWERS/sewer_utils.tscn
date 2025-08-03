@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=4 uid="uid://tmas2xxm8dw0"]
+
+[ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_re31b"]
+[ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_eytpn"]
+[ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="3_16o4n"]
+[ext_resource type="PackedScene" uid="uid://dntmx05tc2bbt" path="res://NPCs/Janitor/janitor.tscn" id="4_16o4n"]
+[ext_resource type="Script" uid="uid://cyvlpqs6yvait" path="res://ROOMS/SEWERS/water_level.gd" id="5_50iho"]
+[ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="6_jmv60"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16o4n"]
+size = Vector2(20, 33.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvl68"]
+size = Vector2(20, 40)
+
+[node name="sewer_utils" node_paths=PackedStringArray("node_with_locations") instance=ExtResource("1_re31b")]
+node_with_locations = NodePath("StartingLocations")
+
+[node name="StartingLocations" type="Node" parent="." index="0"]
+
+[node name="UtilsDoor" type="Node2D" parent="StartingLocations" index="0"]
+position = Vector2(-54, -4)
+
+[node name="floor" type="TileMapLayer" parent="." index="1"]
+tile_map_data = PackedByteArray("AAAAAP//BwASAAgAAAD/////BwASAAgAAAD//wAABwASAAgAAAAAAAAABwASAAgAAAAAAP7/BwASAAgAAAD///7/BwASAAgAAAD+//7/BwASAAgAAAD+////BwASAAgAAAD+/wAABwASAAgAAAABAAAABwASAAgAAAABAP//BwASAAgAAAABAP7/BwASAAgAAAABAP3/BwASAAgAAAAAAP3/BwASAAgAAAD///3/BwASAAgAAAD+//3/BwASAAgAAAACAAAABwASAAgAAAACAP//BwASAAgAAAACAP7/BwASAAgAAAACAP3/BwASAAgAAAD9/wAABwASAAgAAAD9////BwASAAgAAAD9//7/BwASAAgAAAD9//3/BwASAAgAAAD8/wAABwASAAgAAAD8////BwASAAgAAAD7////BwASAAgAAAD7/wAABwASAAgAAAD+/wEABwASAAgAAAD//wEABwASAAgAAAAAAAEABwASAAgAAAABAAEABwASAAgAAAACAAEABwASAAgAAAADAAEABwASAAgAAAADAAAABwASAAgAAAAEAAAABwASAAgAAAAEAP//BwASAAgAAAAEAP7/BwASAAgAAAAEAP3/BwASAAgAAAADAP3/BwASAAgAAAADAP7/BwASAAgAAAADAP//BwASAAgAAAAEAAEABwASAAgAAAA=")
+tile_set = ExtResource("2_eytpn")
+collision_enabled = false
+
+[node name="walls" type="TileMapLayer" parent="." index="2"]
+tile_map_data = PackedByteArray("AAD7/wEABwAMAAMAAAD6/wEABwALAAMAAAD7//3/BwAHAAUAAAD7//7/BwAHAAYAAAD8//3/BwAJAAUAAAD8//7/BwAJAAYAAAD6//3/BwALAAMAAAD9//v/BwAHAAUAAAD9//z/BwAHAAYAAAD+//v/BwAIAAUAAAD+//z/BwAIAAYAAAD///z/BwAIAAYAAAD///v/BwAIAAUAAAAAAPv/BwAIAAUAAAAAAPz/BwAIAAYAAAABAPv/BwAIAAUAAAABAPz/BwAIAAYAAAD8//z/BwALAAIAAAD8//v/BwALAAEAAAACAPv/BwAIAAUAAAACAPz/BwAIAAYAAAADAPv/BwAIAAUAAAADAPz/BwAIAAYAAAAEAPv/BwAIAAUAAAAEAPz/BwAIAAYAAAD9/wEABwAFAAIAAAD8/wEABwAMAAMAAAD9/wIABwALAAMAAAD+/wIABwAMAAMAAAD//wIABwAMAAMAAAAAAAIABwAMAAMAAAABAAIABwAMAAMAAAACAAIABwAMAAMAAAADAAIABwAMAAMAAAAEAAIABwAMAAMAAAAFAAIABwANAAMAAAAFAAEABwANAAIAAAAFAAAABwANAAIAAAAFAP//BwANAAIAAAAFAP7/BwANAAIAAAAFAP3/BwANAAIAAAAFAPz/BwANAAIAAAAFAPv/BwANAAEAAAA=")
+tile_set = ExtResource("2_eytpn")
+
+[node name="decor" type="TileMapLayer" parent="." index="3"]
+tile_map_data = PackedByteArray("AAD+//3/AQAGAA0AAAADAP3/AQACACgAAAADAP7/AQACACkAAAAEAP3/AQADACgAAAAEAP7/AQADACkAAAADAP//AQAHAFAAAAADAAAAAQAHAFEAAAADAAEAAQAHAFIAAAAEAP//AQAIAFAAAAAEAAAAAQAIAFEAAAAEAAEAAQAIAFIAAAD9//z/AQANAFQAAAD9//3/AQANAFUAAAD+/wEAAQAMADoAAAD+////AQAMADgAAAD+/wAAAQAMADkAAAAAAPz/AQAJABsAAAABAPz/AQAEABwAAAACAPv/AQAKAC8AAAADAPv/AQALAC8AAAD+//v/AQAKAC8AAAD///v/AQALAC8AAAA=")
+tile_set = ExtResource("2_eytpn")
+
+[node name="Player" parent="." index="6" instance=ExtResource("3_16o4n")]
+
+[node name="Janitor" parent="." index="7" instance=ExtResource("4_16o4n")]
+position = Vector2(-24, -49)
+disabled = true
+
+[node name="water_level" type="Area2D" parent="." index="8" groups=["interactable"]]
+script = ExtResource("5_50iho")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water_level" index="0"]
+position = Vector2(16, -57.25)
+shape = SubResource("RectangleShape2D_16o4n")
+
+[node name="SSA_Utilities" parent="." index="9" instance=ExtResource("6_jmv60")]
+position = Vector2(-80, -4)
+starting_location = "UtilsDoor"
+to_scene = "res://ROOMS/SEWERS/sewer_entrance.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SSA_Utilities" index="0"]
+shape = SubResource("RectangleShape2D_cvl68")
+
+[node name="ColorRect" type="ColorRect" parent="SSA_Utilities" index="1"]
+visible = false
+offset_left = -29.0
+offset_top = -79.0
+offset_right = 19.0
+offset_bottom = -32.0
+color = Color(0, 1, 1, 1)

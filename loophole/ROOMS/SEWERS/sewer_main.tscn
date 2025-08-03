@@ -36,30 +36,40 @@ tile_map_data = PackedByteArray("AAACAAIABwAKAAEAAAAFAAIABwAMAAMAAAAGAAIABwAMAAM
 tile_set = ExtResource("2_y456t")
 
 [node name="walls2" type="TileMapLayer" parent="." index="4"]
-tile_map_data = PackedByteArray("AAD2//3/BwALAAEAAAA=")
+tile_map_data = PackedByteArray("AAD2//3/BwALAAEAAAD8//z/BwAEAAMAAAD///z/BwAEAAMAAAA=")
 tile_set = ExtResource("2_y456t")
 
-[node name="planks" type="TileMapLayer" parent="." index="5"]
+[node name="water" type="TileMapLayer" parent="." index="5"]
+visible = false
+tile_map_data = PackedByteArray("AAD6//7/BQAHAAUAAAD6////BQAHAAMAAAD6/wAABQAHAAQAAAD7/wAABQAHAAUAAAD7/wEABQAHAAMAAAD7////BQAHAAQAAAD6/wEABQAHAAUAAAABAAEABQAHAAUAAAAAAAEABQAHAAQAAAD8/wEABQAIAAUAAAD8/wAABQAHAAMAAAD8////BQAHAAUAAAD8//7/BQAIAAQAAAD7//7/BQAHAAMAAAD9//7/BQAIAAUAAAD9////BQAHAAMAAAD+////BQAHAAQAAAD+/wAABQAHAAQAAAD9/wAABQAHAAQAAAD9/wEABQAHAAQAAAD+/wEABQAHAAUAAAD//wAABQAHAAUAAAD/////BQAHAAQAAAD///7/BQAHAAQAAAD+//7/BQAHAAMAAAD//wEABQAHAAMAAAAAAAAABQAHAAMAAAABAAAABQAHAAQAAAABAP//BQAHAAMAAAABAP7/BQAIAAQAAAABAP3/BQAHAAQAAAABAPz/BQAHAAQAAAAAAPz/BQAHAAMAAAD///z/BQAHAAUAAAD+//z/BQAHAAQAAAD9//z/BQAHAAMAAAD8//z/BQAHAAUAAAD7//z/BQAHAAQAAAD6//z/BQAHAAMAAAD6//3/BQAHAAQAAAD7//3/BQAKAAUAAAD8//3/BQAHAAMAAAD9//3/BQAHAAQAAAD+//3/BQAHAAUAAAD///3/BQAJAAMAAAAAAP3/BQAHAAQAAAAAAP//BQAHAAUAAAAAAP7/BQAIAAMAAAD6/wIABQADAAIAAAD7/wIABQAEAAIAAAD7/wMABQADAAIAAAD9/wMABQACAAIAAAD+/wMABQADAAIAAAD//wMABQAEAAIAAAD//wIABQACAAIAAAAAAAIABQADAAIAAAD+/wIABQAEAAIAAAD9/wIABQADAAIAAAD8/wIABQACAAIAAAAAAAMABQACAAIAAAABAAIABQAEAAIAAAD6/wMABQACAAIAAAD8/wMABQAEAAIAAAABAAMABQADAAIAAAA=")
+tile_set = ExtResource("2_y456t")
+
+[node name="water2" type="TileMapLayer" parent="." index="6"]
+visible = false
+tile_map_data = PackedByteArray("AAD9//3/BQAHAAsAAAD///7/BQAJAAsAAAD9/wEABQAGAAwAAAABAPz/BQAJAAoAAAD7////BQAJAAwAAAAAAAAAAQAKADwAAAD//wAAAQAJADwAAAD7/wAAAQAJADwAAAD8/wAAAQAKADwAAAD6/wAAAQAIADwAAAD+/wAAAQAIADwAAAD9/wAAAQAHADsAAAA=")
+tile_set = ExtResource("2_y456t")
+
+[node name="planks" type="TileMapLayer" parent="." index="7"]
 visible = false
 tile_map_data = PackedByteArray("AAD5/wAAAQAFADsAAAD6/wAAAQAGADsAAAD7/wAAAQAFADsAAAD8/wAAAQAGADsAAAD9/wAAAQAFADsAAAD+/wAAAQAGADsAAAD//wAAAQAFADsAAAAAAAAAAQAGADsAAAABAAAAAQAFADsAAAACAAAAAQAGADsAAAA=")
 tile_set = ExtResource("2_y456t")
 
-[node name="planksbroken" type="TileMapLayer" parent="." index="6"]
+[node name="planksbroken" type="TileMapLayer" parent="." index="8"]
 visible = false
 tile_map_data = PackedByteArray("AAABAAAAAQAIADwAAAACAAAAAQAJADwAAAD5/wAAAQAKADwAAAA=")
 tile_set = ExtResource("2_y456t")
 
-[node name="extra" type="TileMapLayer" parent="." index="7"]
-tile_map_data = PackedByteArray("AAD1////AQAKAD8AAAD1//7/AQAKAD4AAAD0/wEAAQAHADsAAADz////AQAHAEAAAAD0////AQAIAEAAAAD8//z/BwAEAAMAAAD///z/BwAEAAMAAAD+////BwACAAMAAAABAAAAAQAMAEoAAAACAAAAAQANAEoAAAA=")
+[node name="extra" type="TileMapLayer" parent="." index="9"]
+tile_map_data = PackedByteArray("AAD1////AQAKAD8AAAD1//7/AQAKAD4AAAD0/wEAAQAHADsAAADz////AQAHAEAAAAD0////AQAIAEAAAAD+////BwACAAMAAAABAAAAAQAMAEoAAAACAAAAAQANAEoAAAA=")
 tile_set = ExtResource("2_y456t")
 collision_enabled = false
 
-[node name="barriers" type="TileMapLayer" parent="." index="8"]
+[node name="barriers" type="TileMapLayer" parent="." index="10"]
 visible = false
 tile_map_data = PackedByteArray("AAD6////AwABAAUAAAD6/wEAAwABAAUAAAD7////AwABAAUAAAD7/wEAAwABAAUAAAD8////AwABAAUAAAD8/wEAAwABAAUAAAD9////AwABAAUAAAD9/wEAAwABAAUAAAD+//7/AwAHAAUAAAD+/wEAAwABAAUAAAD/////AwABAAUAAAD//wEAAwABAAUAAAAAAP//AwABAAUAAAAAAAEAAwABAAUAAAABAP//AwABAAUAAAABAAEAAwABAAUAAAD6//7/AwABAAUAAAABAP7/AwABAAUAAAA=")
 tile_set = ExtResource("2_y456t")
 
-[node name="barriers2" type="TileMapLayer" parent="." index="9"]
+[node name="barriers2" type="TileMapLayer" parent="." index="11"]
 visible = false
 tile_map_data = PackedByteArray("AAAAAAAAAwABAAUAAAA=")
 tile_set = ExtResource("2_y456t")
@@ -71,10 +81,10 @@ offset_top = -2196.0
 offset_right = -2707.0
 offset_bottom = -2156.0
 
-[node name="Player" parent="." index="12" instance=ExtResource("3_kitq2")]
+[node name="Player" parent="." index="14" instance=ExtResource("3_kitq2")]
 position = Vector2(103, 2)
 
-[node name="SSA_Sewers" parent="." index="13" instance=ExtResource("4_xvxxy")]
+[node name="SSA_Sewers" parent="." index="15" instance=ExtResource("4_xvxxy")]
 position = Vector2(144, -3)
 starting_location = "MainEntrance"
 to_scene = "res://ROOMS/SEWERS/sewer_entrance.tscn"
@@ -90,13 +100,13 @@ offset_right = 19.0
 offset_bottom = -32.0
 color = Color(0, 1, 1, 1)
 
-[node name="extra2" type="TileMapLayer" parent="." index="14"]
+[node name="extra2" type="TileMapLayer" parent="." index="16"]
 modulate = Color(1, 1, 1, 0.607843)
 tile_map_data = PackedByteArray("AAD+////BgAEAAMAAAA=")
 tile_set = ExtResource("2_y456t")
 collision_enabled = false
 
-[node name="SewerToVault" type="Area2D" parent="." index="15" groups=["interactable"]]
+[node name="SewerToVault" type="Area2D" parent="." index="17" groups=["interactable"]]
 position = Vector2(-24, -11)
 script = ExtResource("5_djrnx")
 

@@ -3,6 +3,7 @@ if GameState.player_has_item("Janitor_Uniform"):
 	% Guard: You new around here?
 	% Guard: Hey could you clean out the lockers in the employee room when you have a chance?
 	% Guard: Keep to your job.
+	% Guard: Hey, can I see your passport?
 else:
 	Guard: Hey, you shouldn't be back here. Leave now and I'll look the other way.
 => END

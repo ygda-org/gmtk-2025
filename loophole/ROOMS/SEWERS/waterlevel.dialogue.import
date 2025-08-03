@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://k5rq5411mq6c"
+path="res://.godot/imported/waterlevel.dialogue-fcd4654c5e597cfb3c4421b8585c164e.tres"
+
+[deps]
+
+source_file="res://ROOMS/SEWERS/waterlevel.dialogue"
+dest_files=["res://.godot/imported/waterlevel.dialogue-fcd4654c5e597cfb3c4421b8585c164e.tres"]
+
+[params]
+
+defaults=true

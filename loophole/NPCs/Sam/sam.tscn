@@ -460,7 +460,6 @@ size = Vector2(20, 39)
 [node name="Sam" instance=ExtResource("1_v8dey")]
 sprite_frames = SubResource("SpriteFrames_fyyh5")
 animation = &"adam"
-frame_progress = 0.493293
 script = ExtResource("6_461a4")
 anim = ""
 dialogue = ExtResource("7_4ibol")
