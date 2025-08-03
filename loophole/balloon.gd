@@ -173,4 +173,12 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
 
 
+
+func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
+	var frequency = 3
+	if letter_index % frequency != 0:
+		return
+	if letter not in "., ":
+		AudioManager.create_audio_with_variance(SFXSettings.SOUND_EFFECT_LABEL.Beep, Vector2(0.5,2))
+
 #endregion

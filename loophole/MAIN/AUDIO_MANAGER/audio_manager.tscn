@@ -1,0 +1,98 @@
+[gd_scene load_steps=21 format=3 uid="uid://cqm2yunv223da"]
+
+[ext_resource type="Script" uid="uid://dai3thsuli1r7" path="res://MAIN/AUDIO_MANAGER/audio_manager.gd" id="1_umqkn"]
+[ext_resource type="Script" uid="uid://dop677pnbgxb7" path="res://MAIN/AUDIO_MANAGER/sfx_settings.gd" id="2_0qod5"]
+[ext_resource type="AudioStream" uid="uid://b1b4364ynywv4" path="res://ASSETS/Audio/Music/in_game_song.mp3" id="3_ej25p"]
+[ext_resource type="AudioStream" uid="uid://b4wobfh6q3exu" path="res://ASSETS/Audio/Music/main_menu_song.mp3" id="4_bevy1"]
+[ext_resource type="AudioStream" uid="uid://cer86tjcoextb" path="res://ASSETS/Audio/door_close.mp3" id="5_bdu88"]
+[ext_resource type="AudioStream" uid="uid://yivucad4lwal" path="res://ASSETS/Audio/door_open.mp3" id="6_ilnfc"]
+[ext_resource type="AudioStream" uid="uid://d23c14ayosqni" path="res://ASSETS/Audio/keypad_press.mp3" id="7_yln7l"]
+[ext_resource type="AudioStream" uid="uid://dylmwqb8sq4xx" path="res://ASSETS/Audio/time_warp.mp3" id="8_fqgr3"]
+[ext_resource type="AudioStream" uid="uid://bfpy8fcvhtjdk" path="res://ASSETS/Audio/base_footsteps.mp3" id="9_bevy1"]
+[ext_resource type="AudioStream" uid="uid://5lofblx44ms4" path="res://ASSETS/Audio/unscrewing_bolt.mp3" id="10_bdu88"]
+[ext_resource type="AudioStream" uid="uid://1t5fk7vyoshh" path="res://ASSETS/Audio/beep.mp3" id="11_bdu88"]
+
+[sub_resource type="Resource" id="Resource_1tgwj"]
+script = ExtResource("2_0qod5")
+label = 0
+stream = ExtResource("3_ej25p")
+volume = -16.316
+pitch = 1.0
+audio_start_offset = 0.0
+metadata/_custom_type_script = "uid://dop677pnbgxb7"
+
+[sub_resource type="Resource" id="Resource_0epao"]
+script = ExtResource("2_0qod5")
+label = 1
+stream = ExtResource("4_bevy1")
+volume = 1.0
+pitch = 1.0
+audio_start_offset = 0.0
+metadata/_custom_type_script = "uid://dop677pnbgxb7"
+
+[sub_resource type="Resource" id="Resource_eavjr"]
+script = ExtResource("2_0qod5")
+label = 2
+stream = ExtResource("5_bdu88")
+volume = 1.0
+pitch = 1.0
+audio_start_offset = 0.0
+metadata/_custom_type_script = "uid://dop677pnbgxb7"
+
+[sub_resource type="Resource" id="Resource_skk36"]
+script = ExtResource("2_0qod5")
+label = 3
+stream = ExtResource("6_ilnfc")
+volume = 1.0
+pitch = 1.0
+audio_start_offset = 0.0
+metadata/_custom_type_script = "uid://dop677pnbgxb7"
+
+[sub_resource type="Resource" id="Resource_4dgq0"]
+script = ExtResource("2_0qod5")
+label = 4
+stream = ExtResource("7_yln7l")
+volume = 1.0
+pitch = 1.0
+audio_start_offset = 0.0
+metadata/_custom_type_script = "uid://dop677pnbgxb7"
+
+[sub_resource type="Resource" id="Resource_5dcgn"]
+script = ExtResource("2_0qod5")
+label = 5
+stream = ExtResource("8_fqgr3")
+volume = 1.0
+pitch = 1.0
+audio_start_offset = 0.25
+metadata/_custom_type_script = "uid://dop677pnbgxb7"
+
+[sub_resource type="Resource" id="Resource_ilnfc"]
+script = ExtResource("2_0qod5")
+label = 6
+stream = ExtResource("9_bevy1")
+volume = 1.0
+pitch = 1.0
+audio_start_offset = 0.0
+metadata/_custom_type_script = "uid://dop677pnbgxb7"
+
+[sub_resource type="Resource" id="Resource_yln7l"]
+script = ExtResource("2_0qod5")
+label = 7
+stream = ExtResource("10_bdu88")
+volume = 1.0
+pitch = 1.0
+audio_start_offset = 0.0
+metadata/_custom_type_script = "uid://dop677pnbgxb7"
+
+[sub_resource type="Resource" id="Resource_fqgr3"]
+script = ExtResource("2_0qod5")
+label = 8
+stream = ExtResource("11_bdu88")
+volume = -7.329
+pitch = 1.0
+audio_start_offset = 0.02
+metadata/_custom_type_script = "uid://dop677pnbgxb7"
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource("1_umqkn")
+sound_effect_settings = Array[ExtResource("2_0qod5")]([SubResource("Resource_1tgwj"), SubResource("Resource_0epao"), SubResource("Resource_eavjr"), SubResource("Resource_skk36"), SubResource("Resource_4dgq0"), SubResource("Resource_5dcgn"), SubResource("Resource_ilnfc"), SubResource("Resource_yln7l"), SubResource("Resource_fqgr3")])

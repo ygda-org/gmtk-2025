@@ -19,6 +19,7 @@ else
 
 Wait... what is happening?
 
+do AudioManager.create_audio(SFXSettings.SOUND_EFFECT_LABEL.TimeWarp)
 do GameState.get_cutscene_player().play("ending")
 
 => END

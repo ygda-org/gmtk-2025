@@ -5,3 +5,4 @@ Our GMTK game jam submission
 
  - [Modern Interior Assets by LimuZu](https://limezu.itch.io/)
  - [All Fonts by Pixel Overload](https://pixeloverload.itch.io/)
+ - [Water+ by SciGho](https://ninjikin.itch.io/water)

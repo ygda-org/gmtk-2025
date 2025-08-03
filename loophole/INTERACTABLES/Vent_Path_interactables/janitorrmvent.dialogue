@@ -15,7 +15,8 @@ if GameState.loaded_save_data["vent_path"] >= 1:
 if GameState.player_has_item("Screwdriver"):
 	: Unlock the vent?
 	- Yes
-		: The vent is unlocked!
+		do AudioManager.create_audio(SFXSettings.SOUND_EFFECT_LABEL.UnscrewingBolt)
+		: [wait=2.68] The vent is unlocked!
 		=> open_vent
 	- No
 		=> END
