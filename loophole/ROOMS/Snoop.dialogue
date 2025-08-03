@@ -21,5 +21,15 @@ elif GameState.loaded_save_data["disguise_path"] == 3:
 	??
 	**Sound proof walls??**
 else:
-	**You hear them muttering something about metal detectors**
+	match GameState.loaded_save_data["last_playthrough"]:
+		when "intro"
+			**You hear them muttering something about metal detectors**
+		when "disguise_path"
+			**You hear them muttering something about passcodes**
+		when "vent_path"
+			**You hear them muttering something about vents**
+		when "sewer_path"
+			**You hear them muttering something about sewers**
+		else
+			**You didn't bother listening, though**
 => END
