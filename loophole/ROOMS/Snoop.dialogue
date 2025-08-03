@@ -18,7 +18,7 @@ if GameState.loaded_save_data["disguise_path"] == 2:
 	CEO: Some guy keeps managing to break into our vault. I mean, I designed all the original security measures myself.
 	CEO: They must be some sort of genius if they can manage it.
 	CEO: But every time they do, I turn back time and fix it.
-	CEO: For example, one time this person broke into the vault, so I had to change the password to 6234.
+	CEO: For example, one time this person broke into the vault, so I had to change the password to 62145.
 	CEO: I've made sure there's no way they can get this password. So I think I'm good to kick back and relax.
 elif GameState.loaded_save_data["disguise_path"] >= 3:
 	???
