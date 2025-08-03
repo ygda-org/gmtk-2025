@@ -9,6 +9,8 @@ enum SOUND_EFFECT_LABEL{
 	DoorOpen,
 	KeypadPress,
 	TimeWarp,
+	BaseFootsteps,
+	UnscrewingBolt,
 }
 
 @export var label : SOUND_EFFECT_LABEL

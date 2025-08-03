@@ -173,4 +173,8 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
 
 
+
+func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
+	pass # Replace with function body.
+
 #endregion

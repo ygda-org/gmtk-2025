@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ctx37vvxpduvj"]
+[gd_scene load_steps=11 format=3 uid="uid://60uds61c7lv7"]
 
 [ext_resource type="Script" uid="uid://dubgtwt55tbpo" path="res://balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
@@ -148,4 +148,5 @@ icon_alignment = 1
 expand_icon = true
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="spoke" from="Balloon/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
