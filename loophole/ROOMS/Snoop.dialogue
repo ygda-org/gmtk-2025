@@ -30,6 +30,8 @@ else:
 			**You hear them muttering something about vents**
 		when "sewer_path"
 			**You hear them muttering something about sewers**
+		when "inspector_path"
+			**You hear them muttering something about inspectors**
 		else
 			**You didn't bother listening, though**
 => END
