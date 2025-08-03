@@ -25,7 +25,9 @@ do AudioManager.create_audio(SFXSettings.SOUND_EFFECT_LABEL.TimeWarp)
 do GameState.get_cutscene_player().play("ending")
 => END
 ~ true_end
-: I did it!
-CEO: What? Nooooooooooooo
-: Yay!
+: I did it no more turning back time! This money is mine!
+CEO: What happened to my power? 
+CEO: Noooooooooooooooooooooooooooooooooo
+CEO: Fine. I give up. Take it. And get out of my sight! I never want to see you again.
+: Finally, I'm rich!
 => END
