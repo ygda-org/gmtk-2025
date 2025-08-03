@@ -143,6 +143,29 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(26, -309), Vector2(26, -434), Vector2(11, -434), Vector2(11, -485)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.833333, 1.1, 1.73333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": ["walk_up"],
+"method": &"set_animation"
+}, {
+"args": ["walk_left"],
+"method": &"set_animation"
+}, {
+"args": ["walk_up"],
+"method": &"set_animation"
+}, {
+"args": ["idle_up"],
+"method": &"set_animation"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8hmr8"]
 _data = {
