@@ -1,12 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://b73ti8uendry"]
+[gd_scene load_steps=6 format=3 uid="uid://b73ti8uendry"]
 
 [ext_resource type="Script" uid="uid://bac6cdou3yksv" path="res://MAIN/main.gd" id="1_gqgiv"]
-[ext_resource type="Texture2D" uid="uid://bb6wn7u4pvdbj" path="res://ASSETS/CoonTitle.png" id="2_gqgiv"]
+[ext_resource type="Texture2D" uid="uid://b7sb1h203ojm3" path="res://ASSETS/main_menu_bg_nobutton.png" id="2_kevqq"]
 [ext_resource type="FontFile" uid="uid://b5d3s5g2svclm" path="res://ASSETS/Fonts/BasicText.otf" id="2_pf8bj"]
+[ext_resource type="Texture2D" uid="uid://dppjfmkg67waq" path="res://ASSETS/play_button_final.png" id="3_giqgi"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_gqgiv"]
-font = ExtResource("2_pf8bj")
-font_size = 36
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqgiv"]
+bg_color = Color(0.46, 0.242267, 0.1334, 0.619608)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_gqgiv")
@@ -14,7 +18,7 @@ script = ExtResource("1_gqgiv")
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 960.0
 offset_bottom = 540.0
-texture = ExtResource("2_gqgiv")
+texture = ExtResource("2_kevqq")
 
 [node name="PlayButton" type="TextureButton" parent="Background"]
 layout_mode = 1
@@ -29,6 +33,11 @@ offset_right = -34.0
 offset_bottom = -52.0
 grow_horizontal = 0
 grow_vertical = 0
+texture_normal = ExtResource("3_giqgi")
+texture_pressed = ExtResource("3_giqgi")
+texture_hover = ExtResource("3_giqgi")
+texture_disabled = ExtResource("3_giqgi")
+texture_focused = ExtResource("3_giqgi")
 
 [node name="GrayOut" type="ColorRect" parent="Background"]
 visible = false
@@ -40,7 +49,7 @@ color = Color(0.11, 0.11, 0.11, 0.603922)
 [node name="UI" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="Popup" type="ColorRect" parent="UI"]
+[node name="Popup" type="Panel" parent="UI"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -52,21 +61,21 @@ offset_right = 250.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.24, 0.48, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_gqgiv")
 
 [node name="Label" type="Label" parent="UI/Popup"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -250.5
-offset_top = 50.0
-offset_right = 250.5
-offset_bottom = 147.0
+offset_left = -231.0
+offset_top = 35.0
+offset_right = 231.0
+offset_bottom = 72.0
 grow_horizontal = 2
-text = "Welcome to Coon Con Loop!"
-label_settings = SubResource("LabelSettings_gqgiv")
-horizontal_alignment = 1
+theme_override_fonts/font = ExtResource("2_pf8bj")
+theme_override_font_sizes/font_size = 36
+text = "Welcome To Coon Con's Loop"
 
 [node name="Load" type="Button" parent="UI/Popup"]
 layout_mode = 1
@@ -111,7 +120,7 @@ text = "Credits"
 [node name="Credits" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="Popup" type="ColorRect" parent="Credits"]
+[node name="Popup" type="Panel" parent="Credits"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -123,7 +132,7 @@ offset_right = 250.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.24, 0.48, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_gqgiv")
 
 [node name="Back" type="Button" parent="Credits/Popup"]
 layout_mode = 1
@@ -143,9 +152,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -231.0
-offset_top = -89.5
+offset_top = -102.5
 offset_right = 231.0
-offset_bottom = 89.5
+offset_bottom = 102.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Made by YGDA, 
