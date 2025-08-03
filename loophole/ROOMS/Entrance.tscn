@@ -11,12 +11,12 @@
 [ext_resource type="Resource" uid="uid://b2wrdl66r2bqr" path="res://INTERACTABLES/ITEMS/Janitor_Key/Janitor_Key.tres" id="7_g5jtj"]
 [ext_resource type="Texture2D" uid="uid://beiibego5xrww" path="res://ASSETS/door_front_animation.png" id="9_vxjj2"]
 [ext_resource type="PackedScene" uid="uid://nkuh2inbdsfa" path="res://INTERACTABLES/Locked_Door/Side_Door.tscn" id="9_wbsbj"]
-[ext_resource type="Script" path="res://ROOMS/entrance_cutscene.gd" id="10_j3g3i"]
+[ext_resource type="Script" uid="uid://b51c86rwyskqh" path="res://ROOMS/entrance_cutscene.gd" id="10_j3g3i"]
 [ext_resource type="PackedScene" uid="uid://druwyapeq51bv" path="res://ROOMS/SCENE_MANAGEMENT/CutsceneManager.tscn" id="11_8hmr8"]
 [ext_resource type="Resource" uid="uid://yoy4iede8876" path="res://ROOMS/CEOHint.dialogue" id="11_v3of8"]
 [ext_resource type="Resource" uid="uid://b6fi5qx47x44u" path="res://NPCs/Sam/GuyOutsideDoor.dialogue" id="12_ruruj"]
 [ext_resource type="Resource" uid="uid://kvx2jq5oaq12" path="res://ROOMS/CUTSCENES/EntranceIntro.dialogue" id="12_vxjj2"]
-[ext_resource type="PackedScene" path="res://ROOMS/SnoopWall.tscn" id="16_tex4p"]
+[ext_resource type="PackedScene" uid="uid://dskowm0dsprnl" path="res://ROOMS/SnoopWall.tscn" id="16_tex4p"]
 [ext_resource type="Resource" uid="uid://byuqv8pvkwa13" path="res://ROOMS/Snoop.dialogue" id="17_el35e"]
 [ext_resource type="PackedScene" uid="uid://5uyawl4p53aa" path="res://NPCs/Bob/Bob.tscn" id="18_qpco8"]
 [ext_resource type="Resource" uid="uid://c7lksfvw5ssm5" path="res://NPCs/Bob/Tips.dialogue" id="19_ruruj"]
@@ -142,6 +142,29 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(26, -309), Vector2(26, -434), Vector2(11, -434), Vector2(11, -485)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.833333, 1.1, 1.73333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": ["walk_up"],
+"method": &"set_animation"
+}, {
+"args": ["walk_left"],
+"method": &"set_animation"
+}, {
+"args": ["walk_up"],
+"method": &"set_animation"
+}, {
+"args": ["idle_up"],
+"method": &"set_animation"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8hmr8"]
