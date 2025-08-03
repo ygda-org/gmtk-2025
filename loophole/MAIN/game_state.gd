@@ -149,6 +149,7 @@ func restart_game():
 	elif START_SAVE_DATA.keys().has(current_ending):
 		loaded_save_data[current_ending] += 1
 	
+	current_ending = "none"
 	save_game()
 	
 	SceneSwitcher.goto_scene(OUTSIDE, "")

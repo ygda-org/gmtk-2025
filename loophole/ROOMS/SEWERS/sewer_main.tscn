@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_y456t"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="3_kitq2"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="4_xvxxy"]
-[ext_resource type="Script" uid="uid://w7pmfamdul03" path="res://ROOMS/SEWERS/sewer_to_vault.gd" id="5_djrnx"]
+[ext_resource type="Script" path="res://ROOMS/SEWERS/sewer_to_vault.gd" id="5_djrnx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djrnx"]
 size = Vector2(15, 58)
