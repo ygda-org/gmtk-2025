@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctx37vvxpduvj"]
+[gd_scene load_steps=11 format=3 uid="uid://ctx37vvxpduvj"]
 
 [ext_resource type="Script" uid="uid://dubgtwt55tbpo" path="res://balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Texture2D" uid="uid://5374a5empf1q" path="res://ASSETS/New Piskel-1.png(5).png" id="2_jj3vs"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="Texture2D" uid="uid://dt3kpsdph4q6" path="res://ASSETS/response-bg.png" id="5_wxbh2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -92,6 +94,10 @@ clip_children = 2
 layout_mode = 2
 mouse_filter = 1
 
+[node name="Background" type="TextureRect" parent="Balloon/MarginContainer/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("2_jj3vs")
+
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer"]
 layout_mode = 2
 
@@ -122,9 +128,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -290.5
+offset_left = -320.0
 offset_top = -35.0
-offset_right = 290.5
+offset_right = 320.0
 offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -137,6 +143,9 @@ response_template = NodePath("ResponseExample")
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu"]
 layout_mode = 2
 text = "Response example"
+icon = ExtResource("5_wxbh2")
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
