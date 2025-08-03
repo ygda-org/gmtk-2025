@@ -12,6 +12,7 @@ if GameState.player_has_item("Screwdriver"):
 		do GameState.send_to_vault("sewer_path")
 	- No
 		=> END
+=> END
 ~ closed_grate
 : The drainage grate seems to be completely covered. It appears that the vault is no longer capable of handling drainage as a result.
 => END
