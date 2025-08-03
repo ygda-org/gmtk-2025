@@ -16,10 +16,9 @@ func _physics_process(delta):
 		$Camera2D.process_callback = 0
 	
 	if Input.is_action_just_pressed("interact"):
-		var interactables = $InteractionArea.get_overlapping_areas()
-		for i in interactables:
-			if i.is_in_group("interactable"):
-				i.interact()
+		var interactable = $InteractionArea.get_overlapping_areas()[0]
+		if interactable and interactable.is_in_group("interactable"):
+			interactable.interact()
 	
 	velocity = Input.get_vector("left", "right", "up", "down") * SPEED
 	if velocity.y > 0:
