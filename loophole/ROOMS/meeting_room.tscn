@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://ousln3x4vjkc"]
+[gd_scene load_steps=10 format=4 uid="uid://ousln3x4vjkc"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_4e8gj"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="2_w6pm4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://cujeb1lfqlnnx" path="res://NPCs/Bob/Meeting.dialogue" id="4_5gtwq"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="4_v6jdu"]
 [ext_resource type="PackedScene" uid="uid://b6oxst7mopyj8" path="res://NPCs/Sam/sam.tscn" id="6_5gtwq"]
+[ext_resource type="Resource" uid="uid://dhb5hhstjpt2f" path="res://ScredriverEnthusiast.dialogue" id="8_h3p6l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tx13a"]
 size = Vector2(6, 32)
@@ -73,6 +74,7 @@ shape = SubResource("RectangleShape2D_tx13a")
 [node name="Player" parent="." index="11" instance=ExtResource("4_v6jdu")]
 position = Vector2(1, -5)
 
-[node name="Sam" parent="." index="12" instance=ExtResource("6_5gtwq")]
+[node name="ScrewdriverEnthusiast" parent="." index="12" instance=ExtResource("6_5gtwq")]
 position = Vector2(-132, 56)
 autoplay = "alex-right"
+dialogue = ExtResource("8_h3p6l")

@@ -17,6 +17,7 @@ const START_SAVE_DATA : Dictionary[String, Variant] = {
 	"last_playthrough": "intro",
 	"flooded": false
 }
+const SCREWDRIVER = preload("res://INTERACTABLES/ITEMS/Screwdriver/Screwdriver.tres")
 
 var loaded_save_data: Dictionary = {}
 var current_ending: String = "none"
@@ -175,3 +176,6 @@ func check_win_file():
 	var content = file.get_as_text()
 	var content_list = content.split("\n", false)
 	return content_list
+
+func give_screwdriver(): # the other way of doing this was really tedious ok
+	add_item_to_player_inventory(SCREWDRIVER)
