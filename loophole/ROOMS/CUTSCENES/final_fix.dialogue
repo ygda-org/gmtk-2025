@@ -1,0 +1,14 @@
+~ start
+CEO: GOD#$!@*
+: What? Whose That.
+CEO: How do you keep breaking into my bank every single time.
+CEO: Luckily that vampire gave me some more powers...
+console: started
+console: cd {{GameState.absolute_wincond_path}}
+console: open properties.txt
+console: set player_can_move false
+console: save
+CEO: There.
+: Hey! I can't move
+CEO: Yes! I win!
+=> END

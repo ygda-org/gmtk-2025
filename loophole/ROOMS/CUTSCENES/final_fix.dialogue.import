@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://djyxm72wfjpe1"
+path="res://.godot/imported/final_fix.dialogue-b8d631bdaf91feb4fab4c22b2b2618f4.tres"
+
+[deps]
+
+source_file="res://ROOMS/CUTSCENES/final_fix.dialogue"
+dest_files=["res://.godot/imported/final_fix.dialogue-b8d631bdaf91feb4fab4c22b2b2618f4.tres"]
+
+[params]
+
+defaults=true

@@ -8,14 +8,15 @@ var starting_cutscene = true
 
 const SAVE_PATH: String = "user://savedata.json"
 const START_SAVE_DATA : Dictionary[String, Variant] = {
-	"disguise_path": 0,
-	"vent_path": 0,
-	"sewer_path": 0,
-	"inspector_path": 0,
+	"disguise_path": 0,# 3
+	"vent_path": 0,# 2
+	"sewer_path": 0,# 3
+	"inspector_path": 0,# 3
 	"has_watched_intro": false,
 	"has_watched_first": false,
 	"last_playthrough": "intro",
-	"flooded": false
+	"flooded": false,
+	"ending": 0
 }
 const SCREWDRIVER = preload("res://INTERACTABLES/ITEMS/Screwdriver/Screwdriver.tres")
 
@@ -29,12 +30,17 @@ var can_player_move: bool = true
 var player_has_timeskipped: bool = false
 var player_has_called: bool = false
 
+const WINCOND_PATH: String = "user://properties.txt"
+var absolute_wincond_path : String
+var final_scene : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	DialogueManager.dialogue_ended.connect(dialogue_finished)
 	DialogueManager.dialogue_started.connect(dialogue_started)
 	reset_player_inventory()
-	print(check_win_file())
+	print(create_win_file())
+	print(get_win_file())
 
 func dialogue_finished(resource):
 	can_player_move = true
@@ -44,7 +50,13 @@ func dialogue_started(resource):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if not final_scene:
+		return
+	var current_properties = get_win_file()
+	can_player_move = int(current_properties[3])
+	if int(current_properties[5]) == 1 and int(current_properties[1]) == 0:
+		send_to_vault("ending")
+		final_scene = false
 
 func add_item_to_player_inventory(item):
 	for i in range(len(player_inventory)):
@@ -171,11 +183,57 @@ func restart_game():
 	
 	SceneSwitcher.goto_scene(OUTSIDE, "")
 
-func check_win_file():
-	var file = FileAccess.open("res://SUPERDUPERIMPORSTUFF/game_state_conditions.txt", FileAccess.READ)
+func create_win_file():
+	var file_access := FileAccess.open(WINCOND_PATH, FileAccess.WRITE)
+	if not file_access:
+		print("Error occured while trying to write save data:", FileAccess.get_open_error())
+		return FAILED
+
+	file_access.store_line("time_warp_enabled=")
+	file_access.store_line("true")
+	file_access.store_line("player_can_move=")
+	file_access.store_line("false")
+	file_access.store_line("player_is_in_vault=")
+	file_access.store_line("false")
+	file_access.close()
+	
+	absolute_wincond_path = file_access.get_path_absolute()
+	
+	print("Created win file at: " + absolute_wincond_path)
+	return OK
+
+func get_win_file():
+	var file = FileAccess.open(WINCOND_PATH, FileAccess.READ)
 	var content = file.get_as_text()
 	var content_list = content.split("\n", false)
+	for i in range (len(content_list)):
+		if content_list[i] == "true":
+			content_list[i] = "1"
+		if content_list[i] == "false":
+			content_list[i] = "0"
 	return content_list
+
+func check_all_paths_finished():
+	if loaded_save_data["disguise_path"] != 3:
+		return false
+	if loaded_save_data["vent_path"] != 2:
+		return false
+	if loaded_save_data["sewer_path"] != 3:
+		return false
+	if loaded_save_data["inspector_path"] != 3:
+		return false
+	return true
+
+func check_lazy():
+	if loaded_save_data["disguise_path"] != 0:
+		return false
+	if loaded_save_data["vent_path"] != 0:
+		return false
+	if loaded_save_data["sewer_path"] != 0:
+		return false
+	if loaded_save_data["inspector_path"] != 1:
+		return false
+	return true
 
 func give_screwdriver(): # the other way of doing this was really tedious ok
 	add_item_to_player_inventory(SCREWDRIVER)
