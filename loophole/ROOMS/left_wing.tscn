@@ -21,7 +21,7 @@ size = Vector2(6, 33)
 size = Vector2(8, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fs7b"]
-size = Vector2(20, 48)
+size = Vector2(23, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyg3r"]
 
@@ -83,7 +83,7 @@ position = Vector2(101, -145)
 [node name="GuardDetectionZone" parent="Guard" index="1" instance=ExtResource("6_06jf4")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Guard/GuardDetectionZone" index="0"]
-position = Vector2(-1, 41)
+position = Vector2(-0.5, 40)
 shape = SubResource("RectangleShape2D_6fs7b")
 
 [node name="StandardObjectManager" parent="." index="10" instance=ExtResource("7_7piet")]
