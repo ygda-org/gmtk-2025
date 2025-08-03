@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://dwv1asu0eh8s6"]
+[gd_scene load_steps=9 format=4 uid="uid://dwv1asu0eh8s6"]
 
 [ext_resource type="PackedScene" uid="uid://78agkknush0k" path="res://ROOMS/SCENE_MANAGEMENT/BaseScene.tscn" id="1_pys8n"]
 [ext_resource type="TileSet" uid="uid://qcoif2ljbwxh" path="res://ASSETS/main_tile_set.tres" id="1_q0276"]
 [ext_resource type="PackedScene" uid="uid://blj820gn8deo1" path="res://PLAYER/Player.tscn" id="2_n80rx"]
-[ext_resource type="PackedScene" uid="uid://cto4wcbhaf3d" path="res://INTERACTABLES/ITEMS/Guard_Key/Guard_Key.tscn" id="3_n80rx"]
 [ext_resource type="PackedScene" uid="uid://bsmfk2u2b6fr0" path="res://ROOMS/SCENE_MANAGEMENT/SceneSwitchArea.tscn" id="5_jc8d2"]
 [ext_resource type="PackedScene" uid="uid://5uyawl4p53aa" path="res://NPCs/Bob/Bob.tscn" id="6_jjj4k"]
 [ext_resource type="PackedScene" uid="uid://bbx3sp1xwulb8" path="res://NPCs/Amelia/amelia.tscn" id="7_atvdi"]
@@ -31,10 +30,7 @@ position = Vector2(4, -16)
 tile_map_data = PackedByteArray("AAD+//j/AQAMACkAAAD8//j/AQAMACkAAAD8//f/AQAMACgAAAD9//f/AQAMACgAAAD9//j/AQAMACkAAAD+//f/AQAMACgAAAD///f/AQAIABUAAAAAAPf/AQAJABUAAAABAPf/AQAMACgAAAABAPj/AQAMACkAAAACAPf/AQAMACgAAAACAPj/AQAMACkAAAADAPf/AQAMACgAAAADAPj/AQAMACkAAAD///b/AQAIABQAAAAAAPb/AQAJABQAAAD9//7/AQANAAMAAAD9////AQANAAQAAAD8////AQALAAMAAAD+////AQAMAAMAAAD+//7/AQAMAAIAAAD+//z/AQAMAAAAAAD+//3/AQAMAAEAAAD9//z/AQALAAAAAAD9//3/AQALAAEAAAD8//z/AQALAAAAAAD8//3/AQALAAEAAAD+//n/AQAHAA8AAAD+//r/AQAHABAAAAD+//v/AQAHABEAAAD///n/AQAIAA8AAAD///r/AQAIABAAAAD///v/AQAIABEAAAAAAPn/AQAJAA8AAAAAAPr/AQAJABAAAAAAAPv/AQAJABEAAAABAPn/AQAKAA8AAAABAPr/AQAKABAAAAABAPv/AQAKABEAAAD8/wEAAQAHACEAAAD8/wIAAQAGACEAAAD8/wMAAQAGACEAAAD8/wQAAQAGACEAAAD9/wMAAQAKACEAAAD9/wQAAQAKACIAAAD9/wEAAQAKACEAAAD9/wIAAQAKACIAAAADAPr/AQAFAB8AAAD8//r/AQAFAB8AAAACAPv/AQADAEwAAAACAPz/AQADAE0AAAACAP3/AQADAE4AAAADAPv/AQAEAEwAAAADAPz/AQAEAE0AAAADAP3/AQAEAE4AAAACAP7/AQADAEwAAAACAP//AQADAE0AAAACAAAAAQADAE4AAAADAP7/AQAEAEwAAAADAP//AQAEAE0AAAADAAAAAQAEAE4AAAA=")
 tile_set = ExtResource("1_q0276")
 
-[node name="GuardKey" parent="." index="5" instance=ExtResource("3_n80rx")]
-position = Vector2(24, -115)
-
-[node name="SSA_LeftWing" parent="." index="7" instance=ExtResource("5_jc8d2")]
+[node name="SSA_LeftWing" parent="." index="6" instance=ExtResource("5_jc8d2")]
 starting_location = "EmployeeDoor"
 to_scene = "res://ROOMS/left_wing.tscn"
 
@@ -42,7 +38,7 @@ to_scene = "res://ROOMS/left_wing.tscn"
 position = Vector2(67.5, 48)
 shape = SubResource("RectangleShape2D_jc8d2")
 
-[node name="Bob" parent="." index="8" instance=ExtResource("6_jjj4k")]
+[node name="Bob" parent="." index="7" instance=ExtResource("6_jjj4k")]
 position = Vector2(-35, -88)
 animation = &"idle-right"
 autoplay = "idle-right"
@@ -50,6 +46,6 @@ frame_progress = 0.0
 dialogue = ExtResource("7_dysqv")
 disabled = true
 
-[node name="Amelia" parent="." index="9" instance=ExtResource("7_atvdi")]
+[node name="Amelia" parent="." index="8" instance=ExtResource("7_atvdi")]
 position = Vector2(-16, -107)
 dialogue = ExtResource("7_dysqv")
